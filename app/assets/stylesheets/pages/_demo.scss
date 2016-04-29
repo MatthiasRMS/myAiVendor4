@@ -12,6 +12,36 @@
   padding-bottom: 35px;
 }
 
+.frame_side{
+  position: relative;
+}
+
+.demo_messages{
+  position: absolute;
+  top: 291px;
+  left: 63px;
+  float:left;
+  width: 336px;
+  overflow-y: auto;
+  height: 369px;
+}
+
+.message {
+  background-color: #026FFD;
+  color: white;
+  border-radius: 10px;
+  padding: 2px 10px 2px 10px;
+  max-width: 230px;
+  margin: 2px;
+  font-size: 15px;
+}
+
+.user_input_demo{
+  position: absolute;
+  bottom: 171px;
+  left: 54px;
+}
+
 .description_side {
   max-width: 540px;
 }
