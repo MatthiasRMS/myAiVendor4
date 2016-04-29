@@ -1,23 +1,44 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  title: "We are a white label conversational commerce platform"
+  tagline: "We set up and manage Facebook Messenger chatbots for retailers through our hybrid solution of A.I. and human customer service back up"
+  demo: "Ask for a demo"
+
+  features: "Features"
+  how: "How it works"
+  login: "Login"
+
+  title4: "Do You Really Need Yet Another App ?"
+
+  time: "Set up time"
+  fees: "Set up fees"
+  monthly: "Monthly maintenance fees"
+  accessibility: "Accessibility / Exposure"
+  user: "User experience"
+  upgrades: "Upgrades"
+
+  developing: "Developing an app"
+  time_app: "3 to 6 months"
+  fees_app: "100,000 £"
+  monthly_app: "2,500 £"
+  accessibility_app: "Sliding screen #4"
+  user_app: "Yet a another interface"
+  upgrades_app: "Require customer download"
+
+  time_own: "2 to 6 weeks"
+  fees_own: "25,000 £"
+  monthly_own: "1,000 £"
+  accessibility_own: "Embedded in any chat app"
+  user_own: "Straight forward texting"
+  upgrades_own: "Transparent for the user"
+
+  request: "Request an invite to our private beta"
+
+
+  demo_title: "Welcome to our Hipster Store bot demo"
+  who: "Who are we ?"
+  store_description: "Our fashion store is small but nice. We are a group of independant fashion designer and artists selling both offline and online. We sell a bunch of hipster clothes"
+  shirts: "Shirts"
+  bottoms: "Bottoms"
+  hats: "Hats"
+  shoes: "Shoes"
+  store_fake: "Unfortunately, our store is all fake but we still hope you can enjoy our product demo."

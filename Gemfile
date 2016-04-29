@@ -29,9 +29,19 @@ gem 'jbuilder', '~> 2.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'figaro'
+gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass'
+gem 'simple_form'
+gem 'autoprefixer-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'binding_of_caller'
+  gem 'better_errors'
   gem 'byebug', platform: :mri
 end
 

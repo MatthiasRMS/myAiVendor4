@@ -1,0 +1,34 @@
+.global_showcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.store_presentation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
+
+.description_side {
+  max-width: 540px;
+}
+
+.instagram_collection {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
+
+.store_description {
+  padding: 15px;
+}
+
+.store_page_title {
+  padding: 35px;
+}

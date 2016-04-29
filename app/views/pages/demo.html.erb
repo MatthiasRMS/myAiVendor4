@@ -1,0 +1,43 @@
+
+
+<div class="container text-center">
+  <h1 class="store_page_title"><%= t('demo_title') %></h1>
+
+
+    <div class="global_showcase">
+      <div class="frame_side text-center">
+        <%=image_tag("hipster_store_frame.png", width: '450')%>
+        <!--         <p style="max-width: 300px;">Just time what ever you want above and our bot will try to answer your requests the best it can</p> -->
+      </div>
+
+      <div class="hidden-xs description_side">
+        <h3><%= t('who') %></h3>
+        <div class="store_presentation">
+        <%=image_tag("hipster_store_front.jpg", width: '250')%>
+          <div class="store_description text-left">
+            <p><%= t('store_description') %></p>
+            <ul>
+              <li>T-shirts</li>
+              <li><%= t('shirts') %></li>
+              <li><%= t('bottoms') %></li>
+              <li><%= t('hats') %></li>
+              <li><%= t('shoes') %></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <p><%= t('store_fake') %></p>
+
+        <div class="hidden-sm instagram_collection">
+          <%=image_tag("instagram1.jpg", width: '180')%>
+          <%=image_tag("instagram2.jpg", width: '180')%>
+          <%=image_tag("instagram3.jpg", width: '180')%>
+          <%=image_tag("instagram4.jpg", width: '180')%>
+          <%=image_tag("instagram5.jpg", width: '180')%>
+          <%=image_tag("instagram6.jpg", width: '180')%>
+        </div>
+      </div>
+    </div>
+
+</div>

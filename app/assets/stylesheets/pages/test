@@ -1,0 +1,92 @@
+    <!--  Florist Example -->
+
+    <h1 class="text-center">Open A New Sales Channel</h1>
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6">
+
+        <div class="avatars">
+          <div class="avatari text-center">
+            <%=image_tag("rachel-the-florist.jpg", class: "avatar-large")%>
+            <p style="padding-top: 5px;"><strong>Rachel</strong></p>
+            <p>Independant Florist</p>
+          </div>
+
+          <%=image_tag("relationship.png", class: "avatar-large", style: "padding-bottom: 40px;")%>
+
+          <div class="avatari text-center">
+            <%=image_tag("suzanne-2.png", class: "avatar-large")%>
+            <p><strong>Suzanne</strong></p>
+            <p>Life saver</p>
+          </div>
+        </div>
+
+        <div class="set-up">
+          <h3>Set up</h3>
+          <p><strong>Type:</strong> Impersonate</p>
+          <p><strong>Tone:</strong> Nice and calm</p>
+          <p><strong>Channel:</strong> Facebook Messenger</p>
+        </div>
+
+
+        <h2>Feedback</h2>
+        <em>"We had regular requests for on demand flowers delivery for a long time now. Unfortunately, we did not have the time, the size or the energy to build and maintain an app. My A.I. Vendor step up our messenger channel within a week, we decided to call it Suzanne and orders started arriving on our system."</em>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 text-center">
+        <%=image_tag("kensington-flower-chatbot-messenger-conversation.png", width: '350')%>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--  Heineken Example -->
+
+    <h1 class="text-center">Go Where Your Customers Are</h1>
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6">
+
+        <div class="avatars">
+          <div class="avatari text-center">
+            <%=image_tag("heineken-european-sales-manager.png", class: "avatar-large")%>
+            <p style="padding-top: 5px;"><strong>Adam</strong></p>
+            <p>Sales manager</p>
+          </div>
+
+          <%=image_tag("relationship.png", class: "avatar-large", style: "padding-bottom: 40px;")%>
+
+          <div class="avatari text-center">
+            <%=image_tag("heineken-logo.jpg", class: "avatar-large")%>
+            <p><strong>Bob</strong></p>
+            <p>Virtual waiter</p>
+          </div>
+        </div>
+
+        <div class="set-up">
+          <h3>Set up</h3>
+          <p><strong>Type:</strong> Branded</p>
+          <p><strong>Tone:</strong> Joyful and chill out</p>
+          <p><strong>Channel:</strong> Whatsapp</p>
+        </div>
+
+        <div class="feedback">
+          <h2>Feedback</h2>
+          <em>"We could see that the young generation was spending all their time on their messaging apps. We heard of My A.I. vendor and we decided to give it a try. Not only our customers loves it but Bob, our virtual waiter, can crack a few jokes. He is part of the family now."</em>
+        </div>
+
+      <%= link_to t(".sign_in", default: "More details"), pages_heineken_path, class: "btn btn-primary btn-lg" %>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-6 text-center">
+        <%=image_tag("heineken-chatbot-messenger-conversation.png", width: '350')%>
+      </div>
+
+    </div>
+    <hr>

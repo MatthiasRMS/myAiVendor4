@@ -1,0 +1,44 @@
+fr:
+  title: "Nous sommes une platforme de commerce conversationel en marque blanche"
+  tagline: "Nous paramétrons et manageons des chatbots sur Facebook Messenger pour des commerçant au travers une solution hybrid offrant une intelligence artificielle et un véritable service humain"
+  demo: "Demandez une démo"
+
+  features: "Fonctionalités"
+  how: "Comment ça fonctionne"
+  login: "S'inscrire"
+
+  title4: "Avez vous besoin d'une enième app ?"
+
+  time: "Temps d'installation"
+  fees: "Cout d'installation"
+  monthly: "Cout mensuel de maintenance"
+  accessibility: "Accessibilité / Exposition"
+  user: "Experience utilisateur"
+  upgrades: "Upgrades"
+
+  developing: "Développer une app"
+  time_app: "3 à 6 mois"
+  fees_app: "100,000 €"
+  monthly_app: "2,500 €"
+  accessibility_app: "Perdu sur le 4ème écran"
+  user_app: "Nouvelle interface à apprendre"
+  upgrades_app: "Nécessite un nouveau téléchargement"
+
+  time_own: "2 à 6 semaines"
+  fees_own: "25,000 €"
+  monthly_own: "1,000 €"
+  accessibility_own: "Directement dans Messenger"
+  user_own: "Messagerie classique"
+  upgrades_own: "Transparent pour l'utilisateur"
+
+  request: "Demandez une invitation à notre beta"
+
+
+  demo_title: "Bienvenue sur la démo de notre bot pour magasin hipster"
+  who: "Qui sommmes nous ?"
+  store_description: "Notre magasin de mode est petit et très pointu. Nous sommes un collectif de designer de mode et d'artistes et nous vendons aussi bien en boutique d'en ligne. Nous vendons toutes une variété de habillement."
+  shirts: "Chemises"
+  Bottoms: "Pantalon"
+  Hats: "Casquette"
+  Shoes: "Chaussures"
+  store_fake: "Malheureusement, notre magasin est entièrement faux, mais nous espèrons que vous apprécirez quand même la démo de notre produit."
