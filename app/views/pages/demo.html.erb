@@ -10,6 +10,17 @@
         <!--         <p style="max-width: 300px;">Just time what ever you want above and our bot will try to answer your requests the best it can</p> -->
       </div>
 
+
+      <div class="demo_messages">
+        <%= render @messages %>
+      </div>
+
+      <div class="user_test">
+        <form>
+          <input type="text" data-behavior="room_speaker">
+        </form>
+      </div>
+
       <div class="hidden-xs description_side">
         <h3><%= t('who') %></h3>
         <div class="store_presentation">
