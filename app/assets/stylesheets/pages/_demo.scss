@@ -26,11 +26,23 @@
   height: 369px;
 }
 
-.message {
+.bot_message {
+  background-color: #EFEFEF;
+  color: black;
+  border-radius: 10px;
+  padding: 2px 10px 2px 10px;
+  width: fit-content;
+  max-width: 230px;
+  margin: 2px;
+  font-size: 15px;
+}
+
+.user_message {
   background-color: #026FFD;
   color: white;
   border-radius: 10px;
   padding: 2px 10px 2px 10px;
+  width: fit-content;
   max-width: 230px;
   margin: 2px;
   font-size: 15px;
