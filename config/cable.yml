@@ -1,7 +1,11 @@
 # Action Cable uses Redis by default to administer connections, channels, and sending/receiving messages over the WebSocket.
-production:
-  adapter: redis
-  url: redis://peaceful-beyond-89816.herokuapp.com/cable
+production: &production
+  :url: redis://redistogo:86e92dfa0b994140ce7f3e7493bd1b12@porgy.redistogo.com:9363/
+  :host: tarpon.redistogo.com
+  :port: 10272
+  :password: 10e348ac30ca0002879ce9d85daf0bb0
+  :inline: true
+  :timeout: 1
 development:
   adapter: async
   url: redis://localhost:6379/1
