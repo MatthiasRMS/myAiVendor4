@@ -1,11 +1,13 @@
 en:
   title: "We are a white label conversational commerce platform"
-  tagline: "We set up and manage Facebook Messenger chatbots for retailers through our hybrid solution of A.I. and human customer service back up"
+  tagline: "We set up and manage chatbots for retailers through our hybrid solution of A.I. and human customer service back up"
   demo: "Ask for a demo"
 
   features: "Features"
   how: "How it works"
   login: "Login"
+
+  chat: "Start chatting"
 
   title4: "Do You Really Need Yet Another App ?"
 

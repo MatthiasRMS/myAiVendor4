@@ -18,35 +18,27 @@
     <div class="icons">
       <div class="row">
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="text-center icon">
             <i class="fa fa-rocket"></i>
-            <h2>Fully Customizable</h2>
-            <p>Set up your chatbot to match 100% your brand identity</p>
+            <h2>Easy to get started</h2>
+            <p>To start using My A.I. Vendor as your own store's bot no coding or scripting is required. Our solution is ready to be implemented in minutes.</p>
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="text-center icon">
-            <i class="fa fa-comment"></i>
-            <h2>Cumulative Solution</h2>
-            <p>Thanks to mutualization, our bots learn faster than others</p>
-          </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div  class="text-center icon">
             <i class="fa fa-users"></i>
             <h2>Human Guided Chats</h2>
-            <p>All chatbots have 24/7 human moderations</p>
+            <p>My A.I. Vendor can understand natural language ordinary people use and communicate with them in the same manner making conversations realistic and trustworthy.</p>
           </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="col-xs-12 col-sm-6 col-md-4">
           <div  class="text-center icon">
             <i class="fa fa-cogs"></i>
             <h2>Plugged In Your Systems</h2>
-            <p>Get the transactions directly in your order management system</p>
+            <p>My A.I. Vendor will plug into your default API to pick on the relevant data and to send the transactions directly in your order management system.</p>
           </div>
         </div>
 
@@ -56,148 +48,62 @@
 
   <hr>
 
-  <div class="examples">
 
 
-    <!--  Example 1 -->
+  <!--  My Hipster Store demo -->
 
-    <h1 class="text-center">In Store Solution</h1>
-    <h2 class="text-center">Outsourcing basic requests</h2>
-    <div class="row">
+  <div class="container text-center">
+    <h1 class="store_page_title"><%= t('demo_title') %></h1>
 
-      <div class="col-xs-12 col-sm-6">
 
-        <div class="avatars">
-          <div class="avatari text-center">
-            <%=image_tag("nike-ceo.jpg", class: "avatar-large")%>
-            <p style="padding-top: 5px;"><strong>Mark Parker</strong></p>
-            <p>Chief Innovation Officer</p>
+      <div class="global_showcase">
+        <div class="frame_side text-center">
+          <%=image_tag("hipster_store_frame.png", width: '450')%>
+        </div>
+
+        <div class="hidden-xs description_side">
+          <h3><%= t('who') %></h3>
+          <div class="store_presentation">
+          <%=image_tag("hipster_store_front.jpg", width: '250')%>
+            <div class="store_description text-left">
+              <p><%= t('store_description') %></p>
+              <ul>
+                <li>T-shirts</li>
+                <li><%= t('shirts') %></li>
+                <li><%= t('bottoms') %></li>
+                <li><%= t('hats') %></li>
+                <li><%= t('shoes') %></li>
+              </ul>
+            </div>
           </div>
 
-          <%=image_tag("relationship.png", class: "avatar-large", style: "padding-bottom: 40px;")%>
+          <p><%= t('store_fake') %></p>
 
-          <div class="avatari text-center">
-            <%=image_tag("nike-logo.ico", class: "avatar-large")%>
-            <p><strong>Suzanne</strong></p>
-            <p>Running specialist</p>
-          </div>
-        </div>
-
-        <div class="set-up">
-          <h3>Set up</h3>
-          <p><strong>Type:</strong> Impersonate</p>
-          <p><strong>Entry point:</strong> In store Messenger codes</p>
-          <p><strong>Main features:</strong> Scanning, browsing, inventory checking, booking</p>
-        </div>
-
-        <div class="feedback">
-          <h3>Feedback</h3>
-          <em>"We always have a hard time coping with instore customer requests. We wanted to be able to outsource the basic questioning and order processing some how, so that our staff can focus on the technical questions. The fact that customers can book online and pick up their product right away is just the icing on the cake."</em>
-        </div>
-
-      </div>
-
-      <div class="col-xs-12 col-sm-6 text-center">
-        <%=image_tag("nike-chatbot-messenger-conversation-2.png", width: '350')%>
-      </div>
-
-    </div>
-    <hr>
-
-
-
-
-    <!--  Example 2 -->
-
-
-    <h1 class="text-center">E-retailers Solution</h1>
-    <h2 class="text-center">Added value services</h2>
-
-    <div class="row">
-
-      <div class="col-xs-12 col-sm-6 text-center">
-        <%=image_tag("asos-chatbot-messenger-conversation.png", width: '350')%>
-      </div>
-
-      <div class="col-xs-12 col-sm-6">
-
-        <div class="avatars">
-          <div class="avatari text-center">
-            <%=image_tag("asos-customer-service.jpg", class: "avatar-large")%>
-            <p style="padding-top: 5px;"><strong>Sarah Alison</strong></p>
-            <p>Happiness manager</p>
+          <div class="hidden-sm instagram_collection">
+            <%=image_tag("instagram1.jpg", width: '180')%>
+            <%=image_tag("instagram2.jpg", width: '180')%>
+            <%=image_tag("instagram3.jpg", width: '180')%>
+            <%=image_tag("instagram4.jpg", width: '180')%>
+            <%=image_tag("instagram5.jpg", width: '180')%>
+            <%=image_tag("instagram6.jpg", width: '180')%>
           </div>
 
-          <%=image_tag("relationship.png", class: "avatar-large", style: "padding-bottom: 40px;")%>
+          <!-- Temporary button -->
+          <a href="" class="btn btn-primary btn-lg"><%= t('chat') %></a>
+          <!--  -->
 
-          <div class="avatari text-center">
-            <%=image_tag("asos-logo.png", class: "avatar-large")%>
-            <p><strong>Asos</strong></p>
-            <p>Order Tracker</p>
+
+          <!-- Code given by facebook in their documentation -->
+          <div class="fb-messengermessageus"
+            messenger_app_id="APP_ID"
+            page_id="PAGE_ID"
+            color="blue"
+            size="standard" >
           </div>
+          <!--  -->
+
         </div>
-
-        <div class="set-up">
-          <h3>Set up</h3>
-          <p><strong>Type:</strong> Impersonate</p>
-          <p><strong>Entry point:</strong> On website and emails</p>
-          <p><strong>Main features:</strong> Order confirmation, order tracker, rescheduling </p>
-        </div>
-
-
-        <h3>Feedback</h3>
-        <em>"Our customers are heavy messaging app users. Our customer service is what differentiate us from our competitors. It has been a will since we realized that emails and phoning were not the appropriate channels for tracking and rescheduling services. When we heard about My A.I. vendor solution, it was a no brainer."</em>
       </div>
-
-    </div>
-    <hr>
-
-
-
-
-    <!-- Example 3 -->
-
-    <h1 class="text-center">Reservation Solution</h1>
-    <h2 class="text-center">Browsing and booking services</h2>
-
-    <div class="row">
-
-
-      <div class="col-xs-12 col-sm-6">
-
-        <div class="avatars">
-          <div class="avatari text-center">
-            <%=image_tag("david-cinema.jpg", class: "avatar-large")%>
-            <p style="padding-top: 5px;"><strong>David</strong></p>
-            <p>Digital manager</p>
-          </div>
-
-          <%=image_tag("relationship.png", class: "avatar-large", style: "padding-bottom: 40px;")%>
-
-          <div class="avatari text-center">
-            <%=image_tag("gaumont-2.jpg", class: "avatar-large")%>
-            <p><strong>Pathé Gaumont</strong></p>
-            <p>Queue cutter</p>
-          </div>
-        </div>
-
-        <div class="set-up">
-          <h3>Set up</h3>
-          <p><strong>Type:</strong> Branded</p>
-          <p><strong>Entry point:</strong> Facebook Messenger browser and Messenger codes</p>
-          <p><strong>Main features:</strong> Itinerary, browsing and booking </p>
-        </div>
-
-
-        <h3>Feedback</h3>
-        <em>"Queuing was becoming a massive issue for our business. At first I was afraid of the quality of service we could get by outsourcing to a robot but it turns out My A.I. Vendor mix solution offers a safety net that we were hoping for."</em>
-      </div>
-
-      <div class="col-xs-12 col-sm-6 text-center">
-        <%=image_tag("gaumont-chatbot-whatsapp-conversation-2.png", width: '350')%>
-      </div>
-
-    </div>
 
   </div>
 
