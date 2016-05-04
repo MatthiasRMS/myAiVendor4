@@ -30,10 +30,13 @@
   padding-bottom: 40px;
 }
 
-
+.container h1 {
+  color: #026FFD;
+  font-weight: bold;
+}
 
 .banner-content {
-  width: 660px;
+  width: 605px;
   padding-left: 33px;
   padding-right: 33px;
 }
@@ -50,15 +53,13 @@
 
 .icons h2 {
   font-size: 27px;
-  font-weight: bold;
 }
 
 .icon i {
-  color: #026FFD;
   font-size:45px;
 }
 
-.icon h2 {
+.icon_header:hover {
   color: #026FFD;
 }
 

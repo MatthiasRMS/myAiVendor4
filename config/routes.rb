@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /fr/ do
     get '/', to: 'pages#home'
     get '/faq', to: 'pages#faq'
+    get '/about', to: 'pages#about'
     get '/how', to: 'pages#how'
     get '/features', to: 'pages#features'
     get '/demo_request', to: 'pages#demo_request'
