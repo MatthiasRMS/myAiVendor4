@@ -1,0 +1,78 @@
+<%= content_for(:title) do %>
+  <%= t('.title', number: current_user.unread_conversations > 0 ? "(" + current_user.unread_conversations.to_s + ") " : "") %>
+<% end %>
+<%= content_for(:description) do %>
+  <%= t('.description') %>
+<% end %>
+<div class="container">
+  <div class="row prerender">
+    <div class="col-md-4 inbox">
+      <div class="panel panel-default margin-top-15 padding-none white-bg" id="panel-inbox">
+        <div class="panel-heading border-btm-light">
+          <h4><%= t('.inbox') %></h4>
+        </div>
+        <div class="panel-body padding-none panel-body-inbox" id="conversations">
+          <div class="loader"> </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 conversation">
+      <div class="panel panel-default margin-top-15 padding-none" id="panel-conversation">
+        <div class="panel-heading border-btm-light">
+          <h4 id="first-name">
+            <% if @conversation.user1 == current_user %>
+              <%= @conversation.user2.first_name %>
+            <% else %>
+              <%= @conversation.user1.first_name %>
+            <% end %>
+          </h4>
+        </div>
+        <div class="panel-body panel-body-conversation padding-none">
+          <div id="messages">
+            <div class="loader"> </div>
+          </div>
+          <div id="new_message">
+            <div class="stick-down-target reply" >
+              <div class="form-group margin-btm-10">
+                <textarea class="form-control" id="message-input"></textarea>
+              </div>
+              <div class="form-group margin-btm-none text-right">
+                <button class="btn btn-post"><%= t('.submit', default: 'Envoyer') %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= react_component "Inbox",
+    render(template: 'conversations/show.json.jbuilder') %>
+</div>
+<%= content_for(:js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function(e) {
+      $('.prerender').remove()
+      togglePaddingAndBorder();
+      $(window).on('resize', function() {
+        togglePaddingAndBorder();
+      })
+      $('#messages-nav-link').addClass("hover");
+      $("#messages").niceScroll({
+        cursorwidth: "10px",
+        cursorcolor: "#ddd",
+        cursoropacitymin: 1,
+        background: "#f8f8f8",
+        cursorborder: "1px solid #fff",
+      });
+      $(".panel-body-inbox").niceScroll({
+        cursorwidth: "10px",
+        cursorcolor: "#ddd",
+        cursoropacitymin: 1,
+        background: "#f8f8f8",
+        cursorborder: "1px solid #fff"
+      });
+      $('#messages').scrollTop($('#messages')[0].scrollHeight);
+      $('#message-input').focus()
+    });
+  <% end %>
+<% end %>
