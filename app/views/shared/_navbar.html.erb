@@ -46,7 +46,8 @@
 
       <!-- Login text link -->
 
-      <%= link_to t("features"), features_path, class: "navbar-wagon-item navbar-wagon-link" %>
+<!--       <%= link_to t("features"), features_path, class: "navbar-wagon-item navbar-wagon-link" %> -->
+      <%= link_to t("about"), about_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t("how"), how_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "FAQ", faq_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t("login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
@@ -78,7 +79,8 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="pages/features"><%= t('features') %></a></li>
+<!--    <li><a href="pages/features"><%#= t('features') %></a></li> -->
+        <li><a href="pages/about"><%= t('about') %></a></li>
         <li><a href="pages/how"><%= t('how') %></a></li>
         <li><a href="pages/faq">FAQ</a></li>
         <li><a href="users/sign_in"><%= t('login') %></a></li>

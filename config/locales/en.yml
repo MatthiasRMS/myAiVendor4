@@ -1,9 +1,10 @@
 en:
   title: "We are a white label conversational commerce platform"
-  tagline: "We set up and manage chatbots for retailers through our hybrid solution of A.I. and human customer service back up"
+  tagline: "We set up and manage chatbots for retailers through our hybrid solution of Artificial Intelligence and human customer service back up"
   demo: "Ask for a demo"
 
   features: "Features"
+  about: "About"
   how: "How it works"
   login: "Login"
 
@@ -38,7 +39,7 @@ en:
 
   demo_title: "Welcome to our Hipster Store bot demo"
   who: "Who are we ?"
-  store_description: "Our fashion store is small but nice. We are a group of independant fashion designer and artists selling both offline and online. We sell a bunch of hipster clothes"
+  store_description: "Our fashion store is small but nice. We are a group of independant fashion designers and artists selling a bunch of hipster clothes both offline and online. You will find:"
   shirts: "Shirts"
   bottoms: "Bottoms"
   hats: "Hats"
