@@ -35,6 +35,12 @@
   font-weight: bold;
 }
 
+.container h3 {
+  color: #026FFD;
+  font-weight: bold;
+}
+
+
 .banner-content {
   width: 605px;
   padding-left: 33px;
@@ -78,6 +84,17 @@
 
 .examples h2 {
   padding-bottom: 30px;
+}
+
+.start-chatting {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.start-chatting h3 {
+  margin: 0px;
+  padding-bottom: 20px;
 }
 
 .row {
