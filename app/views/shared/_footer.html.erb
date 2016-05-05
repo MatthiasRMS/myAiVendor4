@@ -1,6 +1,20 @@
 <div class="footer text-center" style="padding: 20px">
-  <%= image_tag "logo.png", width: '300' %>
-  <p> ©2016 My A.I. Vendor. All Rights Reserved. </p>
-  <%=image_tag("london-banner.png", width: '250px')%>
-  <p style="font-size: 13px"> Proudly developed in London </p>
+  <div class="sponsor">
+    <%=image_tag("london-icon.png", :class => "sponsor_image_1")%>
+    <%=image_tag("la_french_tech_icon.png", :class => "sponsor_image_1")%>
+    <%=image_tag("my_messaging_store_round_logo.png", :class => "sponsor_image_1")%>
+  </div>
+  <p><strong>Proudly developed in London and yet commited to the French Tech</strong></p>
+
+  <div class="container" style="padding-top: 30px;">
+    <div class="footer_bottom">
+      <div class="footer_links">
+        <%= link_to t("contact"), about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t("blog"), about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t("press"), about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+        <%= link_to t("jobs"), about_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
+        <p> © All Rights Reserved. </p>
+    </div>
+  </div>
 </div>

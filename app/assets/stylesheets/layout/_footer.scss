@@ -1,1 +1,19 @@
 // Your footer style
+.sponsor {
+  text-align: center;
+}
+
+.sponsor_image_1 {
+  width: 120px;
+  margin-right: -20px;
+}
+
+.sponsor_image_2 {
+  width: 120px;
+  margin-left: -20px;
+}
+
+.footer_bottom {
+  display: flex;
+  justify-content: space-between;
+}
