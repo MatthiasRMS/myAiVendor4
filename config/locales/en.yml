@@ -12,9 +12,9 @@ en:
 
   title4: "Do You Really Need Yet Another App ?"
 
-  time: "Set up time"
-  fees: "Set up fees"
-  monthly: "Monthly maintenance fees"
+  time: "Average set up time"
+  fees: "Average set up fees"
+  monthly: "Average maintenance fees"
   accessibility: "Accessibility / Exposure"
   user: "User experience"
   upgrades: "Upgrades"
@@ -39,7 +39,8 @@ en:
 
   demo_title: "Welcome to our Hipster Store bot demo"
   who: "Who are we ?"
-  store_description: "Our fashion store is small but nice. We are a group of independant fashion designers and artists selling a bunch of hipster clothes both offline and online. You will find:"
+  store_description: "The Hipster Store is a lifestyle brand, founded in 2006 which has 16 stores globally with 3 in the UK."
+  conscious_brand: "As a conscious brand we make sure to use 100% GOTS (Global Organic Textile Standard) and Fairtrade certified organic cotton in all our garments."
   shirts: "Shirts"
   bottoms: "Bottoms"
   hats: "Hats"

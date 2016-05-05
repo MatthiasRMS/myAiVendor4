@@ -12,9 +12,9 @@ fr:
 
   title4: "Avez vous besoin d'une enième app ?"
 
-  time: "Temps d'installation"
-  fees: "Cout d'installation"
-  monthly: "Cout mensuel de maintenance"
+  time: "Temps d'installation moyen"
+  fees: "Cout d'installation moyen"
+  monthly: "Cout de maintenance moyen"
   accessibility: "Accessibilité / Exposition"
   user: "Experience utilisateur"
   upgrades: "Upgrades"

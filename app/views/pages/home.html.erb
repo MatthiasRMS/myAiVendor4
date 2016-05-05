@@ -62,50 +62,54 @@
     <h1 class="store_page_title"><%= t('demo_title') %></h1>
 
       <div class="global_showcase">
-        <div class="frame_side text-center">
-          <%=image_tag("hipster_store_frame.png", width: '450')%>
+        <div class="hidden-xs frame_side text-center">
+          <%=image_tag("my_hipster_store_chat_demo.png", width: '450')%>
         </div>
 
-        <div class="hidden-xs description_side">
-          <h3><%= t('who') %></h3>
+        <div class="description_side">
           <div class="store_presentation">
-          <%=image_tag("hipster_store_front.jpg", width: '250')%>
-            <div class="store_description text-left">
+            <div class="hidden-xs hidden-sm store_description text-left">
+              <h3 style="text-align: center;"><%= t('who') %></h3>
+              <%=image_tag("my_hipster_store_founders.jpg", width: '350')%>
               <p><%= t('store_description') %></p>
-              <ul>
-                <li>T-shirts</li>
-                <li><%= t('shirts') %></li>
-                <li><%= t('bottoms') %></li>
-                <li><%= t('hats') %></li>
-                <li><%= t('shoes') %></li>
-              </ul>
+              <p><%= t('conscious_brand') %></p>
+              <p><%= t('store_fake') %></p>
+            </div>
+
+            <!--  -->
+
+            <div class="start-chatting">
+              <h3><%= t('chat') %></h3>
+              <p>Flash this code within Messenger</p>
+              <%=image_tag("my_hipster_store_messenger_code.png", width: '250')%>
+              <!-- Temporary button -->
+              <p>...Or click below to start chatting on Messenger desktop</p>
+                <div class="messenger-button">
+                  <a href="" class="btn btn-primary btn-lg"><%= t('chat') %></a>
+                  <!--  -->
+                  <!-- Code given by facebook in their documentation -->
+                  <div class="fb-messengermessageus"
+                    messenger_app_id="APP_ID"
+                    page_id="PAGE_ID"
+                    color="blue"
+                    size="standard" >
+                  </div>
+                </div>
             </div>
           </div>
 
-          <p><%= t('store_fake') %></p>
 
-          <div class="hidden-sm instagram_collection">
-            <%=image_tag("instagram1.jpg", width: '180')%>
-            <%=image_tag("instagram2.jpg", width: '180')%>
-            <%=image_tag("instagram3.jpg", width: '180')%>
-            <%=image_tag("instagram4.jpg", width: '180')%>
-            <%=image_tag("instagram5.jpg", width: '180')%>
-            <%=image_tag("instagram6.jpg", width: '180')%>
+          <div class="hidden-xs hidden-sm instagram_collection">
+            <%=image_tag("instagram1.jpg", width: '162')%>
+            <%=image_tag("instagram2.jpg", width: '162')%>
+            <%=image_tag("instagram3.jpg", width: '162')%>
+            <%=image_tag("instagram4.jpg", width: '162')%>
+            <%=image_tag("instagram5.jpg", width: '162')%>
+            <%=image_tag("instagram7.jpg", width: '162')%>
+            <%=image_tag("instagram6.jpg", width: '162')%>
+            <%=image_tag("instagram8.jpg", width: '162')%>
           </div>
 
-          <!-- Temporary button -->
-          <a href="" class="btn btn-primary btn-lg"><%= t('chat') %></a>
-          <!--  -->
-
-
-          <!-- Code given by facebook in their documentation -->
-          <div class="fb-messengermessageus"
-            messenger_app_id="APP_ID"
-            page_id="PAGE_ID"
-            color="blue"
-            size="standard" >
-          </div>
-          <!--  -->
 
         </div>
       </div>
