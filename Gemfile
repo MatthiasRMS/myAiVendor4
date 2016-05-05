@@ -39,7 +39,11 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 gem 'js-routes'
+gem 'react-rails', '1.6.1'
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-classnames'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
