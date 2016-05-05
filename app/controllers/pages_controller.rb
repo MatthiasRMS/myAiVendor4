@@ -19,4 +19,14 @@ class PagesController < ApplicationController
 
   def features
   end
+
+  def Contact
+  end
+
+  def Press
+  end
+
+  def Jobs
+  end
+
 end

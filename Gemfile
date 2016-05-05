@@ -42,6 +42,7 @@ gem 'js-routes'
 gem 'react-rails', '1.6.1'
 
 source 'https://rails-assets.org' do
+  gem 'rails-assets-lightbox'
   gem 'rails-assets-classnames'
 end
 

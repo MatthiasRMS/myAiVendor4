@@ -54,7 +54,11 @@
 .icons {
   display: flex;
   justify-content: space-around;
-  padding: 40px;
+  padding-top: 40px;
+}
+
+.icon {
+  padding-right: 25px;
 }
 
 .icons h2 {
@@ -70,12 +74,14 @@
 }
 
 .icon p {
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 23px;
+  text-align: justify;
 }
 
 
 .features h1 {
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .examples h1 {
@@ -94,7 +100,7 @@
 
 .start-chatting h3 {
   margin: 0px;
-  padding-bottom: 20px;
+  padding-bottom: 9px;
 }
 
 .row {
