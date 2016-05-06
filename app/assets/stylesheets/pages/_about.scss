@@ -7,3 +7,32 @@
   text-align: justify;
   line-height: 30px;
 }
+
+
+.history {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text-history {
+  max-width: 520px;
+  padding-right: 40px;
+}
+
+.about_features {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about_feature {
+  max-width: 250px;
+}
+
+.about_feature p {
+  text-align: left;
+  padding-bottom: 0px;
+  line-height: 20px;
+}
