@@ -28,9 +28,9 @@ Rails.application.routes.draw do
     get '/demo_request', to: 'pages#demo_request'
     get '/demo', to: 'pages#demo'
     get '/show', to: 'rooms#show'
-    get '/contact', to: 'contact#show'
-    get '/press', to: 'press#show'
-    get '/jobs', to: 'jobs#show'
+    get '/contact', to: 'pages#contact'
+    get '/press', to: 'pages#press'
+    get '/jobs', to: 'pages#jobs'
   end
 
 
