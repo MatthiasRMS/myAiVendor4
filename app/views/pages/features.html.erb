@@ -1,114 +1,107 @@
 <div class="container features_page">
-  <h2 class="text-center">There currently have 9 plug and play features available across 3 main categories and many more yet to come</h2>
 
-  <h3>Catalogue features</h3>
+  <% @non_footer_action %>
+
+  <div class="left-menu">
+    <p><strong>Summary</strong></p>
+    <ul class="list-unstyled" style="line-height: 30px;">
+      <li>Web plugins</li>
+      <li>Customer matching</li>
+      <li>Messenger code</li>
+      <li>Structured templates</li>
+      <li>Carousel</li>
+      <li>Geolocation</li>
+      <li>User control</li>
+    </ul>
+  </div>
+
+  <div class="feature-display">
+    <h2>Features</h2>
+
+    <h3>Web Plugins</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <h4>Feature 1: Browsing through a catalogue</h4>
-        <p>Just like on an ordinary website, your customers can make a search through keywords and browse a selection of corresponding thumbnails</p>
+        <p>You can drop on of these 2 plugins onto your website that work on desktop and mobile web. When people click the "Send to Messenger" plugin, you can initiate a conversation with them in Messenger. The "Message Us" plugin takes the person directly to Messenger and allows them to initiate a conversation with you. On desktop, the person will be sent to messenger.com and on mobile they'll be sent to the Messenger native app.</p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("chatbot-browsing.png", class: "feature_image")%>
+      <%=image_tag("web_plugin.png", class: "feature_image")%>
       </div>
     </div>
 
     <hr>
 
+    <h3>Order updates</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <h4>Feature 2: Navigating through a category tree</h4>
-        <p>Through a serie of structured messages, your customer can easily deep dive into your assortment through the existing category indexation</p>
+        <p>Order update allow you to reach people in Messenger if you have their phone number and their consent to be contacted by you. In conversations on Messenger, people will see you as a brand and not just a short code. Conversations initiated through order updates will be received as Message Requests allowing people to be reached only by the bots they want to communicate with.</p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("chatbot-navigating.png", class: "feature_image")%>
+      <%=image_tag("order_updates.png", class: "feature_image")%>
       </div>
     </div>
 
     <hr>
 
+    <h3>Messenger Codes</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <h4>Feature 3: Checking inventory</h4>
-        <p>Once a product selected, your customer can check stock availabilities in any specific store. This feature gets handy when there is no human vendor available.</p>
+        <p>Place a Messenger Code anywhere and people can scan it to start a conversation with you.It could be on your website, on your store front, on your product display or into an ad.</p>
+        <p>For instance, a beer brand could stick them on to bar tables so that customer can order directly through their phones.</p>
       </div>
-      <div class="col-xs-12 col-sm-6  text-center">
-      <%=image_tag("chatbot-stock-checking.png", class: "feature_image")%>
+      <div class="col-xs-12 col-sm-6 text-center">
+      <%=image_tag("my_hipster_store_messenger_code.png", class: "feature_image")%>
       </div>
     </div>
 
     <hr>
 
+    <h3>Structured Templates</h3>
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <h4>Feature 4: Display product details</h4>
-        <p>Once a product selected trough browsing, navigating or simply scanning a product messenger tag, your customer can check the product attributes and description embedded in a structured message. He or she can as well ask for any specific attributes directly.</p>
+      <div class="col-xs-12 col-sm-4">
+        <p>You can format your messages in a variety of ways. Send simple text and images, or use our structured templates to customize your message bubbles. Structured templates allow you to render an image, text and multiple buttons in one message.</p>
       </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("", class: "feature_image")%>
-      </div>
-    </div>
-
-    <hr>
-  <h3>Order features</h3>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <h4>Feature 5: Order confirmation</h4>
-        <p>Once the checkout completed, your customer can request to receive an order confirmation through Facebook Messenger.</p>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("chatbot-order-confirmation.png", class: "feature_image")%>
+      <div class="col-xs-12 col-sm-8 text-center">
+      <%=image_tag("structured_templates.png", class: "feature_image_large")%>
       </div>
     </div>
 
     <hr>
 
+    <h3>Carousels</h3>
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <h4>Feature 6: Order tracker</h4>
-        <p>Your customer can also request to receive notificiations about its order delivery in Facebook Messenger. This feature offers a much more natural update than emails.</p>
+      <div class="col-xs-12 col-sm-4">
+        <p>You can also render a carousel, allowing you to send a list of items in a compact way. Use buttons to include a call-to-action, which can open a web page or trigger a callback.</p>
       </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("chatbot-order-tracker.png", class: "feature_image")%>
+      <div class="col-xs-12 col-sm-8 text-center">
+      <%=image_tag("carousel.png", class: "feature_image_large")%>
       </div>
     </div>
 
     <hr>
 
+    <h3>Geolocation</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <h4>Feature 7: Order rescheduling</h4>
-        <p>As customers are warn half a day before their delivery, they get offered the possibility to reschedule. Once this update shared with your transporter, they will save time and therefore money</p>
+        <p>At some point in the conversation you can ask your customer to share his current location details. This way you can point him/her towards your closest store.</p>
+        <p>For instance, if you are a cinema company, you can let people look for the one they want in a carrousel from the closest to the farthest</p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("chatbot-rescheduling.png", class: "feature_image")%>
+      <%=image_tag("geolocation.jpg", class: "feature_image")%>
       </div>
     </div>
 
     <hr>
 
-    <h3>Retailer features</h3>
-
+    <h3>User Controls</h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <h4>Feature 8: Itenary display</h4>
-        <p>Your customers can have a google map itenarary to your closest store</p>
+        <p>Facebook have updated Messenger to provide people with even more ways to control the conversation and make sure they can reach the businesses they care about.</p>
+        <p>This way, it is easy for people to opt-out and your customer privacy is respected.</p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("", class: "feature_image")%>
+      <%=image_tag("user_control.png", class: "feature_image")%>
       </div>
     </div>
 
-    <hr>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <h4>Feature 9: Booking</h4>
-        <p>Your customer can ask for booking a reservation. This feature is available for a restaurant table but as well for a cinema ticket or simply a product at a store before picking it up.</p>
-      </div>
-      <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag("chatbot-booking.png", class: "feature_image")%>
-      </div>
-    </div>
-
+  </div>
 </div>

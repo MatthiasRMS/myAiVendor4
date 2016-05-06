@@ -1,11 +1,11 @@
 en:
   title: "We are a white label conversational commerce platform"
-  tagline: "We set up and manage chatbots for retailers through our hybrid solution of Artificial Intelligence and human customer service back up"
+  tagline: "We set up and manage chatbots for retailers through our hybrid solution of Artificial Intelligence backed by real human customer service"
   demo: "Ask for a demo"
 
   features: "Features"
   about: "About"
-  how: "How it works"
+  how: "Our solution"
   login: "Login"
 
   chat: "Start chatting"
@@ -37,10 +37,10 @@ en:
   request: "Request an invite to our private beta"
 
 
-  demo_title: "Welcome to our Hipster Store bot demo"
+  demo_title: "Welcome to our Hipster Store Chatbot demo"
   who: "Who are we ?"
   store_description: "The Hipster Store is a lifestyle brand, founded in 2006 which has 16 stores globally with 3 in the UK."
-  conscious_brand: "As a conscious brand we make sure to use 100% GOTS (Global Organic Textile Standard) and Fairtrade certified organic cotton in all our garments."
+  conscious_brand: "As a conscious brand we make sure to use 100% Global Organic Textile Standard and Fairtrade certified organic cotton in all our garments."
   shirts: "Shirts"
   bottoms: "Bottoms"
   hats: "Hats"

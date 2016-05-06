@@ -17,5 +17,8 @@ class ApplicationController < ActionController::Base
     @locale = params["locale"]
   end
 
+  def non_footer_action
+    @skip_footer = true
+  end
 
 end

@@ -13,9 +13,10 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
+    <%= render 'shared/navbarhidder' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= render 'shared/footer' %>
+    <%= render "shared/footer" unless @skip_footer %>
 
     <!--     Google Analytics script -->
     <script>
