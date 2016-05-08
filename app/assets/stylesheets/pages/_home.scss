@@ -100,14 +100,14 @@
   flex-direction: column;
 }
 
-.start-chatting h3 {
-  margin: 0px;
-  padding-bottom: 9px;
-}
+// .start-chatting h3 {
+//   margin: 0px;
+//   padding-bottom: 9px;
+// }
 
 .row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 
