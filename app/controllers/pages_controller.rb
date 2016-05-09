@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def about
   end
 
-  def how
+  def solution
   end
 
   def demo
@@ -27,6 +27,10 @@ class PagesController < ApplicationController
   end
 
   def Jobs
+  end
+
+  def non_footer_action
+    @skip_footer = true
   end
 
 end

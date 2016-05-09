@@ -1,0 +1,58 @@
+<div class="container how-it-works">
+
+  <h1><%= t('.our_solution') %></h1>
+  <div class="how_flex">
+    <div class="white_label">
+      <h3><%= t('.benefits_title') %></h3>
+      <p><%= t('.benefits_text') %></p>
+    </div>
+    <%=image_tag("white_label_tag.jpg", width: '400')%>
+  </div>
+  <hr>
+
+  <div class="how_flex">
+    <div class="process">
+    <h3><%= t('.on_boarding_title') %></h3>
+      <ul>
+        <li>
+          <p><strong>Phase 1: </strong><%= t('.on_boarding_bullet_point_1') %></p>
+        </li>
+        <li>
+          <p><strong>Phase 2: </strong><%= t('.on_boarding_bullet_point_2') %>
+        </li>
+        <li>
+          <p><strong>Phase 3: </strong><%= t('.on_boarding_bullet_point_3') %></p>
+        </li>
+        <li>
+          <p><strong>Phase 4: </strong><%= t('.on_boarding_bullet_point_4') %></p>
+        </li>
+        <li>
+          <p><strong>Phase 5: </strong><%= t('.on_boarding_bullet_point_5') %></p>
+        </li>
+      </ul>
+    </div>
+  <%=image_tag("on_boarding_process.jpg", width: '400', height: '300')%>
+  </div>
+
+  <hr>
+
+  <div class="how_flex">
+    <div class="hybrid">
+      <h3><%= t('.hybrid_title') %></h3>
+      <p><%= t('.hybrid_text') %></p>
+    </div>
+    <%=image_tag("backer_screenshot.png", width: '400', height: '300')%>
+  </div>
+
+  <hr>
+  <div class="how_flex">
+    <div class="bi">
+      <h3><%= t('.business_intelligence_title') %></h3>
+      <p><%= t('.business_intelligence_text_1') %></p>
+      <p><%= t('.business_intelligence_text_2') %></p>
+      <p><%= t('.business_intelligence_text_3') %></p>
+    </div>
+      <%=image_tag("dashboard_screenshot.png", width: '400', height: '350')%>
+  </div>
+  <hr>
+</div>

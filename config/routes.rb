@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     get '/', to: 'pages#home'
     get '/faq', to: 'pages#faq'
     get '/about', to: 'pages#about'
-    get '/how', to: 'pages#how'
+    get '/solution', to: 'pages#solution'
     get '/features', to: 'pages#features'
     get '/demo_request', to: 'pages#demo_request'
     get '/demo', to: 'pages#demo'

@@ -71,13 +71,13 @@
 
             <div class="start-chatting">
               <h3><%= t('chat') %></h3>
-              <p>Flash this code within Messenger (like <a href="assets/facebook_messenger_code_scanning.png" data-lightbox="roadtrip">this</a>)</p>
+              <p><%= t('flash') %><a href="assets/facebook_messenger_code_scanning.png" data-lightbox="roadtrip"><%= t('this') %></a>)</p>
               <%=image_tag("my_hipster_store_messenger_code.png", width: '250')%>
 
 
 
               <!-- Temporary button -->
-              <p>...Or click below to start chatting on Messenger desktop</p>
+              <p><%= t('desktop') %></p>
                 <div class="messenger-button">
                   <a href="" class="btn btn-primary btn-lg"><%= t('chat') %></a>
                   <!--  -->
