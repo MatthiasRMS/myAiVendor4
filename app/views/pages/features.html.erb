@@ -5,24 +5,24 @@
   <div class="left-menu">
     <p><strong>Summary</strong></p>
     <ul class="list-unstyled" style="line-height: 30px;">
-      <li><a href="#web_plugins" style="text-decoration: none;">Web plugins</a></li>
-      <li><a href="#order_updates">Order updates</a></li>
-      <li><a href="#messenger_code">Messenger code</a></li>
-      <li><a href="#structured_templates">Structured templates</a></li>
-      <li><a href="#carousel">Carousel</a></li>
-      <li><a href="#geolocation">Geolocation</a></li>
-      <li><a href="#gif_integration">GIF integration</a></li>
-      <li><a href="#user_control">User control</a></li>
+      <li><a href="#web_plugins" style="text-decoration: none;"><%= t('.web_plugins') %></a></li>
+      <li><a href="#order_updates"><%= t('.order_updates') %></a></li>
+      <li><a href="#messenger_code"><%= t('.messenger_code') %></a></li>
+      <li><a href="#structured_templates"><%= t('.structured_templates') %></a></li>
+      <li><a href="#carousels"><%= t('.carousels') %></a></li>
+      <li><a href="#geolocation"><%= t('.geolocation') %></a></li>
+      <li><a href="#gif_integration"><%= t('.gif_integration') %></a></li>
+      <li><a href="#user_controls"><%= t('.user_controls') %></a></li>
     </ul>
   </div>
 
   <div class="feature-display">
-    <h2>Features</h2>
+    <h2><%= t('features') %></h2>
 
-    <h3 id="web_plugins">Web Plugins</h3>
+    <h3 id="web_plugins"><%= t('.web_plugins') %></h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <p>You can drop on of these 2 plugins onto your website that work on desktop and mobile web. When people click the "Send to Messenger" plugin, you can initiate a conversation with them in Messenger. The "Message Us" plugin takes the person directly to Messenger and allows them to initiate a conversation with you. On desktop, the person will be sent to messenger.com and on mobile they'll be sent to the Messenger native app.</p>
+        <p><%= t('.web_plugins_text') %></p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
       <%=image_tag("web_plugin.png", class: "feature_image")%>
@@ -31,10 +31,10 @@
 
     <hr>
 
-    <h3 id="order_updates">Order updates</h3>
+    <h3 id="order_updates"><%= t('.order_updates') %></h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <p>Order update allow you to reach people in Messenger if you have their phone number and their consent to be contacted by you. In conversations on Messenger, people will see you as a brand and not just a short code. Conversations initiated through order updates will be received as Message Requests allowing people to be reached only by the bots they want to communicate with.</p>
+        <p><%= t('.order_updates_text') %></p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
       <%=image_tag("order_updates.png", class: "feature_image")%>
@@ -43,11 +43,11 @@
 
     <hr>
 
-    <h3 id="messenger_code">Messenger Codes</h3>
+    <h3 id="messenger_code"><%= t('.messenger_code') %></h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <p>Place a Messenger Code anywhere and people can scan it to start a conversation with you.It could be on your website, on your store front, on your product display or into an ad.</p>
-        <p>For instance, a beer brand could stick them on to bar tables so that customer can order directly through their phones.</p>
+        <p><%= t('.messenger_code_text_1') %></p>
+        <p><%= t('.messenger_code_text_2') %></p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
       <%=image_tag("my_hipster_store_messenger_code.png", class: "feature_image")%>
@@ -56,10 +56,10 @@
 
     <hr>
 
-    <h3 id="structured_templates">Structured Templates</h3>
+    <h3 id="structured_templates"><%= t('.structured_templates') %></h3>
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <p>You can format your messages in a variety of ways. Send simple text and images, or use our structured templates to customize your message bubbles. Structured templates allow you to render an image, text and multiple buttons in one message.</p>
+        <p><%= t('.structured_templates_text') %></p>
       </div>
       <div class="col-xs-12 col-sm-8 text-center">
       <%=image_tag("structured_templates.png", class: "feature_image_large")%>
@@ -68,10 +68,10 @@
 
     <hr>
 
-<h3 id="carousel">Carousels</h3>
+<h3 id="carousels"><%= t('.carousels') %></h3>
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <p>You can also render a carousel, allowing you to send a list of items in a compact way. Use buttons to include a call-to-action, which can open a web page or trigger a callback.</p>
+        <p><%= t('.carousels_text') %></p>
       </div>
       <div class="col-xs-12 col-sm-8 text-center">
       <%=image_tag("carousel.png", class: "feature_image_large")%>
@@ -80,11 +80,11 @@
 
     <hr>
 
-    <h3 id="geolocation">Geolocation</h3>
+    <h3 id="geolocation"><%= t('.geolocation') %></h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <p>At some point in the conversation you can ask your customer to share his current location details. This way you can point him/her towards your closest store.</p>
-        <p>For instance, if you are a cinema company, you can let people look for the one they want in a carrousel from the closest to the farthest</p>
+        <p><%= t('.geolocation_text_1') %></p>
+        <p><%= t('.geolocation_text_2') %></p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
       <%=image_tag("geolocation.jpg", class: "feature_image")%>
@@ -93,11 +93,11 @@
 
     <hr>
 
-    <h3 id="user_control">User Controls</h3>
+    <h3 id="user_controls"><%= t('.user_controls') %></h3>
     <div class="row">
       <div class="col-xs-12 col-sm-6">
-        <p>Facebook have updated Messenger to provide people with even more ways to control the conversation and make sure they can reach the businesses they care about.</p>
-        <p>This way, it is easy for people to opt-out and your customer privacy is respected.</p>
+        <p><%= t('.user_controls_text_1') %></p>
+        <p><%= t('.user_controls_text_2') %></p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
       <%=image_tag("user_control.png", class: "feature_image")%>
