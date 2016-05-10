@@ -95,7 +95,8 @@
 }
 
 .chatting_entrance {
-  width: 700px;
+  max-width: 700px;
+  flex-wrap: wrap;
   padding-top: 30px;
   padding-bottom: 70px;
   display: flex;
