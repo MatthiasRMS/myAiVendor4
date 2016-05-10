@@ -16,7 +16,9 @@
     <%= render 'shared/navbarhidder' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= render "shared/footer" unless @skip_footer %>
+    <% unless @no_footer %>
+      <%= render "shared/footer" unless @skip_footer %>
+    <% end %>
 
     <!--     Google Analytics script -->
     <script>
@@ -27,6 +29,8 @@
 
       ga('create', 'UA-40122648-2', 'auto');
       ga('send', 'pageview');
+
+
     </script>
 
     <%= javascript_include_tag 'application' %>
@@ -36,22 +40,6 @@
 <!--     "Message Us" Plugin from Facebook  -->
     <script>
 
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '<APP_ID>',
-          xfbml      : true,
-          version    : 'v2.6'
-        });
-
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) { return; }
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
 
     </script>
 

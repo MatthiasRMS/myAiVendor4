@@ -18,6 +18,7 @@ class PagesController < ApplicationController
   end
 
   def features
+    @no_footer = true
   end
 
   def Contact
