@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require lightbox
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require js-routes
 //= require react
