@@ -76,42 +76,31 @@
 
       <div class="global_showcase">
         <div class="hidden-xs frame_side text-center">
-          <%=image_tag("my_hipster_store_chat_demo_3.png", width: '400')%>
+          <%=image_tag("my_hipster_store_chat_demo_4.png", width: '400')%>
         </div>
 
         <div class="description_side">
+          <p><%= t('store_fake') %></p>
           <div class="store_presentation">
-            <div class="hidden-xs hidden-sm store_description text-left">
-              <h3 style="text-align: center;"><%= t('who') %></h3>
-              <%=image_tag("my_hipster_store_founders.jpg", width: '375')%>
-              <p><%= t('store_description') %></p>
-              <p><%= t('conscious_brand') %></p>
-              <p><%= t('store_fake') %></p>
-            </div>
-
             <!--  -->
 
-            <div class="start-chatting">
               <h3><%= t('chat') %></h3>
-              <p><%= t('flash') %><a href="assets/facebook_messenger_code_scanning.png" data-lightbox="roadtrip"><%= t('this') %></a>)</p>
-              <%=image_tag("my_hipster_store_messenger_code.png", width: '250')%>
-
-
-
-              <!-- Temporary button -->
-              <p><%= t('.desktop') %></p>
-                <div class="messenger-button">
-                  <a href="" class="btn btn-primary btn-lg"><%= t('chat') %></a>
-                  <!--  -->
-                  <!-- Code given by facebook in their documentation -->
+              <div class="chatting_entrance">
+                <div class="flash">
+                  <p><%= t('flash') %><a href="assets/facebook_messenger_code_scanning.png" data-lightbox="roadtrip"><%= t('this') %></a>)</p>
+                  <%=image_tag("my_hipster_store_messenger_code.png", width: '200', height: '200')%>
+                </div>
+                <!-- Code given by facebook in their documentation -->
+                <div class="desktop">
+                  <p><%= t('desktop') %></p>
                   <div class="fb-messengermessageus"
                     messenger_app_id="753039984832216"
                     page_id="1549864191980766"
                     color="blue"
-                    size="standard" >
+                    size="large" >
                   </div>
                 </div>
-            </div>
+              </div>
           </div>
 
 

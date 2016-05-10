@@ -94,16 +94,22 @@
   padding-bottom: 30px;
 }
 
-.start-chatting {
+.chatting_entrance {
+  width: 700px;
+  padding-top: 30px;
+  padding-bottom: 70px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
 }
 
-// .start-chatting h3 {
-//   margin: 0px;
-//   padding-bottom: 9px;
-// }
+.flash {
+  max-width: 275px;
+}
+
+.desktop {
+  max-width: 275px;
+}
 
 .row {
   display: flex;
