@@ -428,3 +428,19 @@ Old feature page
 
 
 
+
+
+
+
+
+
+
+Hipster store presentation
+
+            <div class="hidden-xs hidden-sm store_description text-left">
+              <h3 style="text-align: center;"><%= t('who') %></h3>
+              <%=image_tag("my_hipster_store_founders.jpg", width: '375')%>
+              <p><%= t('store_description') %></p>
+              <p><%= t('conscious_brand') %></p>
+              <p><%= t('store_fake') %></p>
+            </div>

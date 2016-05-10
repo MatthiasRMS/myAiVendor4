@@ -3,7 +3,7 @@
   <% @non_footer_action %>
 
   <div class="left-menu">
-    <p><strong>Summary</strong></p>
+    <p><strong><%= t('.summary') %></strong></p>
     <ul class="list-unstyled" style="line-height: 30px;">
       <li><a href="#web_plugins" style="text-decoration: none;"><%= t('.web_plugins') %></a></li>
       <li><a href="#order_updates"><%= t('.order_updates') %></a></li>
@@ -11,8 +11,14 @@
       <li><a href="#structured_templates"><%= t('.structured_templates') %></a></li>
       <li><a href="#carousels"><%= t('.carousels') %></a></li>
       <li><a href="#geolocation"><%= t('.geolocation') %></a></li>
-      <li><a href="#gif_integration"><%= t('.gif_integration') %></a></li>
       <li><a href="#user_controls"><%= t('.user_controls') %></a></li>
+    </ul>
+
+    <p style="padding-top: 40px"><strong><%= t('.coming_soon') %></strong></p>
+    <ul class="list-unstyled" style="line-height: 30px;">
+      <li><a href="#gif_integration"><%= t('.gif_integration') %></a></li>
+      <li><a href="#clickable_cards"><%= t('.clickable_cards') %></a></li>
+      <li><a href="#payment"><%= t('.payment') %></a></li>
     </ul>
   </div>
 
@@ -38,7 +44,7 @@
         <p><%= t('.order_updates_text') %></p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag(".order_updates.png", class: "feature_image")%>
+      <%=image_tag("order_updates.png", class: "feature_image")%>
       </div>
     </div>
 
@@ -51,7 +57,7 @@
         <p><%= t('.messenger_code_text_2') %></p>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-      <%=image_tag(".my_hipster_store_messenger_code.png", class: "feature_image")%>
+      <%=image_tag("my_hipster_store_messenger_code.png", class: "feature_image")%>
       </div>
     </div>
 

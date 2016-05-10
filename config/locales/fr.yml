@@ -44,6 +44,12 @@ fr:
   request: "Demandez une invitation à notre beta"
   pages:
     features:
+      summary: "Sommaire"
+      coming_soon: "En développement"
+      gif_integration: "Envoi de GIF"
+      clickable_cards: "Carte clickable"
+      payment: "Paiement"
+      web_plugins: "Web Plugins"
       web_plugins: "Web Plugins"
       web_plugins_text_1: "Vous pouvez insérer ces 2 plugins sur votre site internet et votre site mobile. Lorsque les utilisateurs cliqueront sur le plugin 'Send to Messenger', vous pourrez initier une conversation avec eux. Le plugin 'Message Us' redirige l'utilisateur vers Messenger où ils pourront eux initier la conversation."
       web_plugins_text_2: "S'ils cliquent depuis un ordinateur, ils seront redirigés vers messenger.com et s'ils cliquent depuis un mobile, ils seront redirigés vers l'application Messenger."
@@ -59,7 +65,6 @@ fr:
       geolocation: "Geolocation"
       geolocation_text_1: "A un moment, vous pouvez avoir besoin de la localisation de l'utilisateur. Vous pouvez alors lui demander de la partager avec vous en simplement deux clics. De cette manière vous pouvez lui indiquer le chemin vers votre magasin le plus proche."
       geolocation_text_2: "Par exemple, une chaine de cinéma, pourra lister ses différents cinémas du plus proche au plus éloignés dans un carousel."
-      gif_integration: "GIF integration"
       user_controls: "User Controls"
       user_controls_text_1: "Facebook a actualisé Messenger afin de fournir toujours plus de controle à l'utilisateur et garantir qu'il ne converse qu'avec les entreprises qu'il le souhaite."
       user_controls_text_2: "Il est facile aux utilisateurs de déactiver une conversation. De cette manière, sa vie privée est entièrement respectée."
