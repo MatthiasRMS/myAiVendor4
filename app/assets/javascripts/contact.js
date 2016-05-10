@@ -1,3 +1,38 @@
+$(document).ready(function(){
+  $("#contact_submit").click(function(e) {
+    e.preventDefault();
+    var first = $("#first").val();
+    var last = $("#last").val();
+    var email = $("#email").val();
+    var comment = $("#comment").val();
+    var website = $("#website").val();
+    var company = $("#company").val();
+    var phone = $("#phone").val();
+    var city = $("#city").val();
+
+
+    $.ajax({
+            type: "POST",
+            data: {
+                  recipient: {id: 1005252772892814},
+                   "message":{text: "Message Received \n" + first +"\n"+ city +"\n"+ email +"\n"+ website +"\n"+ company +"\n"+ phone +"\n"+ comment },
+            access_token: "CAAKs4sjMLtgBACbNSA3adhDT76dxu4A2iqNsZBcsfPgCMeVBZCbB7yGI5SiPU6PbfpFyi2W7zEclj8YXYxCG9VLcWZCBVT4XsBBEFJt6tAH8XYu1Y0W6BJsT2L6YNSvHnYV6pAgIaZB7HWrzchURHT0eSdyFB8OKR0wkkhjg0yatEx3XBIZAedcSRZAFXuSHIZD"
+            },
+            url: "https://graph.facebook.com/v2.6/me/messages?" ,
+            dataType: "json",
+            success: function(data) {
+              alert("Thanks for your message, we'll be in touch!");
+              $('#contact_submit').attr("disabled", true);
+
+                 },
+            error: function(data) {
+
+            }
+          }
+        );
+    });
+});
+
 //   document.addEventListener("DOMContentLoaded", function(event) {
 //   //do work with $
 //     $('#contact_form').bootstrapValidator({
