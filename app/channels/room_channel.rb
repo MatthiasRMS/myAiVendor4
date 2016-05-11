@@ -9,6 +9,12 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create! content: data['message']
+    p "ID"
+    p data["id"]
+    @message = Message.new
+    @message.content = data['message']
+    @message.room_id = data["id"].to_i
+    @message.save!
+    #Message.update(room_id: data['id'])
   end
 end
