@@ -1,3 +1,3 @@
 Messenger::Bot.config do |config|
-  config.access_token = ENV["fb_token"]
+  config.access_token = "EAADnZBWehgNMBAFOmZAzdnEzQBsqPy0x97YkeoVYwzi1EnjO45AZAgMESeqtvEVCfbZCJRFjMXHZACYW8ZAeimomZA7NDrbpFntEOrvXhUK3DdmvhOZBEnpcTxjH75WOU24SG34IMpz3ZCdwPCj7sG2G6esWKeSSgVAxZBHAUx49BSrAZDZD"
 end
