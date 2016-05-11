@@ -22,7 +22,7 @@ class MessengerBotController < ActionController::Base
     #   "I'm not sure to understand ... Could you please rephrase ?"
     # else
     sender_id = event["sender"]["id"]
-    session = find_or_create_session(sender_id)
+    # session = find_or_create_session(sender_id)
     room = find_or_create_room(sender_id)
     @message = Message.new
     @message.content = msg
@@ -53,10 +53,10 @@ class MessengerBotController < ActionController::Base
   #   keywords.each {|a| return a.first if (tokenized_array & a).any? }
   # end
 
-  def find_or_create_session(fbid, max_age: 2.minutes)
-    Session.find_by(["facebook_id = ? AND last_exchange >= ?", fbid, max_age.ago]) ||
-    Session.create(facebook_id: fbid, context: {})
-  end
+  # def find_or_create_session(fbid, max_age: 2.minutes)
+  #   Session.find_by(["facebook_id = ? AND last_exchange >= ?", fbid, max_age.ago]) ||
+  #   Session.create(facebook_id: fbid, context: {})
+  # end
 
   def find_or_create_room(fbid)
     Room.find_by(["facebook_id = ?", fbid]) ||
