@@ -1,7 +1,7 @@
 class MessengerBotController < ActionController::Base
 
   def webhook
-      render :json => params["hub.challenge"]
+    render :json => params["hub.challenge"]
   end
 
   def search(msg, session)
