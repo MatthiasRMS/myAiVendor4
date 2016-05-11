@@ -21,8 +21,15 @@ class MessengerBotController < ActionController::Base
     # if msg.nil?
     #   "I'm not sure to understand ... Could you please rephrase ?"
     # else
-    #   sender_id = event["sender"]["id"]
-    #   session = find_or_create_session(sender_id)
+    sender_id = event["sender"]["id"]
+    session = find_or_create_session(sender_id)
+    room = find_or_create_room(sender_id)
+    @message = Message.new
+    @message.content = msg
+    @message.room_id = room.id
+    @message.save!
+
+
     #   session.update(last_exchange: Time.now)
     #   url = "https://scontent-fra3-1.xx.fbcdn.net/t31.0-8/13112827_1001542186602948_437179276631081534_o.jpg"
     #   @template = GenericTemplate.new()
@@ -46,8 +53,13 @@ class MessengerBotController < ActionController::Base
   #   keywords.each {|a| return a.first if (tokenized_array & a).any? }
   # end
 
-  # def find_or_create_session(fbid, max_age: 2.minutes)
-  #   Session.find_by(["facebook_id = ? AND last_exchange >= ?", fbid, max_age.ago]) ||
-  #   Session.create(facebook_id: fbid, context: {})
-  # end
+  def find_or_create_session(fbid, max_age: 2.minutes)
+    Session.find_by(["facebook_id = ? AND last_exchange >= ?", fbid, max_age.ago]) ||
+    Session.create(facebook_id: fbid, context: {})
+  end
+
+  def find_or_create_room(fbid)
+    Room.find_by(["facebook_id = ?", fbid]) ||
+    Room.create(facebook_id: fbid)
+  end
 end
