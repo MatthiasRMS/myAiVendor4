@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
-  get 'rooms/show'
-
+  resources :rooms
   devise_for :users
   root to: 'pages#home'
 
@@ -18,6 +17,10 @@ Rails.application.routes.draw do
   # scope '(:locale)', locale: /fr/ do
   #   resources :pages
   # end
+
+  resources :conversations, only: [:index, :create] do
+    resources :messages, only: :create
+  end
 
   scope '(:locale)', locale: /fr/ do
     get '/', to: 'pages#home'

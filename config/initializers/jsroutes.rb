@@ -4,10 +4,7 @@ JsRoutes.setup do |config|
   #       $ rake tmp:cache:clear
   #       before restarting your `rails s`.
   config.include = [
-    /^posts_sub_categories$/,
-    /^upvote_post$/,
     /^user$/,
-    /^favorite_category$/,
     /^conversations$/,
     /^conversation_messages$/
   ]

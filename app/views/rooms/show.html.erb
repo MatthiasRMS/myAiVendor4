@@ -1,53 +1,69 @@
-<div class="container text-center">
-  <h1 class="store_page_title"><%= t('demo_title') %></h1>
-
-
-    <div class="global_showcase">
-      <div class="frame_side text-center">
-        <%=image_tag("hipster_store_frame.png", width: '450')%>
-        <!--         <p style="max-width: 300px;">Just time what ever you want above and our bot will try to answer your requests the best it can</p> -->
-
-        <div id="messages" class="demo_messages">
-          <%= render @messages %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" id="conversation-list">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Inbox</h4>
         </div>
-
-        <div class="user_input_demo">
-          <form>
-            <input type="text" data-behavior="room_speaker" style="width: 346px; height: 36px;">
-          </form>
-        </div>
-      </div>
-
-      <div class="hidden-xs description_side">
-        <h3><%= t('who') %></h3>
-        <div class="store_presentation">
-        <%=image_tag("hipster_store_front.jpg", width: '250')%>
-          <div class="store_description text-left">
-            <p><%= t('store_description') %></p>
-            <ul>
-              <li>T-shirts</li>
-              <li><%= t('shirts') %></li>
-              <li><%= t('bottoms') %></li>
-              <li><%= t('hats') %></li>
-              <li><%= t('shoes') %></li>
-            </ul>
+        <div class="panel-body fixed-height">
+          <div class="flexbox-columns-start">
+            <%# @conversations.each do |conversation| %>
+              <div class="conversation-link flexbox-start">
+                <span class="flex-item-shrink"><%#= image_tag conversation.other_user(current_user).one_avatar_url, class: "avatar-square" %></span>
+                <div class="conversation-preview flexbox-columns flex-item">
+                  <ul class="conversation-header list-unstyled list-inline flex-item">
+                    <li><h6><%#= conversation.other_user(current_user).first_name %></h6></li>
+                    <li class="date"><%#= conversation.last_message.created_at.strftime("%b %e") %></li>
+                  </ul>
+                  <div class="message-preview flex-item">
+                    <span><%#= conversation.last_message.content %></span>
+                  </div>
+                </div>
+              </div>
+            <%# end %>
+            <div class="end-of-messages">
+              <p>End of messages</p>
+            </div>
           </div>
-        </div>
-
-
-        <p><%= t('store_fake') %></p>
-
-        <div class="hidden-sm instagram_collection">
-          <%=image_tag("instagram1.jpg", width: '180')%>
-          <%=image_tag("instagram2.jpg", width: '180')%>
-          <%=image_tag("instagram3.jpg", width: '180')%>
-          <%=image_tag("instagram4.jpg", width: '180')%>
-          <%=image_tag("instagram5.jpg", width: '180')%>
-          <%=image_tag("instagram6.jpg", width: '180')%>
         </div>
       </div>
     </div>
-
+    <div class="col-sm-8" id="message-list">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Other user name<%#= @selected_conversation.other_user(current_user).first_name %></h4>
+        </div>
+        <div class="panel-body fixed-height">
+          <div id="wrapper">
+            <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
+              <% @room.messages.order(created_at: :asc).each do |message| %>
+                <div class="message-container flexbox-start flex-item">
+                  <div class="message-content flex-item flexbox-columns">
+                    <ul class="message-header list-unstyled list-inline flex-item">
+                      <li><h6>Username</h6></li>
+                      <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
+                    </ul>
+                    <%= simple_format message.content %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="message-input" id="newMessage">
+          <!--   <textarea id="newTextarea" placeholder="Answer here..."></textarea> -->
+            <!-- <div class="actions flexbox hidden">
+              <div class="user_input_demo"> -->
+          <form>
+            <input type="text" data-behavior="room_speaker" style="background-color: white; width: 346px; height: 36px;">
+          </form>
+        </div>
+            <!--   <button class="btn btn-stop hidden">Cancel</button>
+              <button class="btn btn-send hidden">Send</button> -->
+     <!--        </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
 
