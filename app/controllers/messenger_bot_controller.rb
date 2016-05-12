@@ -17,17 +17,21 @@ class MessengerBotController < ActionController::Base
 
   def message(event, sender)
     msg = event["message"]["text"]
-    sender.reply({text: msg})
+    sender_id = event["sender"]["id"]
+    room = find_or_create_room(sender_id)
+    @message = Message.new({content: msg, room_id: room.id, sender: "user" })
+    @message.save!
+
+
+    sender.reply({text: "Hey"})
+    @message_sent = Message.new({content: "Hey", room_id: room.id, sender: "bot" })
+    @message_sent.save!
+
     # if msg.nil?
     #   "I'm not sure to understand ... Could you please rephrase ?"
     # else
-    sender_id = event["sender"]["id"]
+
     # session = find_or_create_session(sender_id)
-    room = find_or_create_room(sender_id)
-    @message = Message.new
-    @message.content = msg
-    @message.room_id = room.id
-    @message.save!
 
 
     #   session.update(last_exchange: Time.now)

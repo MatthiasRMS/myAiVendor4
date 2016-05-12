@@ -33,6 +33,15 @@ $(document).ready(function(){
     });
 });
 
+// $(document).ready(function(){
+//   console.log('hel')
+//   // if ($('.panel-heading').length == 0){
+//   //   $("body").css("overflow":"hidden");
+//   //   console.log("hello")
+//   // }
+// });
+
+
 //   document.addEventListener("DOMContentLoaded", function(event) {
 //   //do work with $
 //     $('#contact_form').bootstrapValidator({
