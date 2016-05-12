@@ -18,10 +18,9 @@ class MessengerBotController < ActionController::Base
   def message(event, sender)
     msg = event["message"]["text"]
     sender_id = event["sender"]["id"]
-    room = find_or_create_room(sender_id)
-    @message = Message.new({content: msg, room_id: room.id, sender: "user" })
+    room = find_or_create_room(sender_id, sender)
+    @message = Message.new({content: msg, room_id: room.id, sender: "user"})
     @message.save!
-
 
     sender.reply({text: "Hey"})
     @message_sent = Message.new({content: "Hey", room_id: room.id, sender: "bot" })
@@ -62,8 +61,8 @@ class MessengerBotController < ActionController::Base
   #   Session.create(facebook_id: fbid, context: {})
   # end
 
-  def find_or_create_room(fbid)
+  def find_or_create_room(fbid, sender)
     Room.find_by(["facebook_id = ?", fbid]) ||
-    Room.create(facebook_id: fbid)
+    Room.create(facebook_id: fbid, first_name: sender.get_profile[:body]["first_name"])
   end
 end
