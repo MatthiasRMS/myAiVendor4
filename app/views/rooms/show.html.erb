@@ -50,6 +50,7 @@
                 <% else %>
                   <div class="user_message text-left">
                      <%= simple_format message.content %>
+                     <%= message.structured_messages %>
                   </div>
                 <% end %>
               <% end %>
