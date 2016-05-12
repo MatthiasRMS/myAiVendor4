@@ -1,4 +1,4 @@
-App.room = App.cable.subscriptions.create "RoomChannel",
+App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".messages").attr("id")},
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -15,7 +15,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
 $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
   if event.keyCode is 13 # return = send
-    console.log($(".global_showcase").attr("id"))
+    console.log(App.cable.subscriptions)
     App.room.speak event.target.value, $(".messages").attr("id")
     event.target.value = ''
     event.preventDefault()

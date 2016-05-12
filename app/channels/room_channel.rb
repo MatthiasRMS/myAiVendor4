@@ -1,7 +1,8 @@
 # Be sure to restart your server when you modify this file. Action Cable runs in a loop that does not support auto reloading.
 class RoomChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "room_channel"
+    room = params[:room].to_i
+    stream_from "room_channel_#{room}"
   end
 
   def unsubscribed
@@ -9,8 +10,6 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    p "ID"
-    p data["id"]
     @message = Message.new
     @message.content = data['message']
     @message.room_id = data["id"].to_i
