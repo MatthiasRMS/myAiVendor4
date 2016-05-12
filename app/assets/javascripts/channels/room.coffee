@@ -6,6 +6,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
+    console.log(data)
     $('.messages').append data['message']
     $("#messages").scrollTop($("#messages")[0].scrollHeight)
 
@@ -16,7 +17,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
 $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
   if event.keyCode is 13 # return = send
     console.log(App.cable.subscriptions)
-    App.room.speak event.target.value, $(".messages").attr("id")
+    App.room.speak event.target.value, $(".messages").attr("id"),
     event.target.value = ''
     event.preventDefault()
 
