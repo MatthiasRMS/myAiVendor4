@@ -81,3 +81,37 @@
 .store_page_title {
   padding: 35px;
 }
+
+.structured-image {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: none;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.structured-text {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#wrapper {
+  overflow-x: hidden;
+}
+
+ .float-wrap {
+      /* 816 = <number of floats> * (<float width> + 2 * <float border width>) */
+      width: 816px;
+      border: 1px solid;
+      /* causes .float-wrap's height to match its child divs */
+      overflow: auto;
+    }
+    .left-floater {
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+      float: left;
+    }
+    .outer {
+      overflow-x: scroll;
+    }
