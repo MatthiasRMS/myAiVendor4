@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  facebook_id: 1
+  context: 
+  status: MyString
+  last_exchange: 2016-05-16 18:23:08
+  count_messages: 1
+
+two:
+  facebook_id: 1
+  context: 
+  status: MyString
+  last_exchange: 2016-05-16 18:23:08
+  count_messages: 1
