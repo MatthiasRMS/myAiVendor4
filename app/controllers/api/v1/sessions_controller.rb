@@ -15,7 +15,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
    @session = find_or_create_session(params[:fbid])
    p @session
    @room = find_or_create_room(sender_id, sender)
-   @message = Message.new({content: msg, room_id: @room.id, sender: "user"})
+   @message = Message.new({content: params["msg"], room_id: @room.id, sender: "user"})
    @message.save!
 
  end
