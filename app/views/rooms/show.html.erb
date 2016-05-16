@@ -1,33 +1,87 @@
 <div class="container">
   <div class="row">
+
+    <!-- Context dashboard on the left hand side -->
     <div class="col-sm-4" id="conversation-list">
-      <div class="panel panel-default">
+      <div class="panel panel-default" id="<%= @session.id %>">
         <div class="panel-heading">
-          <h4>Inbox</h4>
+          <h4>Current context</h4>
         </div>
         <div class="panel-body fixed-height">
           <div class="flexbox-columns-start">
-            <%# @conversations.each do |conversation| %>
-              <div class="conversation-link flexbox-start">
-                <span class="flex-item-shrink"><%#= image_tag conversation.other_user(current_user).one_avatar_url, class: "avatar-square" %></span>
-                <div class="conversation-preview flexbox-columns flex-item">
-                  <ul class="conversation-header list-unstyled list-inline flex-item">
-                    <li><h6><%#= conversation.other_user(current_user).first_name %></h6></li>
-                    <li class="date"><%#= conversation.last_message.created_at.strftime("%b %e") %></li>
-                  </ul>
-                  <div class="message-preview flex-item">
-                    <span><%#= conversation.last_message.content %></span>
-                  </div>
-                </div>
-              </div>
-            <%# end %>
-            <div class="end-of-messages">
-              <p>End of messages</p>
-            </div>
+            <label for="">Browsing choices</label>
+            <select id="browsing_choices">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Category</label>
+            <select id="category">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Brand</label>
+            <select id="brand">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Price range</label>
+            <select id="price_range">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Product</label>
+            <select id="product">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Variant</label>
+            <select id="variant">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Delivery method</label>
+            <select id="delivery_method">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Delivery address</label>
+            <select id="delivery_address">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">City</label>
+            <select id="city">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+            <label for="">Selected store</label>
+
+            <input type="submit" class="form-control" id="context-input"></input>
           </div>
         </div>
       </div>
     </div>
+
+
+    <!--     Session itself -->
     <div class="col-sm-8" id="message-list">
       <div class="panel panel-default">
         <div class="panel-heading">
