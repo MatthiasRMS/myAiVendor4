@@ -1,6 +1,6 @@
-class SessionsController < ApplicationController
+class Api::V1::SessionsController < Api::V1::BaseController
 
- acts_as_token_authentication_handler_for User, except: [ :index, :show ]
+ #acts_as_token_authentication_handler_for User, except: [ :index, :show ]
  before_action :set_session, only: [ :show, :update ]
 
  def update
@@ -12,13 +12,12 @@ class SessionsController < ApplicationController
  end
 
  def create
-   @session = current_user.sessions.build(session_params)
-   authorize @session
-   if @session.save
-     render :show
-   else
-     render_error
-   end
+   @session = find_or_create_session(params[:fbid])
+   p @session
+   @room = find_or_create_room(params[:fbid], params[:first_name])
+   @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender]})
+   @message.save!
+
  end
 
  private
@@ -30,5 +29,15 @@ class SessionsController < ApplicationController
  def render_error
    render json: { errors: @session.errors.full_messages }, status: :unprocessable_entity
  end
+
+ def find_or_create_session(fbid, max_age: 2.minutes)
+    Session.find_by(["facebook_id = ? AND last_exchange >= ?", fbid, max_age.ago]) ||
+    Session.create(facebook_id: fbid, context: {})
+  end
+
+  def find_or_create_room(fbid, first_name)
+    Room.find_by(["facebook_id = ?", fbid]) ||
+    Room.create(facebook_id: fbid, first_name: first_name)
+  end
 
 end
