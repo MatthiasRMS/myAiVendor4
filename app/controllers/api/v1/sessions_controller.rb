@@ -14,7 +14,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
  def create
    @session = find_or_create_session(params[:fbid])
    p @session
-   @room = find_or_create_room(sender_id, sender)
+   @room = find_or_create_room(params[:fbid], params[:first_name])
    @message = Message.new({content: params["msg"], room_id: @room.id, sender: "user"})
    @message.save!
 
@@ -35,9 +35,9 @@ class Api::V1::SessionsController < Api::V1::BaseController
     Session.create(facebook_id: fbid, context: {})
   end
 
-  def find_or_create_room(fbid, sender)
+  def find_or_create_room(fbid, first_name)
     Room.find_by(["facebook_id = ?", fbid]) ||
-    Room.create(facebook_id: fbid, first_name: sender.get_profile[:body]["first_name"])
+    Room.create(facebook_id: fbid, first_name: first_name)
   end
 
 end
