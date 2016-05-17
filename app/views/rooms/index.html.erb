@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+    <div class="messages" id="O"></div>
 
     <!-- Context dashboard on the left hand side -->
     <div class="col-sm-3" id="conversation-list">
@@ -7,7 +8,14 @@
         <div class="panel-heading">
           <h4>All conversations</h4>
         </div>
-        <%= @rooms.each do |room| end%>
+          <% @rooms.each do |room| %>
+          <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
+              <div id="<%= room.id%>">
+                <%= room.first_name %>
+              </div>
+              <br/>
+            <% end %>
+          <% end %>
       </div>
     </div>
 
@@ -20,6 +28,7 @@
         </div>
         <div class="panel-body fixed-height">
           <div id="wrapper">
+            <%= render "messages/structured_message" %>
           </div>
         </div>
       </div>

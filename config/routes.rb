@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get '/update_index', to:"rooms#update_index"
   # devise_for :users
   # root to: 'pages#home'
 

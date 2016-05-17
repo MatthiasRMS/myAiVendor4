@@ -1,0 +1,23 @@
+$(".panel-body").empty();
+$(".details-body").empty();
+<% @messages.each do |m| %>
+ $(".panel-body").append("<%= j render 'messages/msg', message: m %>");
+<% end %>
+
+$(".details-body").append("<h3>Chat info</h3>\
+                          <p>Company name:</p>\
+                          <p>Creation date: <%= @room.created_at %></p>\
+                          <p>Chat main purpose:</p>\
+                          <p># of sessions:</p>\
+                          <p># of users:</p>\
+                          <h3>User info</h3>\
+                          <p>First name:</p>\
+                          <p>Local time:</p>\
+                          <p># of sessions:</p>\
+                          <p> </p>\
+                          <h3>Chat/User info</h3>\
+                          <p>First conversation date:</p>\
+                          <p>Total number of sessions:</p>\
+                          <p>Current conversation starting date:</p>\
+                          <p># of messages in current session:</p>\
+                          <p># of help required in this session:</p>");

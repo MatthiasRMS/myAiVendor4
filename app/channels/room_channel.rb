@@ -10,10 +10,16 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    @message = Message.new
-    @message.content = data['message']
-    @message.room_id = data["id"].to_i
-    @message.save!
+    if data["id"].to_i > 0
+      @message = Message.new
+      @message.content = data['message']
+      @message.room_id = data["id"].to_i
+      @message.save!
+
+       ActionCable.server.broadcast "room_channel_0", room: @message.room_id
+    else
+      p "hello"
+    end
     #Message.update(room_id: data['id'])
   end
 end

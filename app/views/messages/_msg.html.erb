@@ -1,0 +1,15 @@
+<% if message.sender == "user" %>
+  <div class="message-container flexbox-start flex-item">
+    <div class="message-content flex-item flexbox-columns">
+      <ul class="message-header list-unstyled list-inline flex-item">
+        <li><h6><%=  @room.first_name %></h6></li>
+        <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
+      </ul>
+      <%= simple_format message.content %>
+    </div>
+  </div>
+<% else %>
+  <div class="user_message text-left">
+     <%= simple_format message.content %>
+  </div>
+<% end %>
