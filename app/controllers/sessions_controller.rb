@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
 
+
 # So that the user can update the context of a session
  def update
    session = Session.find(params[:id])
