@@ -7,8 +7,13 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
 
   received: (data) ->
     console.log(data)
-    $('.messages').append data['message']
-    $("#messages").scrollTop($("#messages")[0].scrollHeight)
+    if data["room"] != null
+      console.log(data["room"])
+      $("#"+data["room"]).css("color", "red")
+
+    else
+      $('.messages').append data['message']
+      $("#messages").scrollTop($("#messages")[0].scrollHeight)
 
 
   speak: (message, id) ->
