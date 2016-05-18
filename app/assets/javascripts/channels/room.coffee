@@ -17,6 +17,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
       console.log("received")
       $("#mainColumn").prepend($("#"+data["room"]))
       console.log($("#"+data["room"]))
+      $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
 
   speak: (message, id) ->
     @perform 'speak', message: message, id: id
