@@ -50,7 +50,7 @@
       <%= link_to t("solution"), solution_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t("features"), features_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%#= link_to "FAQ", faq_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%#= link_to t("login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t("login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <div class="navbar-wagon-item">
         <% if request.original_url.include? "fr" %>

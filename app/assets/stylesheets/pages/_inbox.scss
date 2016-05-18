@@ -83,16 +83,7 @@
 }
 
 .flexbox-columns-end {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex-direction: column;
-  .flex-item {
-    flex: 0 0 auto;
-  }
-  ul {
-    margin-bottom: 0;
-  }
+    margin-left: 50%;
 }
 
 .flexbox-start {
