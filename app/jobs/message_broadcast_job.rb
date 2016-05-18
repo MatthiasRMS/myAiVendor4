@@ -4,10 +4,10 @@ class MessageBroadcastJob < ApplicationJob
   def perform(message)
     if message.sender == "user"
       ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_message(message)
-      ActionCable.server.broadcast "room_channel_0", room: "0"
+      ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
     elsif message.sender == "bot"
       ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message)
-      ActionCable.server.broadcast "room_channel_0", room: "0"
+      ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
     end
   end
 
