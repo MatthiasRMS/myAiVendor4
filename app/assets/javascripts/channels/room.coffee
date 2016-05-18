@@ -7,7 +7,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
 
   received: (data) ->
     console.log(data)
-    if data["room"] != null
+    if data["room"] == 0
       console.log(data["room"])
       console.log("received in index")
       $("#"+data["room"]).css("color", "red")
