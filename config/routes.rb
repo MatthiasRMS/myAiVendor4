@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount ActionCable.server => '/cable'
   mount Messenger::Bot::Space => "/webhook"
   resources :rooms
-  devise_for :users
+  #devise_for :users
   root to: 'pages#home'
 
   # devise_for :users
