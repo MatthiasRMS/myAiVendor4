@@ -16,8 +16,6 @@ class RoomChannel < ApplicationCable::Channel
       @message.content = data['message']
       @message.room_id = data["id"].to_i
       @message.save!
-
-      ActionCable.server.broadcast "room_channel_0", room: @message.room_id
     end
     #Message.update(room_id: data['id'])
   end
