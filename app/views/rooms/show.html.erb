@@ -90,7 +90,7 @@
         <div class="panel-body fixed-height">
           <div id="wrapper">
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
-              <% @room.messages.order(created_at: :asc).limit(50).each do |message| %>
+              <% @room.messages.order(created_at: :asc).each do |message| %>
               ap message
                 <% if message[:attachment].present? %>
                   <%= render "messages/structured_message", message: message %>
