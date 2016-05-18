@@ -18,33 +18,37 @@ else -->
 <!-- Identifying which type of message is the bot sending us -->
 <% if message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "generic" %>
 
-  <!-- Iterating on the elements of the mssage in order to display all of them -->
-  <% elements.each do |element| %>
-    <div class="generic_card">
-      <div class="structured-image">
-        <%= link_to root_path do %>
+  <div class="carousel">
+    <!-- Iterating on the elements of the mssage in order to display all of them -->
+    <% elements.each do |element| %>
+      <div class="generic_card">
+        <div class="structured-image">
+          <%= link_to root_path do %>
 
-           <%= image_tag element.fetch(:image_url)%>
-        <% end %>
-      </div>
-      <div class="structured-text">
-        <p><strong><%= element.fetch(:title) %></strong></p>
-        <% if element[:subtitle].present? %>
-          <p><%= element.fetch(:subtitle) %>
-        <% end %>
-      </div>
-
-      <!-- Extracting the different buttons in the element (if multiple than multiple CTA)-->
-      <% buttons = element.select {|k,v| k === "buttons"} %>
-
-      <!-- Iterating on the buttons in order to display all the CTA -->
-      <% buttons.each_value do |button| %>
-        <div class="structured-text text-center">
-          <p style="color:#0084FF;"><strong><%= button.fetch(:title) %></strong></p>
+             <%= image_tag(element.fetch(:image_url), width: '200')%>
+          <% end %>
         </div>
-      <% end %>
-    </div>
-  <% end %>
+        <div class="structured-text">
+          <p><strong><%= element.fetch(:title) %></strong></p>
+          <% if element[:subtitle].present? %>
+            <p><%= element.fetch(:subtitle) %>
+          <% end %>
+        </div>
+
+        <!-- Extracting the different buttons in the element (if multiple than multiple CTA)-->
+        <% buttons = element[:buttons] %>
+        <%# buttons = element.select {|k,v| k === "buttons"} %>
+
+        <!-- Iterating on the buttons in order to display all the CTA -->
+        <% buttons.each do |button| %>
+          <div class="structured-text text-center">
+            <p style="color:#0084FF;"><%= button.fetch(:title) %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 <% else %>
   <h1>Too bad</h1>
 <% end %>
