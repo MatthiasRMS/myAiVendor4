@@ -93,7 +93,11 @@
               <% @room.messages.order(created_at: :asc).each do |message| %>
               ap message
                 <% if message.content.include?("attachment") %>
-                  <%= render "messages/structured_message", message: eval(message.content) %>
+                  <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
+                    <%= render "messages/structured_message", message: eval(message.content) %>
+                  <% else %>
+                    <%= render "messages/msg", message: message %>
+                  <% end %>
                 <% else %>
                   <%= render "messages/msg", message: message %>
                 <% end %>
