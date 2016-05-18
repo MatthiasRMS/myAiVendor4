@@ -9,9 +9,12 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     console.log(data)
     if data["room"] != null
       console.log(data["room"])
+      console.log("received in index")
+      $("#"+data["room"]).css("color", "red")
       $(".flexbox-columns-start").prepend($("#"+data["room"]))
     else
       $('.messages').append data['message']
+      console.log("received")
       $("#messages").scrollTop($("#messages")[0].scrollHeight)
 
 
