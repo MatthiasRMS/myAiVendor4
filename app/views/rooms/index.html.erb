@@ -8,14 +8,31 @@
         <div class="panel-heading">
           <h4>All conversations</h4>
         </div>
-          <% @rooms.each do |room| %>
-          <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
-              <div id="<%= room.id%>">
-                <%= room.first_name %>
+        <div class="flexbox-columns-start">
+            <% @rooms.each do |room| %>
+              <div id="<%= room.id%>" class="conversation-link flexbox-start">
+               <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
+                <div class="conversation-preview flexbox-columns flex-item">
+                  <ul class="conversation-header list-unstyled list-inline flex-item">
+                    <li><h6>
+                      <div class="room-name">
+                        <%= room.first_name %>
+                      </div>
+                      <br/>
+                    </h6></li>
+                    <li class="date"></li>
+                  </ul>
+                  <div class="message-preview flex-item">
+                    <span></span>
+                  </div>
+                <% end %>
+                </div>
               </div>
-              <br/>
             <% end %>
-          <% end %>
+            <div class="end-of-messages">
+              <p>Fin des rooms</p>
+            </div>
+          </div>
       </div>
     </div>
 
@@ -28,7 +45,7 @@
         </div>
         <div class="panel-body fixed-height">
           <div id="wrapper">
-            <%= render "messages/structured_message" %>
+
           </div>
         </div>
       </div>

@@ -34,6 +34,7 @@
   &:hover {
     cursor: pointer;
     background-color: rgb(251, 251, 251);
+    text-decoration: none;
   }
 }
 .selected,
@@ -221,4 +222,8 @@
   &.focused {
     padding-bottom: 159px;
   }
+}
+
+.conversation-link:hover{
+  text-decoration:none;
 }
