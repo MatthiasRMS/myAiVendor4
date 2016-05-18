@@ -2,6 +2,7 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
     room = params[:room].to_i
+    stream_from "room_channel_0"
     stream_from "room_channel_#{room}"
   end
 
@@ -15,10 +16,6 @@ class RoomChannel < ApplicationCable::Channel
       @message.content = data['message']
       @message.room_id = data["id"].to_i
       @message.save!
-
-       ActionCable.server.broadcast "room_channel_0", room: @message.room_id
-    else
-      p "hello"
     end
     #Message.update(room_id: data['id'])
   end

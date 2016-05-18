@@ -9,7 +9,7 @@
         </div>
         <div class="panel-body fixed-height">
           <div class="flexbox-columns-start">
-            <label for="">Browsing choices</label>
+            <label>Browsing choices</label>
             <select id="browsing_choices">
               <option value="volvo">Volvo</option>
               <option value="saab">Saab</option>
@@ -90,11 +90,12 @@
         <div class="panel-body fixed-height">
           <div id="wrapper">
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
-              <% @room.messages.order(created_at: :asc).each do |message| %>
-                <% if message.has_key?("attachment") %>
+              <% @room.messages.order(created_at: :asc).limit(50).each do |message| %>
+                <% if message[:attachment].present? %>
                   <%= render "messages/structured_message", message: message %>
                 <% else %>
                   <%= render "messages/msg", message: message %>
+                <% end %>
               <% end %>
             </div>
           </div>

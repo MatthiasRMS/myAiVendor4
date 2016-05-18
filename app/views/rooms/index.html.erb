@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="messages" id="O"></div>
+    <div class="msg" id="O"></div>
 
     <!-- Context dashboard on the left hand side -->
     <div class="col-sm-3" id="conversation-list">
@@ -8,7 +8,7 @@
         <div class="panel-heading">
           <h4>All conversations</h4>
         </div>
-        <div class="flexbox-columns-start">
+        <div id="mainColumn" class="flexbox-columns-start">
             <% @rooms.each do |room| %>
               <div id="<%= room.id%>" class="conversation-link flexbox-start">
                <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
@@ -23,6 +23,7 @@
                     <li class="date"></li>
                   </ul>
                   <div class="message-preview flex-item">
+
                     <span></span>
                   </div>
                 <% end %>
@@ -45,7 +46,9 @@
         </div>
         <div class="panel-body fixed-height">
           <div id="wrapper">
-            <%= render "messages/structured_message" %>
+             <div class="messages flexbox-columns-end flex-item">
+
+            </div>
           </div>
         </div>
       </div>

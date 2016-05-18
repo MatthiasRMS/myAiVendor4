@@ -7,7 +7,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
 
   received: (data) ->
     console.log(data)
-    if data["room"] != null
+    if data["room"] == 0
       console.log(data["room"])
       console.log("received in index")
       $("#"+data["room"]).css("color", "red")
@@ -15,8 +15,9 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     else
       $('.messages').append data['message']
       console.log("received")
-      $("#messages").scrollTop($("#messages")[0].scrollHeight)
-
+      $("#mainColumn").prepend($("#"+data["room"]))
+      console.log($("#"+data["room"]))
+      $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
 
   speak: (message, id) ->
     @perform 'speak', message: message, id: id
