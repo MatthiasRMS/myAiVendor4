@@ -35,8 +35,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Action Cable endpoint configuration
-  config.action_cable.url = 'wss://mymessagingstore.com/cable'
-  config.action_cable.allowed_request_origins = [ 'https://mymessagingstore.com', /http:\/\/mymessagingstore.com.*/ ]
+  config.action_cable.url = 'wss://www.mymessagingstore.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://www.mymessagingstore.com', /http:\/\/www.mymessagingstore.com.*/ ]
 
   # Don't mount Action Cable in the main server process.
   config.action_cable.mount_path = nil
