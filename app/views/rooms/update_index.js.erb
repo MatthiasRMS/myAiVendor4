@@ -1,7 +1,7 @@
-$(".panel-body").empty();
+$(".messages").empty();
 $(".details-body").empty();
 <% @messages.each do |m| %>
- $(".panel-body").append("<%= j render 'messages/msg', message: m %>");
+ $(".messages").append("<%= j render 'messages/msg', message: m %>");
 <% end %>
 
 $(".details-body").append("<h3>Chat info</h3>\
