@@ -15,7 +15,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     else
       $('#wrapper').append data['message']
       console.log("received")
-      $(".flexbox-columns-start").prepend($("#"+data["room"]))
+      $("#mainColumn").prepend($("#"+data["room"]))
       console.log($("#"+data["room"]))
 
   speak: (message, id) ->
