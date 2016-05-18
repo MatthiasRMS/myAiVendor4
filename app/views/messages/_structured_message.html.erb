@@ -1,21 +1,12 @@
-<% message = {:attachment=>{:type=>"template", :payload=>{:template_type=>"generic", :elements=>[{:title=>"AO Gorilla City", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2139_72161d26fe-14132-dedicated-sara-jonsson-gorilla-city-t-shirt-1-white.jpeg?v=1461690568", :subtitle=>"25.00$", :buttons=>[{:type=>"postback", :payload=>"6273782151: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273782151: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273782151: stock", :title=>"Check stock"}]}, {:title=>"Beast", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2850_db7c42d930-beast-bloody-orange.jpeg?v=1461690571", :subtitle=>"28.95$", :buttons=>[{:type=>"postback", :payload=>"6273782599: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273782599: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273782599: stock", :title=>"Check stock"}]}, {:title=>"Imperial Army", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2568_f803b24dcb-imperial-army.jpeg?v=1462621855", :subtitle=>"28.00$", :buttons=>[{:type=>"postback", :payload=>"6272827335: info", :title=>"More info"}, {:type=>"postback", :payload=>"6272827335: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6272827335: stock", :title=>"Check stock"}]}, {:title=>"Kraft Cycle", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/883_926bafed15-kraftcycle.jpeg?v=1462825557", :subtitle=>"15.99$", :buttons=>[{:type=>"postback", :payload=>"6275584903: info", :title=>"More info"}, {:type=>"postback", :payload=>"6275584903: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6275584903: stock", :title=>"Check stock"}]}, {:title=>"Manhattan", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2437_941cd0233c-manhattan.jpeg?v=1462800741", :subtitle=>"19.99$", :buttons=>[{:type=>"postback", :payload=>"6271223815: info", :title=>"More info"}, {:type=>"postback", :payload=>"6271223815: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6271223815: stock", :title=>"Check stock"}]}, {:title=>"Pug Life", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2254_6db54078c1-pug-life.jpeg?v=1461690573", :subtitle=>"25.00$", :buttons=>[{:type=>"postback", :payload=>"6273783111: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273783111: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273783111: stock", :title=>"Check stock"}]}, {:title=>"Skip Leg Day", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2432_ac37ec5020-skip-leg-day.jpeg?v=1462353553", :subtitle=>"29.95$", :buttons=>[{:type=>"postback", :payload=>"6273780231: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273780231: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273780231: stock", :title=>"Check stock"}]}, {:title=>"Solo Biker", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2449_265d5cfedd-solo-biker.jpeg?v=1462871268", :subtitle=>"15.99$", :buttons=>[{:type=>"postback", :payload=>"6275584391: info", :title=>"More info"}, {:type=>"postback", :payload=>"6275584391: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6275584391: stock", :title=>"Check stock"}]}, {:title=>"tennessea T-Shirt", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2600_15294a72f2-tennessee_tshirt.jpeg?v=1462871205", :subtitle=>"19.99$", :buttons=>[{:type=>"postback", :payload=>"6273290759: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273290759: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273290759: stock", :title=>"Check stock"}]}, {:title=>"See more products", :image_url=>"http://res.cloudinary.com/dltbqhact/image/upload/v1463146742/see_more_products_mfd1hh.png", :buttons=>[{:type=>"postback", :payload=>"viewmore", :title=>"View more"}]}]}}}  %>
-
-
-
-
-<!-- if JSON contains "template_type":"button"
-ifelse "template_type":"generic",
-  for each element do
-
-ifelse "template_type":"receipt",
-ifelse "type":"image",
-else -->
-
-
 <!-- Extracting the different element from the message (if multiple than carousel) -->
 <% elements = message[:attachment][:payload][:elements] %>
+<% text = message[:attachment][:payload][:text] %>
+<% buttons = message[:attachment][:payload][:buttons] %>
+<% image = message[:attachment][:payload][:url] %>
 
 <!-- Identifying which type of message is the bot sending us -->
+
+<!-- First type identified: the 'Generic' template -->
 <% if message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "generic" %>
 
   <div class="carousel">
@@ -31,7 +22,7 @@ else -->
         <div class="structured-text">
           <p><strong><%= element.fetch(:title) %></strong></p>
           <% if element[:subtitle].present? %>
-            <p><%= element.fetch(:subtitle) %>
+            <p><%= element.fetch(:subtitle) %></p>
           <% end %>
         </div>
 
@@ -49,54 +40,38 @@ else -->
     <% end %>
   </div>
 
-<% else %>
-  <h1>Too bad</h1>
-<% end %>
 
 
+<!-- Second type identified: the 'Button' template -->
+<% elsif message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "button" %>
 
-<!-- <div class=" flexbox-columns-end" style="overflow-x: scroll; display: inline-block;">
+  <div class="carousel">
+    <!-- Iterating on the elements of the mssage in order to display all of them -->
+    <div class="generic_card">
+      <div class="structured-text">
+        <%= text %>
+      </div>
 
-  <div>
-    <div class="structured-image">
-      <%#= link_to root_path do %>
-         <%#= image_tag "http://res.cloudinary.com/dltbqhact/image/upload/v1462733222/tshirt_category_icon_eijcqg.png"%>
-      <%# end %>
-    </div>
-    <div class="structured-text">
-      <p><strong>Flat trainers - navy </strong></p>
-      <p>59.99$</p>
-    </div>
-
-    <div class="structured-text text-center">
-      <p style="color:#0084FF;"><strong>Choose</strong></p>
+      <!-- Iterating on the buttons in order to display all the CTA -->
+      <% buttons.each do |button| %>
+        <div class="structured-text text-center">
+          <p style="color:#0084FF;"><%= button.fetch(:title) %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 
-</div>
- -->
 
-<!--
- def cta_categories_message(sender)
-    structured_reply = {
-      "attachment":{
-        "type": "template",
-        "payload":{
-          "template_type": "generic",
-          "elements":[
-          {
-            "title":"T-shirts",
-            "image_url": "http://res.cloudinary.com/dltbqhact/image/upload/v1462733222/tshirt_category_icon_eijcqg.png",
-            "buttons":[
-              {
-                "type":"postback",
-                "payload": "t-shirts",
-                "title":"View"
-              }
-            ]
-          }
-        ]
-        }
-      }
-    }
- -->
+
+<!-- Third type identified: the 'receipt' template -->
+<% elsif message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "receipt" %>
+  <%=image_tag("messenger_receipt_sample.png", width: '300')%>
+
+
+
+
+<!-- Fourth and last type identified: the 'image' template -->
+<% else %>
+  <%= image_tag(image, width: '200')%>
+
+<% end %>
