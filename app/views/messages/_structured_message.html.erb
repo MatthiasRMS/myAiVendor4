@@ -15,6 +15,7 @@
 
   <div class="carousel">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
+  <% unless elements.nil? %>
     <% elements.each do |element| %>
       <div class="generic_card">
         <div class="structured-image">
@@ -43,7 +44,7 @@
       </div>
     <% end %>
   </div>
-
+<% end %>
 
 
 <!-- Second type identified: the 'Button' template -->
