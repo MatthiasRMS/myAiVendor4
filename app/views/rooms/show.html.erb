@@ -92,7 +92,7 @@
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
               <% @room.messages.order(created_at: :asc).each do |message| %>
               ap message
-                <% if eval(message.content[:attachment]).present? %>
+                <% if eval(message.content)[:attachment].present? %>
                   <%= render "messages/structured_message", message: eval(message.content) %>
                 <% else %>
                   <%= render "messages/msg", message: message %>
