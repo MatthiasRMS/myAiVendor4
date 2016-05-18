@@ -22,9 +22,9 @@ class MessageBroadcastJob < ApplicationJob
     p message
     p "CLASS"
     p message.content.class
-    p eval(eval(message.content)s
+    p eval(message.content).class
     if message[:attachment].present?
-        ApplicationController.renderer.render(partial: 'messages/structured_message', locals: { message: eval(message.content)})
+        ApplicationController.renderer.render(partial: 'messages/structured_message', locals: { message: eval(message.content)}
     else
         ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
     end
