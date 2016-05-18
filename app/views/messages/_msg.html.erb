@@ -9,7 +9,10 @@
     </div>
   </div>
 <% else %>
-  <div class="user_message text-left">
+  <div class="user_message">
+    <ul class="message-header list-unstyled list-inline flex-item">
+      <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
+    </ul>
      <%= simple_format message.content %>
   </div>
 <% end %>
