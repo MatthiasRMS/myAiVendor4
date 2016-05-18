@@ -1,34 +1,69 @@
-<div class=" flexbox-columns-end" style="overflow-x: scroll; display: inline-block;">
-  <div>
-    <div class="structured-image">
-      <%= link_to root_path do %>
-         <%= image_tag "http://res.cloudinary.com/dltbqhact/image/upload/v1462733222/tshirt_category_icon_eijcqg.png"%>
-      <% end %>
-    </div>
-    <div class="structured-text">
-      <p><strong>Flat trainers - navy </strong></p>
-      <p>59.99$</p>
-    </div>
-    <div class="structured-text text-center">
-      <p style="color:#0084FF;"><strong>Choose</strong></p>
-    </div>
-  </div>
-  <div>
-    <div class="structured-image">
-      <%= link_to root_path do %>
-         <%= image_tag "http://res.cloudinary.com/dltbqhact/image/upload/v1462733222/tshirt_category_icon_eijcqg.png"%>
-      <% end %>
-    </div>
-    <div class="structured-text">
-      <p><strong>Flat trainers - navy </strong></p>
-      <p>59.99$</p>
-    </div>
-    <div class="structured-text text-center">
-      <p style="color:#0084FF;"><strong>Choose</strong></p>
-    </div>
-  </div>
-</div>
+<!-- if JSON contains "template_type":"button"
+ifelse "template_type":"generic",
+  for each element do
 
+ifelse "template_type":"receipt",
+ifelse "type":"image",
+else -->
+
+
+<!-- Extracting the different element from the message (if multiple than carousel) -->
+<%= elements = message.select {|k,v| k === "elements"} %>
+
+<!-- Identifying which type of message is the bot sending us -->
+<%= if message.has_key?("template_type") && message.has_value?("generic") %>
+
+  <!-- Iterating on the elements of the mssage in order to display all of them -->
+  <%= elements.each_value do |element| %>
+    <div class="generic_card">
+      <div class="structured-image">
+        <%= link_to root_path do %>
+           <%= image_tag "http://res.cloudinary.com/dltbqhact/image/upload/v1462733222/tshirt_category_icon_eijcqg.png"%>
+        <% end %>
+      </div>
+      <div class="structured-text">
+        <p><strong>Flat trainers - navy </strong></p>
+        <p>59.99$</p>
+      </div>
+
+      <!-- Extracting the different buttons in the element (if multiple than multiple CTA)-->
+      <%= buttons = element.select {|k,v| k === "buttons"} %>
+
+      <!-- Iterating on the buttons in order to display all the CTA -->
+      <%= buttons.each_value do |button| %>
+        <div class="structured-text text-center">
+          <p style="color:#0084FF;"><strong>Choose</strong></p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+<%= else %>
+
+<% end %>
+
+
+
+<!-- <div class=" flexbox-columns-end" style="overflow-x: scroll; display: inline-block;">
+
+  <div>
+    <div class="structured-image">
+      <%#= link_to root_path do %>
+         <%#= image_tag "http://res.cloudinary.com/dltbqhact/image/upload/v1462733222/tshirt_category_icon_eijcqg.png"%>
+      <%# end %>
+    </div>
+    <div class="structured-text">
+      <p><strong>Flat trainers - navy </strong></p>
+      <p>59.99$</p>
+    </div>
+
+    <div class="structured-text text-center">
+      <p style="color:#0084FF;"><strong>Choose</strong></p>
+    </div>
+  </div>
+
+</div>
+ -->
 
 <!--
  def cta_categories_message(sender)
