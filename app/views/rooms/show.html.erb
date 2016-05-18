@@ -91,7 +91,7 @@
           <div id="wrapper">
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
               <% @room.messages.order(created_at: :asc).each do |message| %>
-                <% if message.has_key?("attachment") %>
+                <% if message["attachment"].present? %>
                   <%= render "messages/structured_message", message: message %>
                 <% else %>
                   <%= render "messages/msg", message: message %>
