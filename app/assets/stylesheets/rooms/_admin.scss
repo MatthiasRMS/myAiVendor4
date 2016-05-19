@@ -1,3 +1,9 @@
+.container-large {
+  width: 1350px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .details-body {
   padding: 10px;
 }
@@ -8,4 +14,24 @@
 
 .details-body p {
   font-size: 14px;
+}
+
+.panel-body label {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ .panel-body input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+}
+
+.message_form  {
+  display: flex;
+  justify-content: space-between;
 }
