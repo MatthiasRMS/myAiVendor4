@@ -9,8 +9,9 @@
         </div>
         <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
           <div class="flexbox-columns-start">
+            <h4>Browsing</h4>
             <div class="dropdown">
-              <label>Browsing choices</label>
+              <label>Primary Browsing</label>
               <select id="browsing_choices">
                 <option value="brands">Brands</option>
                 <option value="pricerange">pricerange</option>
@@ -47,6 +48,7 @@
                 <option value="more_than_50">More than 50 euros</option>
               </select>
             </div>
+            <h4>Product</h4>
             <div class="dropdown">
               <label for="">Product</label>
                 <select id="product">
@@ -99,6 +101,7 @@
                 <option value="46">46</option>
               </select>
             </div>
+            <h4>Checkout</h4>
             <div class="dropdown">
               <label for="">Delivery method</label>
               <select id="delivery_method">
@@ -133,8 +136,10 @@
                 <option value="lamar_boulevard">Lamar Boulevard</option>
               </select>
             </div>
-            <input type="submit" value="Preview" class="btn-lg btn-primary" id="context-input"></input>
-            <input type="submit" value="Update content" class="btn-lg btn-primary" id="context-input"></input>
+            <div class="context-buttons">
+              <input type="submit" value="Preview" class="btn-lg btn-primary" id="context-input"></input>
+              <input type="submit" value="Update context" class="btn-lg btn-primary" id="context-input"></input>
+            </div>
           </div>
         </div>
       </div>
