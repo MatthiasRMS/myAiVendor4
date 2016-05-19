@@ -46,8 +46,15 @@
         </div>
         <div class="panel-body fixed-height">
           <div id="wrapper">
-             <div class="messages flexbox-columns-end flex-item">
-              <%= render "messages/structured_message"%>
+            <div class="messages flexbox-columns-end flex-item">
+              <% @room.messages.order(created_at: :asc).each do |message| %>
+                <% message = eval(message).with_indifferent_access %>
+                <% if message.content.include?("attachment") %>
+                  <%= render "messages/structured_message", message: message %>
+                <% else %>
+                  <%= render "messages/msg", message: message %>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>

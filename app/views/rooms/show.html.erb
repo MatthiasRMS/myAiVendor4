@@ -15,12 +15,15 @@
               <option value="pricerange">pricerange</option>
               <option value="categories">Categories</option>
             </select>
+            </select>
             <label for="">Category</label>
             <select id="category">
-              <option value="t-shirts">T-shirts</option>
+              <option value="t-shirts">T-shirt</option>
+              <option value="sweatshirts">Sweatshirts</option>
               <option value="hats">Hats</option>
               <option value="shorts">Shorts</option>
               <option value="shirts">Shirts</option>
+              <option value="shoes">Shoes</option>
             </select>
             <label for="">Brand</label>
             <select id="brand">
@@ -33,47 +36,84 @@
             </select>
             <label for="">Price range</label>
             <select id="price_range">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <option value="less_than_20">Less than 20 euros</option>
+              <option value="between_20_and_50">Between 20 and 50 euros</option>
+              <option value="more_than_50">More than 50 euros</option>
             </select>
-            <label for="">Product</label>
-            <select id="product">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <label for="">Product</label>
+              <select id="product">
+              <option value="ao_gorilla_city">AO Gorilla City</option>
+              <option value="beast">Beast</option>
+              <option value="flat_trainers">Flat trainers</option>
+              <option value="high-top_trainers">High-top trainers</option>
+              <option value="imperial_army">Imperial Army</option>
+              <option value="kraft_cycle">Kraft Cycle</option>
+              <option value="manhattan">Manhattan</option>
+              <option value="pug_life">Pug Life</option>
+              <option value="red_atacosa_chino_short">Red Atacosa Chino Short</option>
+              <option value="shirt_bike_people">Shirt Bike People</option>
+              <option value="shirt_doves">Shirt Doves</option>
+              <option value="shirt_star_wars_space_ships">Shirt Star Wars Space Ships</option>
+              <option value="skip_leg_day">Skip Leg Day</option>
+              <option value="snapback_blue_chambray_logo">Snapback Blue Chambray Logo</option>
+              <option value="snapback_script_black_turqoise">Snapback Script Black Turqoise</option>
+              <option value="snapback_star_wars_duel">Snapback Star Wars Duel</option>
+              <option value="snapback_stormtrooper">Snapback Stormtrooper</option>
+              <option value="solo_biker">Solo Biker</option>
+              <option value="stan_smith">STAN SMITH</option>
+              <option value="stormtrooper_sweatshirt">Stormtrooper Sweatshirt</option>
+              <option value="sweatshirt_star_wars_helmets">Sweatshirt Star Wars Helmets</option>
+              <option value="tan_slim_chino_shorts">Tan slim chino shorts</option>
+              <option value="tennessea_t-shirt">Tennessea T-Shirt</option>
+              <option value="thor_de_france">Thor de France</option>
+              <option value="trainers_–_navy_with_leather_back">Trainers – navy with leather back</option>
+              <option value="vader">Vader</option>
+              <option value="vinyl_retro">Vinyl Retro</option>
+              <option value="we_come_in_peace">We Come in Peace</option>
+              <option value="williams_&_brown_rugby_shorts">Williams & Brown Rugby Shorts</option>
             </select>
             <label for="">Variant</label>
             <select id="variant">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <option value="extra_small">Extra Small</option>
+              <option value="small">Small</option>
+              <option value="medium">Medium</option>
+              <option value="large">Large</option>
+              <option value="extra_large">Extra Large</option>
+              <option value="39">39</option>
+              <option value="40">40</option>
+              <option value="41">41</option>
+              <option value="42">42</option>
+              <option value="43">43</option>
+              <option value="44">44</option>
+              <option value="45">45</option>
+              <option value="46">46</option>
             </select>
             <label for="">Delivery method</label>
             <select id="delivery_method">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+              <option value="home_delivery">Home delivery</option>
+              <option value="store_pickup">Store pickup</option>
             </select>
             <label for="">Delivery address</label>
-            <select id="delivery_address">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
-            </select>
+              <input id="delivery_address"></input>
             <label for="">City</label>
-            <select id="city">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
-            </select>
+              <input id="City"></input>
             <label for="">Selected store</label>
+              <select id="selected_store">
+                <option value="camden">Camden</option>
+                <option value="old_street">Old street</option>
+                <option value="shorts_gardens">Shorts Gardens</option>
+                <option value="westfield">Westfield</option>
+                <option value="friary_street">Friary Street</option>
+                <option value="saint_honoré">Saint Honoré</option>
+                <option value="froissart">Froissart</option>
+                <option value="hobrechtstraße">Hobrechtstraße</option>
+                <option value="carrer_de_llull">Carrer de Llull</option>
+                <option value="hamngatan">Hamngatan</option>
+                <option value="clement_street">Clement Street</option>
+                <option value="ocean_avenue">Ocean Avenue</option>
+                <option value="bond_street">Bond Street</option>
+                <option value="lamar_boulevard">Lamar Boulevard</option>
+              </select>
 
             <input type="submit" class="form-control" id="context-input"></input>
           </div>
@@ -92,7 +132,6 @@
           <div id="wrapper">
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
               <% @room.messages.order(created_at: :asc).each do |message| %>
-              ap message
                 <%# if message.content.include?("attachment") %>
                   <%# if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
                     <%#= render "messages/structured_message", message: eval(message.content) %>
