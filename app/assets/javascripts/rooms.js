@@ -16,7 +16,7 @@ $(document).ready(function(){
                    'brand':$("#brand").val(),
                      },
           },
-    url: "/session_update" + ,
+    url: "http://rails-bots.herokuapp.com/api/v1/session_update",
     dataType: "json",
     success: function(data) {
       console.log(data);
