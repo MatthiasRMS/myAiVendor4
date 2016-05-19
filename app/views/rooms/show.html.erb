@@ -91,16 +91,12 @@
           <div id="wrapper">
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
               <% @room.messages.order(created_at: :asc).each do |message| %>
-              ap message
-                <% if message.content.include?("attachment") %>
-                  <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
-                    <%= render "messages/structured_message", message: eval(message.content) %>
-                  <% else %>
-                    <%= render "messages/msg", message: message %>
-                  <% end %>
-                <% else %>
-                  <%= render "messages/msg", message: message %>
-                <% end %>
+              <% message = eval(message).with_indifferent_access %>
+                <%# if message.content.include?("attachment") %>
+                    <%= render "messages/structured_message", message: message %>
+                <%# else %>
+                  <%#= render "messages/msg", message: message %>
+                <%# end %>
               <% end %>
             </div>
           </div>
