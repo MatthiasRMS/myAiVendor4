@@ -16,19 +16,29 @@
   font-size: 14px;
 }
 
-.panel-body label {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
- .panel-body input {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.flexbox-columns-start h4 {
+  font-size: 17px;
+  font-weight: bold;
+  color: #026FFD;
 }
 
 .dropdown {
   display: flex;
   justify-content: space-between;
+  margin-left: 15px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.dropdown label {
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.context-buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
 }
 
 .message_form  {
