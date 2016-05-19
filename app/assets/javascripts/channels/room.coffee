@@ -15,8 +15,9 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     else
       $('.messages').append data['message']
       console.log("received")
-      console.log(data["context"])
-      console.log(data["context"]["intent"])
+      console.log(data)
+      console.log(JSON.parse(data))
+      console.log(JSON.parse(data.context))
       $("#mainColumn").prepend($("#"+data["room"]))
       console.log($("#"+data["room"]))
       $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)

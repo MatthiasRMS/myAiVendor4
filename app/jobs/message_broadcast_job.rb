@@ -6,8 +6,7 @@ class MessageBroadcastJob < ApplicationJob
       ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_message(message), context: message.context
       ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
     elsif message.sender == "bot"
-
-      ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message)
+      ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message), context: message.context
       ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
     end
   end
