@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518091533) do
+ActiveRecord::Schema.define(version: 20160519121304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160518091533) do
     t.integer  "room_id"
     t.string   "sender"
     t.jsonb    "structured_messages"
+    t.jsonb    "context"
     t.index ["room_id"], name: "index_messages_on_room_id", using: :btree
   end
 
