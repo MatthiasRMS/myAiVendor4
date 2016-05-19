@@ -83,7 +83,7 @@
 }
 
 .flexbox-columns-end {
-    margin-left: 50%;
+    margin-left: 57%;
 }
 
 .flexbox-start {
@@ -118,11 +118,11 @@
 }
 .scroll {
 }
-#conversation-list {
-  @media(min-width: 768px) {
-    padding-right: 0 !important;
-  }
-}
+// #conversation-list {
+//   @media(min-width: 768px) {
+//     padding-right: 0 !important;
+//   }
+// }
 #message-list {
   @media(min-width: 768px) {
     padding-left: 0 !important;
