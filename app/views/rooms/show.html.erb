@@ -7,17 +7,18 @@
         <div class="panel-heading">
           <h4>Current context</h4>
         </div>
-        <div class="panel-body fixed-height">
+        <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
           <div class="flexbox-columns-start">
             <label>Browsing choices</label>
             <select id="browsing_choices">
-              <option value="category">Category</option>
-              <option value="brand">Brand</option>
-              <option value="price_range">Price range</option>
+              <option value="brands">Brands</option>
+              <option value="pricerange">pricerange</option>
+              <option value="categories">Categories</option>
+            </select>
             </select>
             <label for="">Category</label>
             <select id="category">
-              <option value="t-shirt">T-shirt</option>
+              <option value="t-shirts">T-shirt</option>
               <option value="sweatshirts">Sweatshirts</option>
               <option value="hats">Hats</option>
               <option value="shorts">Shorts</option>
@@ -27,11 +28,11 @@
             <label for="">Brand</label>
             <select id="brand">
               <option value="dedicated">Dedicated</option>
-              <option value="atinum">Atinum</option>
-              <option value="jolly_awesome">Jolly Awesome</option>
-              <option value="star_wars">Star Wars</option>
-              <option value="bike_lovers">Bike Lovers</option>
               <option value="adidas">Adidas</option>
+              <option value="jollyawesome">Jolly Awesome</option>
+              <option value="atinum">Atinum</option>
+              <option value="starwars">Star Wars</option>
+              <option value="bikelover">Bike Lover</option>
             </select>
             <label for="">Price range</label>
             <select id="price_range">
@@ -131,12 +132,15 @@
           <div id="wrapper">
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
               <% @room.messages.order(created_at: :asc).each do |message| %>
-              <% message = eval(message).with_indifferent_access %>
-                <% if message.content.include?("attachment") %>
-                  <%= render "messages/structured_message", message: message %>
-                <% else %>
+                <%# if message.content.include?("attachment") %>
+                  <%# if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
+                    <%#= render "messages/structured_message", message: eval(message.content) %>
+                  <%# else %>
+                    <%#= render "messages/msg", message: message %>
+                  <%# end %>
+                <%# else %>
                   <%= render "messages/msg", message: message %>
-                <% end %>
+                <%# end %>
               <% end %>
             </div>
           </div>
