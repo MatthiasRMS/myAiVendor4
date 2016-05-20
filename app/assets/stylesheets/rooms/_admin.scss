@@ -8,12 +8,9 @@
   padding: 10px;
 }
 
-.details-body h3 {
-  font-size: 18px;
-}
-
 .details-body p {
   font-size: 14px;
+  margin-left: 15px;
 }
 
 .flexbox-columns-start h4 {
@@ -41,7 +38,19 @@
   padding-top: 15px;
 }
 
+
 .message_form  {
   display: flex;
+  justify-content: space-around;
+}
+
+.suggestion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+}
+
+.more-suggestions {
+  margin-top: 40px;
 }
