@@ -10,17 +10,19 @@
         <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
           <div class="flexbox-columns-start">
             <h4>Browsing</h4>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label>Primary Browsing</label>
               <select id="browsing_choices">
+                <option value="default">-</option>
                 <option value="brands">Brands</option>
                 <option value="pricerange">pricerange</option>
                 <option value="categories">Categories</option>
               </select>
             </div>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label for="">Category</label>
               <select id="category">
+                <option value="default">-</option>
                 <option value="t-shirts">T-shirt</option>
                 <option value="sweatshirts">Sweatshirts</option>
                 <option value="hats">Hats</option>
@@ -29,9 +31,10 @@
                 <option value="shoes">Shoes</option>
               </select>
             </div>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label for="">Brand</label>
               <select id="brand">
+                <option value="default">-</option>
                 <option value="dedicated">Dedicated</option>
                 <option value="adidas">Adidas</option>
                 <option value="jollyawesome">Jolly Awesome</option>
@@ -40,18 +43,20 @@
                 <option value="bikelover">Bike Lover</option>
               </select>
             </div>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label for="">Price range</label>
               <select id="price_range">
+                <option value="default">-</option>
                 <option value="less_than_20">Less than 20 euros</option>
                 <option value="between_20_and_50">Between 20 and 50 euros</option>
                 <option value="more_than_50">More than 50 euros</option>
               </select>
             </div>
             <h4>Product</h4>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label for="">Product</label>
                 <select id="product">
+                <option value="default">-</option>
                 <option value="ao_gorilla_city">AO Gorilla City</option>
                 <option value="beast">Beast</option>
                 <option value="flat_trainers">Flat trainers</option>
@@ -83,9 +88,10 @@
                 <option value="williams_&_brown_rugby_shorts">Williams & Brown Rugby Shorts</option>
               </select>
             </div>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label for="">Variant</label>
               <select id="variant">
+                <option value="default">-</option>
                 <option value="extra_small">Extra Small</option>
                 <option value="small">Small</option>
                 <option value="medium">Medium</option>
@@ -102,24 +108,26 @@
               </select>
             </div>
             <h4>Checkout</h4>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label for="">Delivery method</label>
               <select id="delivery_method">
+                <option value="default">-</option>
                 <option value="home_delivery">Home delivery</option>
                 <option value="store_pickup">Store pickup</option>
               </select>
             </div>
-            <div class="dropdown">
+            <div class="context_dropdown">
             <label for="">Delivery address</label>
               <input id="delivery_address"></input>
             </div>
-            <div class="dropdown">
+            <div class="context_dropdown">
             <label for="">City</label>
               <input id="City"></input>
             </div>
-            <div class="dropdown">
+            <div class="context_dropdown">
               <label for="">Selected store</label>
               <select id="selected_store">
+                <option value="default">-</option>
                 <option value="camden">Camden</option>
                 <option value="old_street">Old street</option>
                 <option value="shorts_gardens">Shorts Gardens</option>
