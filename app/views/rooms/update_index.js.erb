@@ -1,8 +1,23 @@
 $(".messages").empty();
 $(".details-body").empty();
 <% @messages.each do |m| %>
- $(".messages").append("<%= j render 'messages/msg', message: m %>");
+  <% if m.content.present? %>
+    <% if m.content.include?("attachment") %>
+      <% if eval(m.content)[:attachment][:payload][:template_type] == "generic" %>
+        $(".messages").append("<%= j render 'messages/structured_message', message: eval(m.content) %>");
+      <% elsif eval(m.content)[:attachment][:payload][:template_type] == "button" %>
+         $(".messages").append("<%= j render 'messages/structured_message', message: eval(m.content) %>");
+      <% elsif eval(m.content)[:attachment][:payload][:template_type] == "receipt" %>
+        $(".messages").append("<%= j render 'messages/structured_message', message: eval(m.content) %>");
+      <% else %>
+        $(".messages").append("<%= j render 'messages/msg', message: m %>");
+      <% end %>
+    <% else %>
+      $(".messages").append("<%= j render 'messages/msg', message: m %>");
+    <% end %>
+  <% end %>
 <% end %>
+
 
 $(".details-body").append("<h3>Chat info</h3>\
                           <p>Company name:</p>\
