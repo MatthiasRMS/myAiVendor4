@@ -166,15 +166,15 @@
           <div id="wrapper">
             <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
               <% @room.messages.order(created_at: :asc).each do |message| %>
-                <%# if message.content.include?("attachment") %>
-                  <%# if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
-                    <%#= render "messages/structured_message", message: eval(message.content) %>
-                  <%# else %>
-                    <%#= render "messages/msg", message: message %>
-                  <%# end %>
-                <%# else %>
+                <% if message.content.include?("attachment") %>
+                  <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
+                    <%= render "messages/structured_message", message: eval(message.content) %>
+                  <% else %>
+                    <%= render "messages/msg", message: message.content %>
+                  <% end %>
+                <% else %>
                   <%= render "messages/msg", message: message %>
-                <%# end %>
+                <% end %>
               <% end %>
             </div>
           </div>
