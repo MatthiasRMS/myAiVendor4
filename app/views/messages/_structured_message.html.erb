@@ -1,8 +1,19 @@
-<%# message = '{:attachment=>{:type=>"template", :payload=>{:template_type=>"generic", :elements=>[{:title=>"Shirt Bike People", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2592_3908b53c8e-bike-people_shirt.jpeg?v=1461690582", :subtitle=>"69.95$", :buttons=>[{:type=>"postback", :payload=>"6273785095: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273785095: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273785095: stock", :title=>"Check stock"}]},{:title=>"Shirt Bike People", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2592_3908b53c8e-bike-people_shirt.jpeg?v=1461690582", :subtitle=>"69.95$", :buttons=>[{:type=>"postback", :payload=>"6273785095: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273785095: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273785095: stock", :title=>"Check stock"}]},{:title=>"Shirt Bike People", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2592_3908b53c8e-bike-people_shirt.jpeg?v=1461690582", :subtitle=>"69.95$", :buttons=>[{:type=>"postback", :payload=>"6273785095: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273785095: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273785095: stock", :title=>"Check stock"}]},{:title=>"Shirt Bike People", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2592_3908b53c8e-bike-people_shirt.jpeg?v=1461690582", :subtitle=>"69.95$", :buttons=>[{:type=>"postback", :payload=>"6273785095: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273785095: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273785095: stock", :title=>"Check stock"}]}, {:title=>"Shirt Doves", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2535_030a49a1ca-2535_46987f1952-doves_shirt-original.jpeg?v=1462355572", :subtitle=>"69.95$", :buttons=>[{:type=>"postback", :payload=>"6273784135: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273784135: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273784135: stock", :title=>"Check stock"}]}, {:title=>"Shirt Star Wars Space Ships", :image_url=>"https://cdn.shopify.com/s/files/1/1258/8379/products/2574_99a2cacf28-star-wars-space-ships_shirt.jpeg?v=1461690585", :subtitle=>"69.95$", :buttons=>[{:type=>"postback", :payload=>"6273785991: info", :title=>"More info"}, {:type=>"postback", :payload=>"6273785991: pictures", :title=>"More pictures"}, {:type=>"postback", :payload=>"6273785991: stock", :title=>"Check stock"}]}]}}}'
+<% message_string = '{:attachment=>{:type=>"template", :payload=>{:template_type=>"button", :text=>"Do you want to browse through the brands, our categories or by price range?", :buttons=>[{:type=>"postback", :title=>"Categories", :payload=>"category"}, {:type=>"postback", :title=>"Brands", :payload=>"brand"}, {:type=>"postback", :title=>"Price range", :payload=>"pricerange"}]}}}'
 %>
 
-<%# message = eval(message_string).with_indifferent_access %>
+<% message = eval(message_string) %>
 
+<%# message_string.gsub!(/([{,]\s*):([^>\s]+)\s*=>/, '\1"\2"=>')%>
+
+<%# message_string.gsub!(/([{,]\s*)([0-9]+\.?[0-9]*)\s*=>/, '\1"\2"=>')%>
+
+<%# message_string.gsub!(/([{,]\s*)(".+?"|[0-9]+\.?[0-9]*)\s*=>\s*:([^,}\s]+\s*)/, '\1\2=>"\3"')%>
+
+<%# message_string.gsub!(/([\[,]\s*):([^,\]\s]+)/, '\1"\2"')%>
+
+<%# message_string.gsub!(/([{,]\s*)(".+?"|[0-9]+\.?[0-9]*)\s*=>/, '\1\2:')%>
+
+<%# message = JSON.parse(message_string).with_indifferent_access %>
 <!-- Extracting the different element from the message (if multiple than carousel) -->
 <% elements = message[:attachment][:payload][:elements] %>
 <% text = message[:attachment][:payload][:text] %>
@@ -19,6 +30,7 @@
   <div class="carousel">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
     <% elements.each do |element| %>
+     <% unless element.nil? %>
       <div class="generic_card">
         <div class="structured-image">
           <%= link_to root_path do %>
@@ -43,6 +55,7 @@
             <p style="color:#0084FF;"><%= button.fetch(:title) %></p>
           </div>
         <% end %>
+      <% end %>
       </div>
     <% end %>
   </div>
