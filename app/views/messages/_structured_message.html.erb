@@ -30,6 +30,7 @@
   <div class="carousel">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
     <% elements.each do |element| %>
+     <% unless element.nil? %>
       <div class="generic_card">
         <div class="structured-image">
           <%= link_to root_path do %>
@@ -54,6 +55,7 @@
             <p style="color:#0084FF;"><%= button.fetch(:title) %></p>
           </div>
         <% end %>
+      <% end %>
       </div>
     <% end %>
   </div>
