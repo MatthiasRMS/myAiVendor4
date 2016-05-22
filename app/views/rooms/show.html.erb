@@ -169,6 +169,10 @@
                 <% if message.content.include?("attachment") %>
                   <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
                     <%= render "messages/structured_message", message: eval(message.content) %>
+                  <% elsif eval(message.content)[:attachment][:payload][:template_type] == "button" %>
+                    <%= render "messages/structured_message", message: eval(message.content) %>
+                  <% elsif eval(message.content)[:attachment][:payload][:template_type] == "receipt" %>
+                    <%= render "messages/structured_message", message: eval(message.content) %>
                   <% else %>
                     <%= render "messages/msg", message: message %>
                   <% end %>
