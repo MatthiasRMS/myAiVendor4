@@ -170,7 +170,7 @@
                   <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
                     <%= render "messages/structured_message", message: eval(message.content) %>
                   <% else %>
-                    <%= render "messages/msg", message: message.content %>
+                    <%= render "messages/msg", message: message %>
                   <% end %>
                 <% else %>
                   <%= render "messages/msg", message: message %>
