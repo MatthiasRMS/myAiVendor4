@@ -17,7 +17,7 @@
       <% @rooms.reverse_each do |room| %>
 
         <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
-          <div class="room-tab">
+          <div id="<%= room.id %>" class="room-tab">
             <div class="user-avatar">
               <%#= room.picture %>
               <%= image_tag("avatar_sample.png", class: "avatar-tab")%>

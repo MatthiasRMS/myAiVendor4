@@ -16,14 +16,14 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
       $('.messages').append data['message']
       console.log("received")
       console.log(data)
+      $("#mainColumn").prepend($("#" + data["room"]))
+      console.log($("#"+data["room"]))
+      $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
       context = data['context'].replace(/=>/g, ":")
       parsed_context = JSON.parse(context)
       $('#browsing_choices').val(parsed_context.intent)
       $('#brand').val(parsed_context.brand)
-      $("#mainColumn").prepend($("#"+data["room"]))
       console.log($("#"+data["room"]))
-      $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
-
   speak: (message, id) ->
     @perform 'speak', message: message, id: id
 
