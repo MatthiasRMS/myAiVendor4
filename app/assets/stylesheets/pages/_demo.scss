@@ -38,15 +38,23 @@
 }
 
 .user_message {
+  background-color: #F9F9F9;
+  color: white;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  width: fit-content;
+  max-width: 250px;
+  margin: 2px;
+  font-size: 15px;
+}
+
+.bot_message {
   background-color: #0084FF;
   color: white;
-  border-top-right-radius: 1.3em;
-  border-top-left-radius: 1.3em;
-  border-bottom-right-radius: 1.3em;
-  border-bottom-left-radius: 1.3em;
-  padding: 2px 10px 2px 10px;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
   width: fit-content;
-  max-width: 230px;
+  max-width: 250px;
   margin: 2px;
   font-size: 15px;
 }

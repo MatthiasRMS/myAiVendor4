@@ -1,11 +1,13 @@
 <% if message.sender == "user" %>
   <div class="message-container flexbox-start flex-item">
     <div class="message-content flex-item flexbox-columns">
-      <ul class="message-header list-unstyled list-inline flex-item">
+      <ul class="list-unstyled list-inline">
         <li><h6><%=  @room.first_name %></h6></li>
         <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
       </ul>
-      <%= simple_format message.content %>
+      <div class="user_message">
+        <%= simple_format message.content %>
+      </div>
     </div>
   </div>
 <% else %>
@@ -14,7 +16,7 @@
       <li><h6>Bot</h6></li>
       <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
     </ul>
-    <div class="user_message">
+    <div class="bot_message">
        <%= simple_format message.content %>
     </div>
   </div>
