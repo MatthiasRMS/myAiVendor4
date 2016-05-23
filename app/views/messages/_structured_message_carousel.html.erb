@@ -8,13 +8,12 @@
 <% image = message[:attachment][:payload][:url] %>
 
 
- <% p "STRUCTURED" %>
 <!-- Identifying which type of message is the bot sending us -->
 
 <!-- First type identified: the 'Generic' template -->
 <% if message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "generic" %>
 
-  <div class="carousel">
+  <div class="carousel flexbox-columns-end">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
     <% elements.each do |element| %>
      <% unless element.nil? %>
@@ -51,8 +50,7 @@
 
 <!-- Second type identified: the 'Button' template -->
 <% elsif message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "button" %>
-<%  p "BUTTON" %>
-  <div class="carousel">
+  <div class="carousel flexbox-columns-end">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
     <div class="generic_card">
       <div class="structured-text">
@@ -72,13 +70,16 @@
 
 <!-- Third type identified: the 'receipt' template -->
 <% elsif message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "receipt" %>
-  <%= image_tag("messenger_receipt_sample.png", width: '300')%>
-
+  <div class="flexbox-columns-end">
+    <%= image_tag("messenger_receipt_sample.png", width: '300')%>
+  </div>
 
 
 
 <!-- Fourth and last type identified: the 'image' template -->
 <% else %>
-  <%= image_tag(image, width: '200')%>
+  <div class="flexbox-columns-end">
+    <%= image_tag(image, width: '200')%>
+  </div>
 
 <% end %>
