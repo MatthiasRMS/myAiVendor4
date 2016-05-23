@@ -118,19 +118,7 @@
 }
 .scroll {
 }
-// #conversation-list {
-//   @media(min-width: 768px) {
-//     padding-right: 0 !important;
-//   }
-// }
-#message-list {
-  @media(min-width: 768px) {
-    padding-left: 0 !important;
-    .panel {
-      border-left-width: 0 !important;
-    }
-  }
-}
+
 .message-container {
   width: 100%;
   padding: 10px 20px;
