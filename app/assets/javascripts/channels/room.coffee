@@ -20,7 +20,8 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
       parsed_context = JSON.parse(context)
       $('#browsing_choices').val(parsed_context.intent)
       $('#brand').val(parsed_context.brand)
-      $("#mainColumn").prepend($("#"+data["room"]))
+      console.log($("#"+data["room"]))
+      $("#mainColumn").prepend($("#" + data["room"]))
       console.log($("#"+data["room"]))
       $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
 
