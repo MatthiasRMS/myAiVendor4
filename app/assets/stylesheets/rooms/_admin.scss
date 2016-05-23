@@ -43,8 +43,11 @@
   padding-top: 15px;
 }
 
+.suggestion-body {
+  padding: 15px;
+}
 
-.message_form  {
+.suggestion-list  {
   display: flex;
   justify-content: space-around;
 }
@@ -58,4 +61,13 @@
 
 .more-suggestions {
   margin-top: 40px;
+}
+
+.message-form  {
+  display: flex;
+  justify-content: space-around;
+}
+
+.taking-the-lead-body {
+    padding: 15px;
 }

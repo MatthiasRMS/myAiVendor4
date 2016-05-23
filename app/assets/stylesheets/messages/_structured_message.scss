@@ -10,12 +10,24 @@
 
 
 .structured-text {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
   font-size: 14px;
   padding-top: 10px;
 }
 
 .structured-button {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
   font-size: 14px;
   line-height: 0.5;
   padding-top: 10px;
+}
+
+
+.structured-image {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: none;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
