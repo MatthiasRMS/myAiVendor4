@@ -172,16 +172,16 @@
           <% @room.messages.order(created_at: :asc).each do |message| %>
             <% if message.content.include?("attachment") %>
               <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
-                <%= render "messages/structured_message", message: eval(message.content) %>
+                <%= render "messages/structured_message_carousel", message: eval(message.content) %>
               <% elsif eval(message.content)[:attachment][:payload][:template_type] == "button" %>
-                <%= render "messages/structured_message", message: eval(message.content) %>
+                <%= render "messages/structured_message_button", message: eval(message.content) %>
               <% elsif eval(message.content)[:attachment][:payload][:template_type] == "receipt" %>
-                <%= render "messages/structured_message", message: eval(message.content) %>
+                <%= render "messages/structured_message_receipt", message: eval(message.content) %>
               <% else %>
-                <%= render "messages/msg", message: message %>
+                <%= render "messages/image", message: message %>
             <% end %>
             <% else %>
-              <%= render "messages/msg", message: message %>
+              <%= render "messages/text_message", message: message %>
             <% end %>
           <% end %>
         </div>
