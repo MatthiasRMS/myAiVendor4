@@ -4,14 +4,6 @@
   justify-content: space-between;
 }
 
-// .store_presentation {
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   padding-top: 5px;
-//   padding-bottom: 15px;
-// }
-
 .frame_side{
   position: relative;
 }
@@ -89,21 +81,3 @@
 .store_page_title {
   padding: 35px;
 }
-
-
- .float-wrap {
-      /* 816 = <number of floats> * (<float width> + 2 * <float border width>) */
-      width: 816px;
-      border: 1px solid;
-      /* causes .float-wrap's height to match its child divs */
-      overflow: auto;
-    }
-    .left-floater {
-      width: 100px;
-      height: 100px;
-      border: 1px solid;
-      float: left;
-    }
-    .outer {
-      overflow-x: scroll;
-    }
