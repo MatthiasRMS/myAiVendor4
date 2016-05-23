@@ -14,7 +14,7 @@ class MessageBroadcastJob < ApplicationJob
   private
 
   def render_message(message)
-    ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
+    ApplicationController.renderer.render(partial: 'messages/text_message', locals: { message: message })
   end
 
   def render_bot_message(message)
@@ -23,7 +23,15 @@ class MessageBroadcastJob < ApplicationJob
     p message.content.class
     p eval(message.content).class
     if eval(message.content)[:attachment].present?
-        ApplicationController.renderer.render(partial: 'messages/structured_message', locals: { message: eval(message.content)})
+      if eval(m.content)[:attachment][:payload][:template_type] == "generic"
+       ApplicationController.renderer.render(partial: 'messages/structured_message_carousel', locals: { message: eval(message.content)})
+       elsif eval(m.content)[:attachment][:payload][:template_type] == "button"
+         ApplicationController.renderer.render(partial: 'messages/structured_message_button', locals: { message: eval(message.content)})
+      elsif eval(m.content)[:attachment][:payload][:template_type] == "receipt"
+        ApplicationController.renderer.render(partial: 'messages/structured_message_receipt', locals: { message: eval(message.content)})
+      else
+       ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
+      end
     else
         ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
     end

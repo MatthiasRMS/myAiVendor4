@@ -4,11 +4,11 @@ $(".details-body").empty();
   <% if m.content.present? %>
     <% if m.content.include?("attachment") %>
       <% if eval(m.content)[:attachment][:payload][:template_type] == "generic" %>
-        $(".messages").append("<%= j render 'messages/structured_message', message: eval(m.content) %>");
+        $(".messages").append("<%= j render 'messages/structured_message_carousel', message: eval(m.content) %>");
       <% elsif eval(m.content)[:attachment][:payload][:template_type] == "button" %>
-         $(".messages").append("<%= j render 'messages/structured_message', message: eval(m.content) %>");
+         $(".messages").append("<%= j render 'messages/structured_message_button', message: eval(m.content) %>");
       <% elsif eval(m.content)[:attachment][:payload][:template_type] == "receipt" %>
-        $(".messages").append("<%= j render 'messages/structured_message', message: eval(m.content) %>");
+        $(".messages").append("<%= j render 'messages/structured_message_receipt', message: eval(m.content) %>");
       <% else %>
         $(".messages").append("<%= j render 'messages/text_message', message: m %>");
       <% end %>
