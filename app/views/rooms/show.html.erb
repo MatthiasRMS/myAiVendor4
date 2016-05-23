@@ -162,13 +162,13 @@
 
 
   <!--     Session itself -->
-  <div class="panel panel-default">
+  <div class="panel panel-default width-fixing">
     <div class="panel-heading">
       <h4><%= @room.first_name %></h4>
     </div>
     <div class="panel-body fixed-height">
       <div id="wrapper">
-        <div id="<%= @room.id %>" class="messages width-fixing flex-item">
+        <div id="<%= @room.id %>" class="messages flex-item">
           <% @room.messages.order(created_at: :asc).each do |message| %>
             <% if message.content.include?("attachment") %>
               <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
