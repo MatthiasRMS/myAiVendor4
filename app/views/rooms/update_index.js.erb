@@ -10,10 +10,10 @@ $(".details-body").empty();
       <% elsif eval(m.content)[:attachment][:payload][:template_type] == "receipt" %>
         $(".messages").append("<%= j render 'messages/structured_message', message: eval(m.content) %>");
       <% else %>
-        $(".messages").append("<%= j render 'messages/msg', message: m %>");
+        $(".messages").append("<%= j render 'messages/text_message', message: m %>");
       <% end %>
     <% else %>
-      $(".messages").append("<%= j render 'messages/msg', message: m %>");
+      $(".messages").append("<%= j render 'messages/text_message', message: m %>");
     <% end %>
   <% end %>
 <% end %>
