@@ -16,7 +16,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
    p @session
    p params
    p params["profile_pic"]
-   profile_picture = Rack::Utils.parse_query(params["profile_pic"])
+   p profile_picture = Rack::Utils.parse_query(params["profile_pic"])
    @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture)
    @room.update(profile_picture: profile_picture)
    @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
