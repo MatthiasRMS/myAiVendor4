@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160519121304) do
+ActiveRecord::Schema.define(version: 20160523201458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(version: 20160519121304) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.bigint   "facebook_id"
     t.string   "first_name"
+    t.string   "profile_picture"
   end
 
   create_table "sessions", force: :cascade do |t|
