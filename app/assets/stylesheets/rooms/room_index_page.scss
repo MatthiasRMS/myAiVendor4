@@ -1,0 +1,30 @@
+.room-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  height: 75px;
+  padding: 5px;
+  min-width: 300px;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.user-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.room-last-update {
+  color: grey;
+  font-size: 13px;
+}
+
+.last-session-status a {
+  color: grey;
+  font-size: 13px;
+}
