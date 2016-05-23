@@ -12,9 +12,9 @@
     <div class="panel-heading">
       <h4>All conversations</h4>
     </div>
-    <div id="mainColumn" class="flexbox-columns-start">
+    <div id="mainColumn">
 
-      <% @rooms.reverse_each do |room| %>
+      <% @rooms.sort_by {|r| r.messages.last.created_at} do |room| %>
 
         <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
           <div id="<%= room.id %>" class="room-tab">
