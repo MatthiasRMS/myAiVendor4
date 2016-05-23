@@ -1,5 +1,3 @@
-<%# message_string = '{:attachment=>{:type=>"template", :payload=>{:template_type=>"button", :text=>"Do you want to browse through the brands, our categories or by price range?", :buttons=>[{:type=>"postback", :title=>"Categories", :payload=>"category"}, {:type=>"postback", :title=>"Brands", :payload=>"brand"}, {:type=>"postback", :title=>"Price range", :payload=>"pricerange"}]}}}'
-%>
 
 <%# message = eval(message) %>
 <% elements = message[:attachment][:payload][:elements] %>
@@ -8,10 +6,8 @@
 <% image = message[:attachment][:payload][:url] %>
 
 
-<!-- Identifying which type of message is the bot sending us -->
 
 <!-- First type identified: the 'Generic' template -->
-<% if message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "generic" %>
 
   <div class="carousel flexbox-columns-end">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
@@ -48,38 +44,6 @@
 
 
 
-<!-- Second type identified: the 'Button' template -->
-<% elsif message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "button" %>
-  <div class="carousel flexbox-columns-end">
-    <!-- Iterating on the elements of the mssage in order to display all of them -->
-    <div class="generic_card">
-      <div class="structured-text">
-        <%= text %>
-      </div>
-
-      <!-- Iterating on the buttons in order to display all the CTA -->
-      <% buttons.each do |button| %>
-        <div class="structured-text text-center">
-          <p style="color:#0084FF;"><%= button.fetch(:title) %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>
 
 
 
-<!-- Third type identified: the 'receipt' template -->
-<% elsif message[:attachment][:payload].has_key?(:template_type) && message[:attachment][:payload][:template_type] == "receipt" %>
-  <div class="flexbox-columns-end">
-    <%= image_tag("messenger_receipt_sample.png", width: '300')%>
-  </div>
-
-
-
-<!-- Fourth and last type identified: the 'image' template -->
-<% else %>
-  <div class="flexbox-columns-end">
-    <%= image_tag(image, width: '200')%>
-  </div>
-
-<% end %>
