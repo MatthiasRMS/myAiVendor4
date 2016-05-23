@@ -83,7 +83,11 @@
 }
 
 .flexbox-columns-end {
-    margin-left: 57%;
+  margin-left: 57%;
+}
+
+.width-fixing {
+  width: 700px;
 }
 
 .flexbox-start {
@@ -137,9 +141,7 @@
     flex: 1 1 auto;
   }
 }
-.messages {
-  width: 100%
-}
+
 .message-input {
   background-color: white;
   margin-bottom: 30px;
