@@ -12,7 +12,9 @@
     <div class="panel-heading">
       <h4>All conversations</h4>
     </div>
-    <div id="mainColumn">
+
+    <div  id="mainColumn" class="flexbox-columns-start fixed-height overflow">
+
 
       <% @rooms.sort_by {|r| r.messages.last.created_at} do |room| %>
 
