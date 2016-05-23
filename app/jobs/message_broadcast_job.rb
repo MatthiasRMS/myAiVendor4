@@ -23,11 +23,11 @@ class MessageBroadcastJob < ApplicationJob
     p message.content.class
     p eval(message.content).class
     if eval(message.content)[:attachment].present?
-      if eval(m.content)[:attachment][:payload][:template_type] == "generic"
+      if eval(message.content)[:attachment][:payload][:template_type] == "generic"
        ApplicationController.renderer.render(partial: 'messages/structured_message_carousel', locals: { message: eval(message.content)})
-       elsif eval(m.content)[:attachment][:payload][:template_type] == "button"
+       elsif eval(message.content)[:attachment][:payload][:template_type] == "button"
          ApplicationController.renderer.render(partial: 'messages/structured_message_button', locals: { message: eval(message.content)})
-      elsif eval(m.content)[:attachment][:payload][:template_type] == "receipt"
+      elsif eval(message.content)[:attachment][:payload][:template_type] == "receipt"
         ApplicationController.renderer.render(partial: 'messages/structured_message_receipt', locals: { message: eval(message.content)})
       else
        ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
