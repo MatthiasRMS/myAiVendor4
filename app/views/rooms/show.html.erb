@@ -226,40 +226,46 @@
 <div class="container-large">
 
   <!-- Bot suggestions -->
-  <div class="message-input bot-suggestions" id="newMessage">
-    <h4>Here are my best suggestions</h4>
-    <div class="message_form">
-      <div class="suggestion">
-        <p>Suggestion 1</p>
-        <%=image_tag("suggestion_sample_1.png")%>
-        <button class="btn btn-primary">Send</button>
-      </div>
-      <div class="suggestion">
-        <p>Suggestion 2</p>
-        <%=image_tag("suggestion_sample_2.png")%>
-        <button class="btn btn-primary">Send</button>
-      </div>
-      <div class="suggestion">
-        <p>Suggestion 3</p>
-        <%=image_tag("suggestion_sample_3.png")%>
-        <button class="btn btn-primary">Send</button>
-      </div>
-      <div class="suggestion">
-        <p>Suggestion 4</p>
-        <%=image_tag("suggestion_sample_4.png")%>
-        <button class="btn btn-primary">Send</button>
-      </div>
+  <div class="panel panel-default message-input bot-suggestions" id="newMessage">
+    <div class="panel-heading">
+      <h4>Here are my best suggestions</h4>
     </div>
-    <div class="text-center">
-      <button class="btn btn-lg btn-primary more-suggestions">See more suggestions</button>
+    <div class="suggestion-body">
+      <div class="suggestion-list">
+        <div class="suggestion">
+          <p>Suggestion 1</p>
+          <%=image_tag("suggestion_sample_1.png")%>
+          <button class="btn btn-primary">Send</button>
+        </div>
+        <div class="suggestion">
+          <p>Suggestion 2</p>
+          <%=image_tag("suggestion_sample_2.png")%>
+          <button class="btn btn-primary">Send</button>
+        </div>
+        <div class="suggestion">
+          <p>Suggestion 3</p>
+          <%=image_tag("suggestion_sample_3.png")%>
+          <button class="btn btn-primary">Send</button>
+        </div>
+        <div class="suggestion">
+          <p>Suggestion 4</p>
+          <%=image_tag("suggestion_sample_4.png")%>
+          <button class="btn btn-primary">Send</button>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-lg btn-primary more-suggestions">See more suggestions</button>
+      </div>
     </div>
   </div>
 
 
   <!-- Write a message from scratch -->
-  <div class="message-input" id="newMessage">
-    <h4>Take the lead on the conversation</h4>
-    <div class="message_form">
+  <div class="panel panel-default message-input" id="newMessage">
+    <div class="panel-heading">
+      <h4>Take the lead on the conversation</h4>
+    </div>
+    <div class="message-form taking-the-lead-body">
       <input type="text" data-behavior="room_speaker" style="background-color: white; width: 1200px; height: 35px;">
       <button class="btn btn-lg btn-primary">Send</button>
     </div>
