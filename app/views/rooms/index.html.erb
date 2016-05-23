@@ -16,7 +16,7 @@
     <div  id="mainColumn" class="flexbox-columns-start fixed-height overflow">
 
 
-      <% @rooms.sort_by {|r| r.messages.last.created_at}.each do |room| %>
+      <% @rooms.sort_by {|r| r.messages.last.created_at}.reverse.each do |room| %>
 
         <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
           <div id="<%= room.id %>" class="room-tab">
@@ -59,14 +59,21 @@
     <div class="panel-body fixed-height">
       <div id="wrapper">
         <div class="messages flex-item">
-          <%# @room.messages.order(created_at: :asc).each do |message| %>
-            <%# message = eval(message).with_indifferent_access %>
-            <%# if message.content.include?("attachment") %>
-              <%#= render "messages/structured_message" %>
-            <%# else %>
-              <%#= render "messages/msg", message: message %>
-            <%# end %>
-          <%# end %>
+          <% @room.messages.order(created_at: :asc).each do |message| %>
+            <% if message.content.include?("attachment") %>
+              <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
+                <%= render "messages/structured_message_carousel", message: eval(message.content) %>
+              <% elsif eval(message.content)[:attachment][:payload][:template_type] == "button" %>
+                <%= render "messages/structured_message_button", message: eval(message.content) %>
+              <% elsif eval(message.content)[:attachment][:payload][:template_type] == "receipt" %>
+                <%= render "messages/structured_message_receipt", message: eval(message.content) %>
+              <% else %>
+                <%= render "messages/image", message: message %>
+            <% end %>
+            <% else %>
+              <%= render "messages/text_message", message: message %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
