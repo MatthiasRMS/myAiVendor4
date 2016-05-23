@@ -63,32 +63,7 @@
 .scroll {
   overflow: scroll;
 }
-.flexbox-columns-start {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  .flex-item {
-    flex: 1 1 auto;
-  }
-  .flex-item-grow {
-    flex: 1 0 auto;
-  }
-  .flex-item-shrink {
-    flex: 0 1 auto;
-    min-height: 61px;
-  }
-  ul {
-    margin-bottom: 0;
-  }
-}
 
-.flexbox-columns-end {
-  margin-left: 57%;
-}
-
-.width-fixing {
-  width: 700px;
-}
 
 .flexbox-start {
   display: flex;
