@@ -154,6 +154,13 @@
   </div>
 
 
+
+
+
+
+
+
+
   <!--     Session itself -->
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -161,7 +168,7 @@
     </div>
     <div class="panel-body fixed-height">
       <div id="wrapper">
-        <div id="<%= @room.id %>" class="messages flexbox-columns-end flex-item">
+        <div id="<%= @room.id %>" class="messages width-fixing flex-item">
           <% @room.messages.order(created_at: :asc).each do |message| %>
             <% if message.content.include?("attachment") %>
               <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
@@ -181,6 +188,11 @@
       </div>
     </div>
   </div>
+
+
+
+
+
 
   <!--  Information about the chatbot, the user and their history together -->
   <div class="panel panel-default">

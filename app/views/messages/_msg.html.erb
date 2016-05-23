@@ -9,11 +9,13 @@
     </div>
   </div>
 <% else %>
-  <ul class="message-header list-unstyled list-inline flex-item">
-    <li><h6>Bot</h6></li>
-    <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
-  </ul>
-  <div class="user_message">
-     <%= simple_format message.content %>
+  <div class="flexbox-columns-end">
+    <ul class="message-header list-unstyled list-inline flex-item">
+      <li><h6>Bot</h6></li>
+      <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
+    </ul>
+    <div class="user_message">
+       <%= simple_format message.content %>
+    </div>
   </div>
 <% end %>

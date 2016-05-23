@@ -15,7 +15,7 @@ $(document).ready(function(){
                    'intent': $("#browsing_choices").val(),
                    'category':$("#category").val(),
                    'brand':$("#brand").val(),
-                   'price_range':$("#price_range").val(),
+                   'pricerange':$("#price_range").val(),
                    'product':$("#product").val(),
                    'variant':$("#variant").val(),
                    'delivery_method':$("#delivery_method").val(),
