@@ -22,11 +22,9 @@
           <div id="<%= room.id %>" class="room-tab">
             <div class="user-avatar">
               <% if room.profile_picture.present? %>
-                <%= image_tag("https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/11425115_10152993512543697_2720240051556879751_n.jpg?oh=8db4ad4a71e18391f2b9a1eb42a72a25", class: "avatar-tab")%>
-
-
+                <%= image_tag(room.profile_picture, class: "avatar-tab")%>
               <% else %>
-                <%= image_tag("https://scontent.xx.fbcdn.net/v/t1.0-1/p200x200/11425115_10152993512543697_2720240051556879751_n.jpg?oh=8db4ad4a71e18391f2b9a1eb42a72a25", class: "avatar-tab")%>
+                <%= image_tag("avatar_sample.png", class: "avatar-tab")%>
               <% end %>
             </div>
             <div class="user-main">
