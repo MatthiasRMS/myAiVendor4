@@ -49,10 +49,6 @@
 .unread-messages {
   background-color: rgb(251, 251, 251);
 }
-.panel-body {
-  position: relative;
-  height: 60vh;
-}
 .panel-body > .flexbox-columns {
   width: 100%;
 }
@@ -93,9 +89,7 @@
   }
 }
 .fixed-height {
-  height: 75vh;
-}
-.scroll {
+  height: 68vh;
 }
 
 .message-container {
@@ -129,8 +123,6 @@
   outline: none;
 }
 #wrapper {
-  min-height: 75vh;
-  height: 100%;
   overflow: scroll;
   padding-bottom: 61px;
   &.focused {
