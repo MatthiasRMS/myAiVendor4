@@ -1,0 +1,11 @@
+<%# message = eval(message) %>
+<% elements = message[:attachment][:payload][:elements] %>
+<% text = message[:attachment][:payload][:text] %>
+<% buttons = message[:attachment][:payload][:buttons] %>
+<% image = message[:attachment][:payload][:url] %>
+
+<!-- Third type identified: the 'receipt' template -->
+  <div class="flexbox-columns-end">
+    <%= image_tag("messenger_receipt_sample.png", width: '300')%>
+  </div>
+
