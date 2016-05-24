@@ -51,7 +51,7 @@
 // Conversation specific
 
 .flexbox-columns-end {
-  margin-left: 61%;
+  margin-left: 54%;
 }
 
 .width-fixing {
@@ -109,4 +109,16 @@
 
 .taking-the-lead-body {
     padding: 15px;
+}
+
+.backer-message-templates  {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.backer-message-template {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
