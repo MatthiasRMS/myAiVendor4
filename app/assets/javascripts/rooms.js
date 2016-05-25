@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight);
 
   // Enabling to refresh the context dashboard from the backer feature
   $('#context-input').click(function(e){e.preventDefault();
