@@ -42,6 +42,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'js-routes'
 gem 'react-rails', '1.6.1'
 
+gem 'rails_12factor', group: :production
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-lightbox'
   gem 'rails-assets-classnames'
