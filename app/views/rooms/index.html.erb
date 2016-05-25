@@ -34,7 +34,7 @@
               <div class="last-session-status">
                 <%#= session.status %>
                 <%= image_tag("green-circle.png", width: '10')%>
-                <a href="">All good</a>
+                <%= link_to "All good", room_path(room) %>
               </div>
             </div>
             <div class="room-last-update">
