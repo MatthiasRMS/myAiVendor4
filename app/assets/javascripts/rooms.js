@@ -10,11 +10,11 @@ $(document).ready(function(){
   var session_id = $('.panel-default')[0].id;
   $.ajax({
     type: "POST",
-    data: { 'fbid': fbid,
+    data: {'fbid': fbid,
            'context': {
                    'intent': $("#browsing_choices").val(),
                    'category':$("#category").val(),
-                   'brand':$("#brand").val(),
+                   'brand':$("#brand").val()
                    'pricerange':$("#price_range").val(),
                    'product':$("#product").val(),
                    'variant':$("#variant").val(),
