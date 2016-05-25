@@ -14,7 +14,7 @@ $(document).ready(function(){
            'context': {
                    'intent': $("#browsing_choices").val(),
                    'category':$("#category").val(),
-                   'brand':$("#brand").val()
+                   'brand':$("#brand").val(),
                    'pricerange':$("#price_range").val(),
                    'product':$("#product").val(),
                    'variant':$("#variant").val(),
