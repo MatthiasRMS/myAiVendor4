@@ -5,6 +5,10 @@ $(document).ready(function(){
   $('#context-input').click(function(e){e.preventDefault();
     var fbid = $(".facebook")[0].id
     var session_id = $('.panel-default')[0].id;
+    // $(".panel-body input").slice(0, this.length - 2).each(function() {
+       //console.log($(this).val())
+    // })
+    // $.each($(".panel-body select"), function() {console.log(this)})
     $.ajax({
       type: "POST",
       data: {'fbid': fbid,
@@ -32,3 +36,4 @@ $(document).ready(function(){
     });
   });
 });
+
