@@ -1,10 +1,20 @@
-<h4>brand: <%= @bot.brand %> </h4>
-<h4>sending updates to: <%= @bot.reception_endpoint %> </h4>
-<h4>API secret key</h4>
-<input type="password" id="password" name="password" class="showpassword" value="<%= @bot.secret %>">
-</br>
-<h4>API Key</h4>
-<input value="<%= @bot.api_key %>">
-<% @bot.parameters.each do |p| %>
-  <%= p.name %>: <%= p.input_type %></br>
-<% end %>
+
+<div class="bot_new_form header_spacing display-flex">
+  <div class="bot-request-details">
+    <h3>Bot details</h3>
+    <p><strong>Brand:</strong> <%= @bot.brand %> </p>
+    <p><strong>Sending updates to:</strong> <%= @bot.reception_endpoint %> </p>
+    <% @bot.parameters.each do |p| %>
+      <strong><%= p.name %>:</strong> <%= p.input_type %></br>
+    <% end %>
+  </div>
+
+  <div class="api_details">
+    <h3>API info</h3>
+    <p>API secret key</p>
+    <input type="password" id="password" name="password" class="showpassword" value="<%= @bot.secret %>">
+    </br>
+    <p>API Key</p>
+    <input value="<%= @bot.api_key %>">
+  </div>
+</div>
