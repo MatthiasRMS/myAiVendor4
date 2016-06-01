@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row bot_new_form header_spacing">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <%= simple_form_for @bot do |f| %>
         <%= f.error_notification %>
@@ -10,14 +10,14 @@
             <%= render 'parameters/parameter_fields', f: p %>
           <% end %>
           <div>
-            <%= link_to_add_association 'Add a parameter', f, :parameters %>
+            <%= link_to_add_association 'Add more parameters', f, :parameters %>
           </div>
         </div>
         <div class="form-actions text-center">
-          <%= f.button :submit, "Soumettre", :class => "btn btn-primary" %>
+          <%= f.button :submit, "Submit", :class => "btn btn-primary" %>
         </div>
       <% end %>
-   </div>
+    </div>
   </div>
 </div>
 
