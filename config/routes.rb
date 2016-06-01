@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
   mount Messenger::Bot::Space => "/webhook"
   resources :rooms
+  resources :bots do
+    resources :parameters
+  end
   #devise_for :users
   root to: 'pages#home'
 

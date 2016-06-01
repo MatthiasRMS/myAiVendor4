@@ -4,159 +4,28 @@
 <div class="container-large main-room-display">
 
   <!-- Context dashboard on the left hand side -->
-  <div class="panel panel-default" id="<%= @session.id %>">
+    <% if @session != nil %>
+      <div class="panel panel-default" id="<%= @session.id %>">
+    <% else %>
+      <div class="panel panel-default">
+    <% end %>
     <div class="panel-heading">
       <h4>Current context</h4>
     </div>
     <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
       <div class="flexbox-columns-start">
-        <h4>Browsing</h4>
-        <div class="context_dropdown">
-          <label>Primary Browsing</label>
-          <select id="browsing_choices">
-            <option value="">-</option>
-            <option value="brands">Brands</option>
-            <option value="pricerange">pricerange</option>
-            <option value="categories">Categories</option>
-          </select>
-        </div>
-        <div class="context_dropdown">
-          <label for="">Category</label>
-          <select id="category">
-            <option value="">-</option>
-            <option value="t-shirts">T-shirt</option>
-            <option value="sweatshirts">Sweatshirts</option>
-            <option value="hats">Hats</option>
-            <option value="shorts">Shorts</option>
-            <option value="shirts">Shirts</option>
-            <option value="shoes">Shoes</option>
-          </select>
-        </div>
-        <div class="context_dropdown">
-          <label for="">Brand</label>
-          <select id="brand">
-            <option value="">-</option>
-            <option value="dedicated">Dedicated</option>
-            <option value="adidas">Adidas</option>
-            <option value="jollyawesome">Jolly Awesome</option>
-            <option value="atinum">Atinum</option>
-            <option value="starwars">Star Wars</option>
-            <option value="bikelover">Bike Lover</option>
-          </select>
-        </div>
-        <div class="context_dropdown">
-          <label for="">Price range</label>
-          <select id="price_range">
-            <option value="">-</option>
-            <option value="less20">Less than 20 euros</option>
-            <option value="20to50">Between 20 and 50 euros</option>
-            <option value="more50">More than 50 euros</option>
-          </select>
-        </div>
-        <h4>Product</h4>
-        <div class="context_dropdown">
-          <label for="">Product</label>
-            <select id="product">
-            <option value="">-</option>
-            <option value="ao_gorilla_city">AO Gorilla City</option>
-            <option value="beast">Beast</option>
-            <option value="flat_trainers">Flat trainers</option>
-            <option value="high-top_trainers">High-top trainers</option>
-            <option value="imperial_army">Imperial Army</option>
-            <option value="kraft_cycle">Kraft Cycle</option>
-            <option value="manhattan">Manhattan</option>
-            <option value="pug_life">Pug Life</option>
-            <option value="red_atacosa_chino_short">Red Atacosa Chino Short</option>
-            <option value="shirt_bike_people">Shirt Bike People</option>
-            <option value="shirt_doves">Shirt Doves</option>
-            <option value="shirt_star_wars_space_ships">Shirt Star Wars Space Ships</option>
-            <option value="skip_leg_day">Skip Leg Day</option>
-            <option value="snapback_blue_chambray_logo">Snapback Blue Chambray Logo</option>
-            <option value="snapback_script_black_turqoise">Snapback Script Black Turqoise</option>
-            <option value="snapback_star_wars_duel">Snapback Star Wars Duel</option>
-            <option value="snapback_stormtrooper">Snapback Stormtrooper</option>
-            <option value="solo_biker">Solo Biker</option>
-            <option value="stan_smith">STAN SMITH</option>
-            <option value="stormtrooper_sweatshirt">Stormtrooper Sweatshirt</option>
-            <option value="sweatshirt_star_wars_helmets">Sweatshirt Star Wars Helmets</option>
-            <option value="tan_slim_chino_shorts">Tan slim chino shorts</option>
-            <option value="tennessea_t-shirt">Tennessea T-Shirt</option>
-            <option value="thor_de_france">Thor de France</option>
-            <option value="trainers_–_navy_with_leather_back">Trainers – navy with leather back</option>
-            <option value="vader">Vader</option>
-            <option value="vinyl_retro">Vinyl Retro</option>
-            <option value="we_come_in_peace">We Come in Peace</option>
-            <option value="williams_&_brown_rugby_shorts">Williams & Brown Rugby Shorts</option>
-          </select>
-        </div>
-        <div class="context_dropdown">
-          <label for="">Variant</label>
-          <select id="variant">
-            <option value="">-</option>
-            <option value="extra_small">Extra Small</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-            <option value="extra_large">Extra Large</option>
-            <option value="39">39</option>
-            <option value="40">40</option>
-            <option value="41">41</option>
-            <option value="42">42</option>
-            <option value="43">43</option>
-            <option value="44">44</option>
-            <option value="45">45</option>
-            <option value="46">46</option>
-          </select>
-        </div>
-        <h4>Checkout</h4>
-        <div class="context_dropdown">
-          <label for="">Delivery method</label>
-          <select id="delivery_method">
-            <option value="">-</option>
-            <option value="delivery">Home delivery</option>
-            <option value="pickup">Store pickup</option>
-          </select>
-        </div>
-        <div class="context_dropdown">
-        <label for="">Delivery address</label>
-          <input id="delivery_address"></input>
-        </div>
-        <div class="context_dropdown">
-        <label for="">City</label>
-          <input id="City"></input>
-        </div>
-        <div class="context_dropdown">
-          <label for="">Selected store</label>
-          <select id="selected_store">
-            <option value="">-</option>
-            <option value="camden">Camden</option>
-            <option value="old_street">Old street</option>
-            <option value="shorts_gardens">Shorts Gardens</option>
-            <option value="westfield">Westfield</option>
-            <option value="friary_street">Friary Street</option>
-            <option value="saint_honoré">Saint Honoré</option>
-            <option value="froissart">Froissart</option>
-            <option value="hobrechtstraße">Hobrechtstraße</option>
-            <option value="carrer_de_llull">Carrer de Llull</option>
-            <option value="hamngatan">Hamngatan</option>
-            <option value="clement_street">Clement Street</option>
-            <option value="ocean_avenue">Ocean Avenue</option>
-            <option value="bond_street">Bond Street</option>
-            <option value="lamar_boulevard">Lamar Boulevard</option>
-          </select>
-        </div>
-        <div class="context-buttons">
-          <input type="submit" value="Preview" class="btn-lg btn-primary" id="context-preview"></input>
-          <input type="submit" value="Update context" class="btn-lg btn-primary" id="context-input"></input>
-        </div>
+        <% @room.bot.parameters.each do |p| %>
+          <%= p.input_type %>
+          <%= p.name %>
+        </br>
+        <% end %>
+      </div>
+      <div class="context-buttons">
+        <input type="submit" value="Preview" class="btn-lg btn-primary" id="context-preview"></input>
+        <input type="submit" value="Update context" class="btn-lg btn-primary" id="context-input"></input>
       </div>
     </div>
   </div>
-
-
-
-
-
 
 
 
@@ -170,13 +39,13 @@
       <div id="wrapper">
         <div id="<%= @room.id %>" class="messages flex-item">
           <% @room.messages.order(created_at: :asc).each do |message| %>
-            <% if message.content.include?("attachment") %>
-              <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
-                <%= render "messages/structured_message_carousel", message: eval(message.content) %>
-              <% elsif eval(message.content)[:attachment][:payload][:template_type] == "button" %>
-                <%= render "messages/structured_message_button", message: eval(message.content) %>
-              <% elsif eval(message.content)[:attachment][:payload][:template_type] == "receipt" %>
-                <%= render "messages/structured_message_receipt", message: eval(message.content) %>
+            <% if message.content.nil? && message.structured_messages.include?("attachment") %>
+              <% if (message.structured_messages.with_indifferent_access)[:attachment][:payload][:template_type] == "generic" %>
+                <%= render "messages/structured_message_carousel", message: (message.structured_messages.with_indifferent_access) %>
+              <% elsif (message.structured_messages.with_indifferent_access)[:attachment][:payload][:template_type] == "button" %>
+                <%= render "messages/structured_message_button", message: (message.structured_messages.with_indifferent_access) %>
+              <% elsif (message.structured_messages.with_indifferent_access)[:attachment][:payload][:template_type] == "receipt" %>
+                <%= render "messages/structured_message_receipt", message: (message.structured_messages.with_indifferent_access) %>
               <% else %>
                 <%= render "messages/image", message: message %>
             <% end %>
