@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531190037) do
+ActiveRecord::Schema.define(version: 20160601114128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20160531190037) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
 
+  create_table "bots", force: :cascade do |t|
+    t.string   "brand"
+    t.string   "endpoint"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at",          null: false
@@ -39,6 +46,14 @@ ActiveRecord::Schema.define(version: 20160531190037) do
     t.jsonb    "structured_messages"
     t.jsonb    "context"
     t.index ["room_id"], name: "index_messages_on_room_id", using: :btree
+  end
+
+  create_table "parameters", force: :cascade do |t|
+    t.string   "type"
+    t.integer  "bot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bot_id"], name: "index_parameters_on_bot_id", using: :btree
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -78,4 +93,5 @@ ActiveRecord::Schema.define(version: 20160531190037) do
   end
 
   add_foreign_key "messages", "rooms"
+  add_foreign_key "parameters", "bots"
 end

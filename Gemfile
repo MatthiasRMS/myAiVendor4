@@ -42,6 +42,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'js-routes'
 gem 'react-rails', '1.6.1'
 gem 'activeadmin', github: 'activeadmin'
+gem 'cocoon'
 gem 'rails_12factor', group: :production
 
 source 'https://rails-assets.org' do
