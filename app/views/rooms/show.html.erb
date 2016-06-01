@@ -15,8 +15,13 @@
     <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
       <div class="flexbox-columns-start">
         <% @room.bot.parameters.each do |p| %>
-          <%= p.input_type %>
-          <%= p.name %>
+        <% if p.input_type == "list" %>
+          <h4> <%= p.name %></h4>
+          <select id="#<%= p.name %>"></select>
+        <% elsif p.input_type == "free text" %>
+          <h4> <%= p.name %></h4>
+          <input id="#<%= p.name %>"></input>
+        <% end %>
         </br>
         <% end %>
       </div>

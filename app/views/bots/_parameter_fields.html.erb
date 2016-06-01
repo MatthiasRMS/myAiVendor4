@@ -1,8 +1,10 @@
+<% @input_types = ["list", "free text"] %>
+
 <div class='row'>
   <div class='col-xs-12 col-md-6'>
     <div style='display: flex;'>
       <%= f.input :name, label: "Name" %>
-      <%= f.input :input_type, label: "Type" %>
+      <%= f.input :input_type, :collection => @input_types, label: "Type", :include_blank => false %>
       <hr>
     </div>
   </div>
