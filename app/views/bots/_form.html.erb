@@ -5,7 +5,7 @@
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :brand, :label => "Brand" %>
-          <%= f.input :endpoint, :label => "Endpoint to send updates" %>
+          <%= f.input :emission_endpoint, :label => "Endpoint to send updates" %>
           <%= f.simple_fields_for :parameters do |p| %>
             <%= render 'parameters/parameter_fields', f: p %>
           <% end %>

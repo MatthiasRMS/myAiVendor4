@@ -11,16 +11,22 @@ class Api::V1::SessionsController < Api::V1::BaseController
    end
  end
 
- def create
-   @session = find_or_create_session(params[:fbid])
-   p @session
-   p params
-   p params["profile_pic"]
-   p profile_picture = Rack::Utils.parse_query(params["profile_pic"]).keys.first
-   @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture)
-   @room.update(profile_picture: profile_picture)
-   @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
-   @message.save!
+  def create
+    @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture)
+    if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"])
+      puts "Valid signature"
+      @session = find_or_create_session(params[:fbid])
+      p @session
+      p params
+      p params["profile_pic"]
+      p profile_picture = Rack::Utils.parse_query(params["profile_pic"]).keys.first
+
+      @room.update(profile_picture: profile_picture)
+      @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
+      @message.save!
+    else
+      puts "Invalid signature"
+    end
  end
 
  private
@@ -41,6 +47,10 @@ class Api::V1::SessionsController < Api::V1::BaseController
   def find_or_create_room(fbid, first_name, profile_picture)
     Room.find_by(["facebook_id = ?", fbid]) ||
     Room.create(facebook_id: fbid, first_name: first_name, profile_picture: profile_picture)
+  end
+
+  def verify_signature(secret, api_key, encoded_key)
+    return true if params["key"] == Digest::SHA1.hexdigest("--#{secret}--#{api_key}--")
   end
 
 end
