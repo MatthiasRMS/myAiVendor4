@@ -101,5 +101,7 @@ en:
       business_intelligence_text_1: "As a My Message Store customer you will get access to a real time dashboard in order to follow up with what is happening."
       business_intelligence_text_2: "All conversation logs are available at any given time. You can browse and cluster them by topics or stories."
       business_intelligence_text_3: "Trend reports are sent on a quaterly basis. This way you can understand how your customers are using this new channel."
-
+  time:
+    formats:
+      long: "%B %d, %Y"
 
