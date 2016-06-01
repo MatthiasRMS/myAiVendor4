@@ -1,2 +1,6 @@
 <h4>brand: <%= @bot.brand %> </h4>
 <h4>sending updates to: <%= @bot.endpoint %> </h4>
+
+<% @bot.parameters.each do |p| %>
+  <%= p.name %>: <%= p.input_type %></br>
+<% end %>

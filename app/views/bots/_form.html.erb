@@ -6,11 +6,11 @@
         <div class="form-inputs">
           <%= f.input :brand, :label => "Brand" %>
           <%= f.input :endpoint, :label => "Endpoint to send updates" %>
-          <%#= f.simple_fields_for :prizes do |p| %>
-            <%#= render 'prize_fields', f: p %>
-          <%# end %>
+          <%= f.simple_fields_for :parameters do |p| %>
+            <%= render 'parameters/parameter_fields', f: p %>
+          <% end %>
           <div>
-            <%#= link_to_add_association 'Ajouter un prix', f, :prizes %>
+            <%= link_to_add_association 'Add a parameter', f, :parameters %>
           </div>
         </div>
         <div class="form-actions text-center">

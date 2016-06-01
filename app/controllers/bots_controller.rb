@@ -18,6 +18,6 @@ class BotsController < ApplicationController
   end
 
   def bot_params
-     params.require(:bot).permit(:brand, :endpoint) #, prizes_attributes: [:id, :title, :quantity, :description, :prize_picture])
+     params.require(:bot).permit(:brand, :endpoint, parameters_attributes: [:input_type, :name])
   end
 end
