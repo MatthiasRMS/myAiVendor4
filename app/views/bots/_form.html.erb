@@ -7,7 +7,7 @@
           <%= f.input :brand, :label => "Brand" %>
           <%= f.input :emission_endpoint, :label => "Endpoint to send updates" %>
           <%= f.simple_fields_for :parameters do |p| %>
-            <%= render 'parameters/parameter_fields', f: p %>
+            <%= render 'parameter_fields', f: p %>
           <% end %>
           <div>
             <%= link_to_add_association 'Add more parameters', f, :parameters %>
