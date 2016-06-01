@@ -17,10 +17,10 @@
         <% @room.bot.parameters.each do |p| %>
         <% if p.input_type == "list" %>
           <h4> <%= p.name %></h4>
-          <select id="#<%= p.name %>"></select>
+          <select id="<%= p.name %>"></select>
         <% elsif p.input_type == "free text" %>
           <h4> <%= p.name %></h4>
-          <input id="#<%= p.name %>"></input>
+          <input id="<%= p.name %>"></input>
         <% end %>
         </br>
         <% end %>
