@@ -12,6 +12,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
  end
 
   def create
+    profile_picture = Rack::Utils.parse_query(params["profile_pic"]).keys.first
     @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture)
     if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"])
       puts "Valid signature"
@@ -19,7 +20,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
       p @session
       p params
       p params["profile_pic"]
-      p profile_picture = Rack::Utils.parse_query(params["profile_pic"]).keys.first
+
 
       @room.update(profile_picture: profile_picture)
       @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
