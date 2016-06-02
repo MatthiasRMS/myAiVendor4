@@ -2,6 +2,7 @@
 <html>
   <head>
     <%= favicon_link_tag 'favicon.ico' %>
+    <%= Gon::Base.render_data %>
     <title><%= "My Messaging Store" || yield(:title) %></title>
     <meta name="description"
         content="<%= ("Commerce for the messaging age" || "").squish %>">
