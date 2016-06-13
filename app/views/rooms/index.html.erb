@@ -16,7 +16,7 @@
     <div  id="mainColumn" class="flexbox-columns-start fixed-height overflow">
 
 
-      <% @rooms.each do |room| %>
+      <% @rooms.sort_by(&:created_at).reverse.each do |room| %>
 
         <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
           <div id="<%= room.id %>" class="room-tab">
