@@ -38,7 +38,9 @@
               </div>
             </div>
             <div class="room-last-update">
-              <%= room.messages.last.created_at.strftime("%b %e, %l:%M%P")  %>
+              <% if room.messages.count > 0 %>
+                <%= room.messages.last.created_at.strftime("%b %e, %l:%M%P")  %>
+              <% end %>
             </div>
           </div>
         <% end %>
