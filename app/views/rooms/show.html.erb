@@ -14,7 +14,7 @@
     </div>
     <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
       <div class="flexbox-columns-start">
-        <% @room.bot.parameters.each do |p| %>
+        <% @room.bot.entities.each do |p| %>
         <% if p.input_type == "list" %>
           <h4> <%= p.name %></h4>
           <select id="<%= p.name %>"></select>
