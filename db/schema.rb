@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601140029) do
+ActiveRecord::Schema.define(version: 20160614142830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 20160601140029) do
     t.string   "api_key"
   end
 
+  create_table "entities", force: :cascade do |t|
+    t.string   "input_type"
+    t.integer  "bot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+    t.index ["bot_id"], name: "index_entities_on_bot_id", using: :btree
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at",          null: false
@@ -49,15 +58,6 @@ ActiveRecord::Schema.define(version: 20160601140029) do
     t.jsonb    "structured_messages"
     t.jsonb    "context"
     t.index ["room_id"], name: "index_messages_on_room_id", using: :btree
-  end
-
-  create_table "parameters", force: :cascade do |t|
-    t.string   "input_type"
-    t.integer  "bot_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "name"
-    t.index ["bot_id"], name: "index_parameters_on_bot_id", using: :btree
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20160601140029) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "entities", "bots"
   add_foreign_key "messages", "rooms"
-  add_foreign_key "parameters", "bots"
   add_foreign_key "rooms", "bots"
 end
