@@ -16,7 +16,7 @@
     <div  id="mainColumn" class="flexbox-columns-start fixed-height overflow">
 
 
-      <% @rooms.sort_by {|r| r.messages.last.created_at}.reverse.each do |room| %>
+      <% @rooms.sort_by(&:created_at).reverse.each do |room| %>
 
         <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
           <div id="<%= room.id %>" class="room-tab">
@@ -38,7 +38,9 @@
               </div>
             </div>
             <div class="room-last-update">
-              <%= room.messages.last.created_at.strftime("%b %e, %l:%M%P")  %>
+              <% if room.messages.count > 0 %>
+                <%= room.messages.last.created_at.strftime("%b %e, %l:%M%P")  %>
+              <% end %>
             </div>
           </div>
         <% end %>
