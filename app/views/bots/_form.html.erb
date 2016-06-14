@@ -6,7 +6,8 @@
         <div class="form-inputs">
           <%= f.input :brand, :label => "Brand" %>
           <%= f.input :emission_endpoint, :label => "Endpoint to send updates" %>
-          <%= f.input :service, :label => "NLP service used" %>
+          <label>NLP service used</label></br>
+          <%= f.select(:service, ["Wit", "API.ai"], {:include_blank => false},:label => "NLP service used") %>
           <%= f.input :access_token, :label => "Access token for this service" %>
           <%#= f.simple_fields_for :parameters do |p| %>
             <%#= render 'parameter_fields', f: p %>
