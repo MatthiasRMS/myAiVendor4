@@ -6,11 +6,13 @@
         <div class="form-inputs">
           <%= f.input :brand, :label => "Brand" %>
           <%= f.input :emission_endpoint, :label => "Endpoint to send updates" %>
-          <%= f.simple_fields_for :parameters do |p| %>
-            <%= render 'parameter_fields', f: p %>
-          <% end %>
+          <%= f.input :service, :label => "NLP service used" %>
+          <%= f.input :access_token, :label => "Access token for this service" %>
+          <%#= f.simple_fields_for :parameters do |p| %>
+            <%#= render 'parameter_fields', f: p %>
+          <%# end %>
           <div>
-            <%= link_to_add_association 'Add more parameters', f, :parameters %>
+            <%#= link_to_add_association 'Add more parameters', f, :parameters %>
           </div>
         </div>
         <div class="form-actions text-center">
