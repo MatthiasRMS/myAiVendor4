@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614142830) do
+ActiveRecord::Schema.define(version: 20160614144337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20160614142830) do
     t.string   "reception_endpoint"
     t.string   "secret"
     t.string   "api_key"
+  end
+
+  create_table "end_users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "profile_picture"
+    t.string   "gender"
+    t.integer  "facebook_id"
+    t.string   "local_time_zone"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "entities", force: :cascade do |t|
