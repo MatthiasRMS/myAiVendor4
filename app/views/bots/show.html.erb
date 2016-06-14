@@ -3,8 +3,10 @@
   <div class="bot-request-details">
     <h3>Bot details</h3>
     <p><strong>Brand:</strong> <%= @bot.brand %> </p>
-    <p><strong>Sending updates to:</strong> <%= @bot.reception_endpoint %> </p>
-    <% @bot.parameters.each do |p| %>
+    <p><strong>Sending updates to:</strong> <%= @bot.emission_endpoint %> </p>
+    <p><strong>Service used:</strong> <%= @bot.service %> </p>
+    <p><strong>Access token:</strong> <%= @bot.access_token %> </p>
+    <% @bot.entities.each do |p| %>
       <strong><%= p.name %>:</strong> <%= p.input_type %></br>
     <% end %>
   </div>
