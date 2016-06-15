@@ -51,6 +51,11 @@ class Api::V1::SessionsController < Api::V1::BaseController
   end
 
   def verify_signature(secret, api_key, encoded_key)
+    p "VERIFICATION"
+    p encoded_key
+    p secret
+    p api_key
+    p Digest::SHA1.hexdigest("--#{secret}--#{api_key}--")
     return true if params["key"] == Digest::SHA1.hexdigest("--#{secret}--#{api_key}--")
   end
 
