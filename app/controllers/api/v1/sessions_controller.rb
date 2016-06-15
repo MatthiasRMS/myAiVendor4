@@ -12,7 +12,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
  end
 
   def create
-    profile_picture = Rack::Utils.parse_query(params["profile_pic"]).keys.first
+    profile_picture = Rack::Utils.parse_query(params[:profile_pic]).keys.first
     @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture, params["bot_id"])
     if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"])
       puts "Valid signature"
@@ -59,5 +59,21 @@ class Api::V1::SessionsController < Api::V1::BaseController
     p Digest::SHA1.hexdigest("--#{secret}--#{api_key}--")
     return true if params["key"] == Digest::SHA1.hexdigest("--#{secret}--#{api_key}--")
   end
+
+  # def update_session_status
+  #   # 'Backer_assigned' (orange sticker)
+  #   if current_intent = lost && #some has clicked on the conversation
+  #     status = 'Backer_assigned'
+  #   # 'Blocked' session (red sticker)
+  #   elsif current_intent = lost
+  #     status = 'Blocked'
+  #   # 'Active' session (green sticker)
+  #   elsif now - last_update < 300
+  #     status = 'Active'
+  #   #'Inactive' session (grey sticker)
+  #   else
+  #     status = 'Inactive'
+  #   end
+  # end
 
 end
