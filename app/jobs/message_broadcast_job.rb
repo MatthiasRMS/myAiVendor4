@@ -2,12 +2,15 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
+    p "PERFORM"
     if message.sender == "user"
-      ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_message(message), context: message.context
+      ActionCable.server.broadcast "room_channel_#{message.room_id}", message: message.content
       ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
     elsif message.sender == "bot"
-      ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message), context: message.context
-      ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
+      p "FOR BOT"
+      p message.room_id
+      p ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message)
+      p ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
     end
   end
 
@@ -18,10 +21,10 @@ class MessageBroadcastJob < ApplicationJob
   end
 
   def render_bot_message(message)
-    p message
-    p "CLASS"
-    p message.content.class
-    p eval(message.content).class
+    # p message
+    # p "CLASS"
+    # p message.content.class
+    # p eval(message.content).class
     if eval(message.content)[:attachment].present?
       if eval(message.content)[:attachment][:payload][:template_type] == "generic"
        ApplicationController.renderer.render(partial: 'messages/structured_message_carousel', locals: { message: eval(message.content)})

@@ -63,7 +63,7 @@
     </div>
     <div class="panel-body fixed-height">
       <div id="wrapper">
-        <div class="messages flex-item">
+        <div id="0" class="messages flex-item">
           <% @room.messages.order(created_at: :asc).each do |message| %>
             <% if message.content.include?("attachment") %>
               <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
