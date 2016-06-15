@@ -13,11 +13,12 @@ $('#context-input').click(function(e){
       data[$(this).attr("id")] = $(this).val();
     }
   });
-   $(".panel-body select").slice(0, $(this).length).each(function() {
+  $(".panel-body select").slice(0, $(this).length).each(function() {
     if($(this).val() != ""){
       data[$(this).attr("id")] = $(this).val();
      }
   });
+   data["fbid"] = gon.fbid
    console.log(data)
   $.ajax({
     type: "POST",
