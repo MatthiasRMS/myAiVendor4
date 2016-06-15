@@ -14,7 +14,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
   def create
     profile_picture = Rack::Utils.parse_query(params["profile_pic"]).keys.first
     @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture)
-    if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"])
+    if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"], params["bot_id"])
       puts "Valid signature"
       @session = find_or_create_session(params[:fbid])
       p @session
@@ -45,9 +45,10 @@ class Api::V1::SessionsController < Api::V1::BaseController
     Session.create(facebook_id: fbid, context: {})
   end
 
-  def find_or_create_room(fbid, first_name, profile_picture)
+  def find_or_create_room(fbid, first_name, profile_picture, api_key)
+    bot = Bot.find_by api_key: api_key
     Room.find_by(["facebook_id = ?", fbid]) ||
-    Room.create(facebook_id: fbid, first_name: first_name, profile_picture: profile_picture)
+    Room.create(facebook_id: fbid, first_name: first_name, profile_picture: profile_picture, bot_id: bot.id )
   end
 
   def verify_signature(secret, api_key, encoded_key)
