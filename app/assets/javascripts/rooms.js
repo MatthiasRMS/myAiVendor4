@@ -18,6 +18,8 @@ $('#context-input').click(function(e){
       data[$(this).attr("id")] = $(this).val();
      }
   });
+  console.log("gon");
+  console.log(gon.fbid);
    data["fbid"] = gon.fbid + 1;
    console.log(data);
   $.ajax({
