@@ -13,8 +13,8 @@ class Api::V1::SessionsController < Api::V1::BaseController
 
   def create
     profile_picture = Rack::Utils.parse_query(params["profile_pic"]).keys.first
-    @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture)
-    if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"], params["bot_id"])
+    @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture, params["bot_id"])
+    if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"])
       puts "Valid signature"
       @session = find_or_create_session(params[:fbid])
       p @session
