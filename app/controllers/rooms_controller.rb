@@ -17,7 +17,6 @@ class RoomsController < ApplicationController
 
       @room = Room.find(params[:id])
       p @room.bot
-      gon.fbid = @room.facebook_id
       gon.endpoint = @room.bot.emission_endpoint
       @messages = Message.where(room_id: @room.id)
       @no_footer = true
