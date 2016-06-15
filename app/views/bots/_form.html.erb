@@ -9,11 +9,11 @@
           <label>NLP service used</label></br>
           <%= f.select(:service, ["Wit", "API.ai"], {:include_blank => false},:label => "NLP service used") %>
           <%= f.input :access_token, :label => "Access token for this service" %>
-          <%#= f.simple_fields_for :parameters do |p| %>
-            <%#= render 'parameter_fields', f: p %>
-          <%# end %>
+          <%= f.simple_fields_for :entities do |p| %>
+            <%= render 'entity_fields', f: p %>
+          <% end %>
           <div>
-            <%#= link_to_add_association 'Add more parameters', f, :parameters %>
+            <%= link_to_add_association 'Add more parameters', f, :entities %>
           </div>
         </div>
         <div class="form-actions text-center">

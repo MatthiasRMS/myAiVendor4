@@ -9,6 +9,7 @@
     <% @bot.entities.each do |p| %>
       <strong><%= p.name %>:</strong> <%= p.input_type %></br>
     <% end %>
+    <%= link_to "Edit bot settings", edit_bot_path(@bot) %>
   </div>
 
   <div class="api_details">
