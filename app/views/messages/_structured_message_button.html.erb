@@ -18,7 +18,7 @@
         <div class="structured-button text-center">
           <% if button["title"].present? %>
             <% p button %>
-            <p style="color:#0084FF;"><%= button.fetch(:title) %></p>
+            <p style="color:#0084FF;"><%= button["title"] %></p>
           <% end %>
         </div>
       <% end %>
