@@ -9,11 +9,16 @@ $('#context-input').click(function(e){
   var session_id = $('.panel-default')[0].id;
   var data = {}
   $(".panel-body input").slice(0, $(this).length - 3).each(function() {
-    data[$(this).attr("id")] = $(this).val();
+    if($(this).val() != ""){
+      data[$(this).attr("id")] = $(this).val();
+    }
   });
    $(".panel-body select").slice(0, $(this).length).each(function() {
-    data[$(this).attr("id")] = $(this).val();
+    if($(this).val() != ""){
+      data[$(this).attr("id")] = $(this).val();
+     }
   });
+   console.log(data)
   $.ajax({
     type: "POST",
     data: data,
