@@ -44,6 +44,7 @@ gem 'react-rails', '1.6.1'
 gem 'activeadmin', github: 'activeadmin'
 gem 'cocoon'
 gem 'gon'
+gem 'rest-client'
 gem 'rails_12factor', group: :production
 
 source 'https://rails-assets.org' do
