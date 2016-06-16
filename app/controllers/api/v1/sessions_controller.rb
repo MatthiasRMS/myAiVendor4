@@ -76,4 +76,27 @@ class Api::V1::SessionsController < Api::V1::BaseController
   #   end
   # end
 
+
+  # This method enables to update the entities directly
+  def context_update
+    session = find_session(params[:fbid])
+    p "FETCHED SESSION"
+    p session.id
+    context = session.context
+    p "CONTEXT"
+    context["category"] = params[:category]
+    context["brand"] = params[:brand]
+    context["price range"] = params[:price_range]
+
+    session.update(context: context)
+    p "UPDATED CONTEXT"
+    p session.context
+    sender = Messenger::Bot::Transmitter.new(params[:fbid])
+    username = sender.get_profile[:body]["first_name"]
+    answer(session, username, sender)
+    respond_to do |format|
+      format.js
+  end
+
 end
+

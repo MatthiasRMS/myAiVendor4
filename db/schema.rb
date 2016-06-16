@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614151919) do
+ActiveRecord::Schema.define(version: 20160616081656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20160614151919) do
     t.string   "api_key"
     t.string   "service"
     t.string   "access_token"
+    t.text     "bot_description"
   end
 
   create_table "end_users", force: :cascade do |t|

@@ -8,6 +8,12 @@ class BotsController < ApplicationController
     @bot = Bot.find(params[:id])
   end
 
+  def index
+    @bots = Bot.all
+    #@bot = @bots.last
+    @no_footer = true
+  end
+
   def create
     @bot = Bot.new(bot_params)
     @bot.secret = SecureRandom.hex
@@ -30,6 +36,6 @@ class BotsController < ApplicationController
   end
 
   def bot_params
-     params.require(:bot).permit(:service, :access_token, :brand, :reception_endpoint, :emission_endpoint, entities_attributes: [:id, :input_type, :name, :_destroy])
+     params.require(:bot).permit(:service, :access_token, :brand, :bot_description, :reception_endpoint, :emission_endpoint, entities_attributes: [:id, :input_type, :name, :_destroy])
   end
 end
