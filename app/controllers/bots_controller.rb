@@ -36,6 +36,6 @@ class BotsController < ApplicationController
   end
 
   def bot_params
-     params.require(:bot).permit(:service, :access_token, :brand, :reception_endpoint, :emission_endpoint, entities_attributes: [:id, :input_type, :name, :_destroy])
+     params.require(:bot).permit(:service, :access_token, :brand, :bot_description, :reception_endpoint, :emission_endpoint, entities_attributes: [:id, :input_type, :name, :_destroy])
   end
 end

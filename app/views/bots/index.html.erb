@@ -1,16 +1,20 @@
 <div class="container head-spacing">
-    <div class="bot-index-display-flex bot-index-header">
-      <h4>Index</h4>
-      <h4>Bot Name</h4>
-      <h4>Creation date</h4>
-      <h4>Actions</h4>
-    </div>
-  <% @bots.each do |bot| %>
-    <div class="bot-index-display-flex">
-      <p><%= bot.id  %></p>
-      <p><%= bot.brand %></p>
-      <p><%= bot.created_at.strftime("%d %B %Y") %></p>
-      <%= link_to "Edit", bot_path(bot), :id=>"bot-editing-btn", :class=>"btn btn-primary" %>
-    </div>
-  <% end %>
+  <table style="border-spacing: 66px 14px; border-collapse: separate;">
+    <tr>
+      <td><h4>Index</h4></td>
+      <td><h4>Bot Name</h4></td>
+      <td><h4>Bot Description</h4></td>
+      <td><h4>Creation date</h4></td>
+      <td><h4>Actions</h4></td>
+    </tr>
+    <% @bots.each do |bot| %>
+      <tr>
+        <td><p><%= bot.id  %></p></td>
+        <td><p><%= bot.brand %></p></td>
+        <td><p><%= bot.bot_description %></p></td>
+        <td><p><%= bot.created_at.strftime("%d %B %Y") %></p></td>
+        <td><%= link_to "Edit", bot_path(bot), :id=>"bot-editing-btn", :class=>"btn btn-primary" %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>
