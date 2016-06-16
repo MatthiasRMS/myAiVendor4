@@ -23,10 +23,10 @@ class Api::V1::SessionsController < Api::V1::BaseController
       p params["msg"].class
       p params["profile_pic"]
 
-
       @room.update(profile_picture: profile_picture)
       @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
       @message.save!
+      @session.update(status: update_session_status(@session, @room) )
     else
       puts "Invalid signature"
     end
@@ -62,21 +62,18 @@ class Api::V1::SessionsController < Api::V1::BaseController
     return true if params["key"] == Digest::SHA1.hexdigest("--#{secret}--#{api_key}--")
   end
 
-  # def update_session_status
-  #   # 'Backer_assigned' (orange sticker)
-  #   if current_intent = lost && #some has clicked on the conversation
-  #     status = 'Backer_assigned'
-  #   # 'Blocked' session (red sticker)
-  #   elsif current_intent = lost
-  #     status = 'Blocked'
-  #   # 'Active' session (green sticker)
-  #   elsif now - last_update < 300
-  #     status = 'Active'
-  #   #'Inactive' session (grey sticker)
-  #   else
-  #     status = 'Inactive'
-  #   end
-  # end
+  def update_session_status(@session, @room)
+    # 'Backer_assigned' (orange sticker)
+    if @session.context["intent"]== lost
+      status = 'blocked'
+    # 'Active' session (green sticker)
+    elsif Time.now - @room.messages.last.created_at < 3000
+      status = 'active'
+    #'Inactive' session (grey sticker)
+    else
+      status = 'inactive'
+    end
+  end
 
 end
 

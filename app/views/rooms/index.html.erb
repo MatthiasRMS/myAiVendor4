@@ -32,9 +32,9 @@
                 <%= room.first_name %>
               </div>
               <div class="last-session-status">
-                <%#= session.status %>
                 <%= image_tag("green-circle.png", width: '10')%>
-                <%= link_to "All good", room_path(room) %>
+                <%= link_to  Session.where(facebook_id: room.facebook_id).last.status, room_path(room) %>
+
               </div>
             </div>
             <div class="room-last-update">

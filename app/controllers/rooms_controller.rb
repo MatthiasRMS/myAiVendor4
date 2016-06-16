@@ -21,5 +21,8 @@ class RoomsController < ApplicationController
       @messages = Message.where(room_id: @room.id)
       @no_footer = true
       @session = Session.where(facebook_id: @room.facebook_id).last
+      if @session.status == "blocked"
+        @session.update(status: "backer_assigned")
+      end
   end
 end
