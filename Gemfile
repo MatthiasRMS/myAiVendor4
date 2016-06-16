@@ -57,7 +57,14 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'byebug', platform: :mri
+  gem 'awesome_print'
+  gem 'nokogiri'
+  gem 'quiet_assets'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'spring'
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
