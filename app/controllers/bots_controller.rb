@@ -8,6 +8,12 @@ class BotsController < ApplicationController
     @bot = Bot.find(params[:id])
   end
 
+  def index
+    @bots = Bot.all
+    #@bot = @bots.last
+    @no_footer = true
+  end
+
   def create
     @bot = Bot.new(bot_params)
     @bot.secret = SecureRandom.hex

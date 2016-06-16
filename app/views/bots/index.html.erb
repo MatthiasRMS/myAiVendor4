@@ -1,0 +1,16 @@
+<div class="container head-spacing">
+    <div class="bot-index-display-flex bot-index-header">
+      <h4>Index</h4>
+      <h4>Bot Name</h4>
+      <h4>Creation date</h4>
+      <h4>Actions</h4>
+    </div>
+  <% @bots.each do |bot| %>
+    <div class="bot-index-display-flex">
+      <p><%= bot.id  %></p>
+      <p><%= bot.brand %></p>
+      <p><%= bot.created_at.strftime("%d %B %Y") %></p>
+      <%= link_to "Edit", bot_path(bot), :id=>"bot-editing-btn", :class=>"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

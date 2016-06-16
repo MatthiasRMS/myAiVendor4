@@ -96,7 +96,8 @@
     </div>
     <div class="details-body flexbox-columns-start">
       <h4>Chatbot details</h4>
-      <p>Company name: <%= @room.bot.brand %></p>
+      <p>Company name: <%= link_to @room.bot.brand, bot_path(@room.bot) %></p>
+
       <p>Creation date: <%= @room.bot.created_at.strftime("%d %B %Y") %></p>
       <p>Chat main purpose:</p>
       <p># of sessions:</p>
