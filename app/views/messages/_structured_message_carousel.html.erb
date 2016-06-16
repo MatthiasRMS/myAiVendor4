@@ -9,21 +9,23 @@
 
 <!-- First type identified: the 'Generic' template -->
 
-  <div class="carousel flexbox-columns-end">
+<div class="carousel flexbox-columns-end">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
+  <% unless elements.nil? %>
     <% elements.each do |element| %>
-     <% unless element.nil? %>
+      <% unless element.nil? %>
       <div class="generic_card">
         <div class="structured-image">
+        <% unless element[:image_url].nil? %>
           <%= link_to root_path do %>
-
-             <%= image_tag(element.fetch(:image_url), width: '200')%>
+             <%= image_tag(element[:image_url], width: '200')%>
           <% end %>
+        <% end %>
         </div>
         <div class="structured-text">
-          <p><strong><%= element.fetch(:title) %></strong></p>
+          <p><strong><%= element[:title] %></strong></p>
           <% if element[:subtitle].present? %>
-            <p><%= element.fetch(:subtitle) %></p>
+            <p><%= element[:subtitle] %></p>
           <% end %>
         </div>
 
@@ -32,14 +34,17 @@
         <%# buttons = element.select {|k,v| k === "buttons"} %>
 
         <!-- Iterating on the buttons in order to display all the CTA -->
+      <% unless buttons.nil? %>
         <% buttons.each do |button| %>
           <div class="structured-button text-center">
-            <p style="color:#0084FF;"><%= button.fetch(:title) %></p>
+            <p style="color:#0084FF;"><%= button[:title] %></p>
           </div>
         <% end %>
       <% end %>
+      <% end %>
       </div>
     <% end %>
+  <% end %>
   </div>
 
 
