@@ -12,6 +12,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
  end
 
   def create
+    params.permit!
     profile_picture = CGI.unescape(params[:profile_pic])
     @room = find_or_create_room(params[:fbid], params[:first_name], profile_picture, params["bot_id"])
     if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"])
