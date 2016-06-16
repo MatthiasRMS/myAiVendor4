@@ -1,8 +1,9 @@
-<div class="container head-spacing">
+<div class="container-large head-spacing">
   <table style="border-spacing: 66px 14px; border-collapse: separate;">
-    <tr>
+    <tr style="color: #FCC012;">
       <td><h4>Index</h4></td>
       <td><h4>Bot Name</h4></td>
+      <td><h4>Platform used</h4></td>
       <td><h4>Bot Description</h4></td>
       <td><h4>Creation date</h4></td>
       <td><h4>Actions</h4></td>
@@ -11,6 +12,7 @@
       <tr>
         <td><p><%= bot.id  %></p></td>
         <td><p><%= bot.brand %></p></td>
+        <td><p><%= bot.service %></p></td>
         <td><p><%= bot.bot_description %></p></td>
         <td><p><%= bot.created_at.strftime("%d %B %Y") %></p></td>
         <td><%= link_to "Edit", bot_path(bot), :id=>"bot-editing-btn", :class=>"btn btn-primary" %></td>
