@@ -19,6 +19,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
       @session = find_or_create_session(params[:fbid])
       p @session
       p params
+      p params["msg"]
       p params["profile_pic"]
 
 
