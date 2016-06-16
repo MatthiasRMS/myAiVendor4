@@ -99,7 +99,7 @@
       <p>Company name: <%= link_to @room.bot.brand, bot_path(@room.bot) %></p>
 
       <p>Creation date: <%= @room.bot.created_at.strftime("%d %B %Y") %></p>
-      <p>Chat main purpose:</p>
+      <p>Chat description: <%= @room.bot.bot_description %></p>
       <p># of sessions:</p>
       <p># of users: </p>
       <h4>User details</h4>
