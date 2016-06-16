@@ -14,6 +14,8 @@
     </div>
     <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
       <div class="flexbox-columns-start">
+        <label>Update Message</label>
+        <input id="msg" type="text">
         <% @room.bot.entities.each do |p| %>
         <% if p.input_type == "list" %>
           <h4> <%= p.name %></h4>
