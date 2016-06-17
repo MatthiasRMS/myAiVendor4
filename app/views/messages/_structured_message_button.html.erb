@@ -4,7 +4,7 @@
 <% text = message[:attachment][:payload][:text] %>
 <% buttons = message[:attachment][:payload][:buttons] %>
 <% image = message[:attachment][:payload][:url] %>
-
+<% p "hello" %>
 <!-- Second type identified: the 'Button' template -->
   <div class="carousel flexbox-columns-end">
     <!-- Iterating on the elements of the mssage in order to display all of them -->
@@ -12,7 +12,6 @@
       <div class="structured-text">
         <%= text %>
       </div>
-
       <!-- Iterating on the buttons in order to display all the CTA -->
       <% buttons.each do |button| %>
         <div class="structured-button text-center">
