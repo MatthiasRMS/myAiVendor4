@@ -66,7 +66,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
     return true if params["key"] == Digest::SHA1.hexdigest("--#{secret}--#{api_key}--")
   end
 
-  def update_session_status(@session, @room)
+  def update_session_status(session, room)
     # 'Backer_assigned' (orange sticker)
     if @session.context["intent"]== lost
       status = 'blocked'
