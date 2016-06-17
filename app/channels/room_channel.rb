@@ -18,6 +18,7 @@ class RoomChannel < ApplicationCable::Channel
       @message.content = data['message']
       @message.room_id = data["id"].to_i
       @message.save!
+      MessageBroadcastJob.perform_later @message
     end
   end
 end
