@@ -3,14 +3,16 @@ class MessageBroadcastJob < ApplicationJob
 
   def perform(message)
     p "PERFORM"
+    room = Room.find(message.room_id)
+    session = Session.where(facebook_id: room.facebook_id).last
     if message.sender == "user"
       ActionCable.server.broadcast "room_channel_#{message.room_id}", message: message.content
-      ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
+      ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}", status: "#{session.status}"
     elsif message.sender == "bot"
       p "FOR BOT"
       p message.room_id
       p ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message)
-      p ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}"
+      p ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}", status: "#{session.status}"
     end
   end
 
