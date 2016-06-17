@@ -77,6 +77,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
     else
       status = 'inactive'
     end
+    status
   end
 
 end
