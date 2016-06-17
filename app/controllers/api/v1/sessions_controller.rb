@@ -68,10 +68,10 @@ class Api::V1::SessionsController < Api::V1::BaseController
 
   def update_session_status(session, room)
     # 'Backer_assigned' (orange sticker)
-    if @session.context["intent"]== lost
+    if session.context["intent"]== lost
       status = 'blocked'
     # 'Active' session (green sticker)
-    elsif Time.now - @room.messages.last.created_at < 3000
+    elsif Time.now - room.messages.last.created_at < 3000
       status = 'active'
     #'Inactive' session (grey sticker)
     else
