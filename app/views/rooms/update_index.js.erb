@@ -1,2 +1,23 @@
 console.log("UPDATE");
 $(".messages").empty();
+$(".details-body").empty();
+
+
+
+$(".details-body").append("<h4>Chatbot details</h4>\
+                          <p>Company name: <%= link_to @room.bot.brand, bot_path(@room.bot) %></p>\
+                          <p>Creation date: <%= @room.bot.created_at.strftime('%d %B %Y') %></p>\
+                          <p>Chat main purpose:</p>\
+                          <p># of sessions:</p>\
+                          <p># of users: </p>\
+                          <h4>User details</h4>\
+                          <p>First name: <%= @room.first_name %></p>\
+                          <p>Local time:</p>\
+                          <p># of sessions:</p>\
+                          <h4>Chatbot / User history</h4>\
+                          <p>First conversation date:</p>\
+                          <p>Total number of sessions:</p>\
+                          <p>Current conversation starting date:</p>\
+                          <p># of messages in current session:</p>\
+                          <p># of help required in this session:</p>");
+console.log("UPDATE");
