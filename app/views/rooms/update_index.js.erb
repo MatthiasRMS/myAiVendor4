@@ -18,7 +18,7 @@ $(".details-body").empty();
     <% end %>
   <% end %>
 <% end %>
-
+$("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
 
 $(".details-body").append("<h4>Chatbot details</h4>\
                           <p>Company name: <%= j link_to @room.bot.brand, bot_path(@room.bot) %></p>\
