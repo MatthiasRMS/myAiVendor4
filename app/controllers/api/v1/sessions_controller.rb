@@ -30,8 +30,8 @@ class Api::V1::SessionsController < Api::V1::BaseController
         @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
       end
       @message.save!
-      MessageBroadcastJob.perform_now @message
       @session.update(status: update_session_status(@session, @room) )
+      MessageBroadcastJob.perform_now @message
     else
       puts "Invalid signature"
     end
