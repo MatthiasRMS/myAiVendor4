@@ -33,7 +33,7 @@
               </div>
               <div class="last-session-status">
                 <%= image_tag("green-circle.png", width: '10')%>
-                <%= link_to  Session.where(facebook_id: room.facebook_id).last.status, room_path(room) %>
+                <%= link_to  Session.where(facebook_id: room.facebook_id).last.statu, room_path(room) %>
 
               </div>
             </div>
@@ -65,18 +65,20 @@
       <div id="wrapper">
         <div id="0" class="messages flex-item">
           <% @room.messages.order(created_at: :asc).each do |message| %>
-            <% if message.content.include?("attachment") %>
-              <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
-                <%= render "messages/structured_message_carousel", message: eval(message.content) %>
-              <% elsif eval(message.content)[:attachment][:payload][:template_type] == "button" %>
-                <%= render "messages/structured_message_button", message: eval(message.content) %>
-              <% elsif eval(message.content)[:attachment][:payload][:template_type] == "receipt" %>
-                <%= render "messages/structured_message_receipt", message: eval(message.content) %>
+            <% unless message.content.nil? %>
+              <% if message.content.include?("attachment") %>
+                <% if eval(message.content)[:attachment][:payload][:template_type] == "generic" %>
+                  <%= render "messages/structured_message_carousel", message: eval(message.content) %>
+                <% elsif eval(message.content)[:attachment][:payload][:template_type] == "button" %>
+                  <%= render "messages/structured_message_button", message: eval(message.content) %>
+                <% elsif eval(message.content)[:attachment][:payload][:template_type] == "receipt" %>
+                  <%= render "messages/structured_message_receipt", message: eval(message.content) %>
+                <% else %>
+                  <%= render "messages/image", message: message %>
+              <% end %>
               <% else %>
-                <%= render "messages/image", message: message %>
-            <% end %>
-            <% else %>
-              <%= render "messages/text_message", message: message %>
+                <%= render "messages/text_message", message: message %>
+              <% end %>
             <% end %>
           <% end %>
         </div>
