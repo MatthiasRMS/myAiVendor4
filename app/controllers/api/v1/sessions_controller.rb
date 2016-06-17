@@ -25,7 +25,11 @@ class Api::V1::SessionsController < Api::V1::BaseController
 
 
       @room.update(profile_picture: profile_picture)
-      @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
+      if params["msg"].include? "attachment"
+        @message = Message.new({structured_messages: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
+      else
+        @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
+      end
       @message.save!
     else
       puts "Invalid signature"
