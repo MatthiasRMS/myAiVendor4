@@ -10,7 +10,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
   received: (data) ->
     console.log("RECEIVED")
     console.log("hello")
-    console.log($(".panel-heading")[0].id))
+    console.log($(".panel-heading")[0].id)
     console.log(data["room"])
     if $(".panel-heading")[0].id == data["room"]
       $('.messages').append data['message']
