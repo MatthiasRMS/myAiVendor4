@@ -9,11 +9,11 @@
   <!-- Direct access to all the conversations -->
 
   <div class="panel panel-default">
-    <div class="panel-heading">
+    <div id="<%= @room.id %>" class="panel-heading">
       <h4>All conversations</h4>
     </div>
 
-    <div  id="mainColumn" class="flexbox-columns-start fixed-height overflow">
+    <div id="mainColumn" class="flexbox-columns-start fixed-height overflow">
 
 
       <% @rooms.sort_by {|r| r.messages.last.created_at}.reverse.each do |room| %>
