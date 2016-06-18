@@ -12,7 +12,9 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     console.log("hello")
     console.log($(".panel-heading")[0].id)
     console.log(data["room"])
+    console.log($(".panel-heading")[0].id == data["room"])
     if $(".panel-heading")[0].id == data["room"]
+      console.log("here is true")
       $('.messages').append data['message']
     if data["room"] == 0
       $("#"+data["room"]).css("color", "red")
