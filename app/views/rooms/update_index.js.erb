@@ -1,6 +1,6 @@
 console.log("UPDATE");
 $(".messages").empty();
-$(".panel-heading")[0].id = <%= @room.id %>
+$(".panel-heading").id = <%= @room.id %>
 $(".details-body").empty();
 <% @messages.each do |m| %>
   <% if m.content.present? %>
