@@ -21,24 +21,23 @@ class MessageBroadcastJob < ApplicationJob
   def render_message(message)
     ApplicationController.renderer.render(partial: 'messages/text_message', locals: { message: message })
   end
-
-  def render_bot_message(message)
+   def render_bot_message(message)
     # p message
     # p "CLASS"
     # p message.content.class
     # p eval(message.content).class
       if message.structured_messages.nil? == false && message.structured_messages["attachment"].present?
         if (eval(message.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "generic"
-          render "messages/structured_message_carousel", message: (eval(message.structured_messages).with_indifferent_access)
+          ApplicationController.renderer.render(partial: "messages/structured_message_carousel", locals: { message: (eval(message.structured_messages).with_indifferent_access)})
         elsif (eval(message.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "button"
-          render "messages/structured_message_button", message: (eval(message.structured_messages).with_indifferent_access)
+          ApplicationController.renderer.render(partial: "messages/structured_message_button", locals: { message: (eval(message.structured_messages).with_indifferent_access)})
         elsif (eval(message.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "receipt"
-          render "messages/structured_message_receipt", message: (eval(message.structured_messages).with_indifferent_access)
+          ApplicationController.renderer.render(partial: "messages/structured_message_receipt",locals: { message: (eval(message.structured_messages).with_indifferent_access)})
         else
-          render "messages/image", message: message
+          ApplicationController.renderer.render(partial: "messages/image",locals: { message: message })
       end
     else
-      render "messages/text_message", message: message
+      ApplicationController.renderer.render(partial: "messages/text_message", locals: { message: message })
     end
   end
 end
