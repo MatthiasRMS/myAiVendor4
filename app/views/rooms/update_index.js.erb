@@ -3,19 +3,20 @@ $(".messages").empty();
 $(".panel-heading")[0].id = <%= @room.id %>
 $(".details-body").empty();
 <% @messages.each do |m| %>
-  <% if message.structured_messages.nil? == false && message.structured_messages["attachment"].present? %>
-    <% if (eval(message.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "generic" %>
-      $(".messages").append("<%= j render "messages/structured_message_carousel", message: (eval(message.structured_messages).with_indifferent_access) %>");
-    <% elsif (eval(message.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "button" %>
-      $(".messages").append("<%= j render "messages/structured_message_button", message: (eval(message.structured_messages).with_indifferent_access) %>");
-    <% elsif (eval(message.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "receipt" %>
-      $(".messages").append("<%= j render "messages/structured_message_receipt", message: (eval(message.structured_messages).with_indifferent_access) %>");
+  <% if m.structured_messages.nil? == false && m.structured_messages["attachment"].present? %>
+    <% if (eval(m.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "generic" %>
+      $(".messages").append("<%= j render "messages/structured_message_carousel", message: (eval(m.structured_messages).with_indifferent_access) %>");
+    <% elsif (eval(m.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "button" %>
+      $(".messages").append("<%= j render "messages/structured_message_button", message: (eval(m.structured_messages).with_indifferent_access) %>");
+    <% elsif (eval(m.structured_messages).with_indifferent_access)[:attachment][:payload][:template_type] == "receipt" %>
+      $(".messages").append("<%= j render "messages/structured_message_receipt", message: (eval(m.structured_messages).with_indifferent_access) %>");
     <% else %>
-      $(".messages").append("<%= j render "messages/image", message: message %>");
+      $(".messages").append("<%= j render "messages/image", message: m %>");
     <% end %>
   <% else %>
-    $(".messages").append("<%= j render "messages/text_message", message: message %>");
+    $(".messages").append("<%= j render "messages/text_message", message: m %>");
   <% end %>
+<% end %>
 
 
 $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
