@@ -6,7 +6,7 @@ class MessageBroadcastJob < ApplicationJob
     room = Room.find(message.room_id)
     session = Session.where(facebook_id: room.facebook_id).last
     if message.sender == "user"
-      ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
+      ActionCable.server.broadcast "room_channel_#{message.room_id}", message: ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
       ActionCable.server.broadcast "room_channel_#{message.room_id}", message: message.content
       ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}", status: "#{session.status}"
     elsif message.sender == "bot"
