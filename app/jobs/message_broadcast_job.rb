@@ -7,12 +7,12 @@ class MessageBroadcastJob < ApplicationJob
     session = Session.where(facebook_id: room.facebook_id).last
     if message.sender == "user"
       ActionCable.server.broadcast "room_channel_#{message.room_id}", message: ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
-      ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}", status: "#{session.status}"
+      ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}", status: "#{session.status}", message: ApplicationController.renderer.render(partial: 'messages/bot_message', locals: { message: message })
     elsif message.sender == "bot"
       p "FOR BOT"
       p message.room_id
-      p ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message)
-      p ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}", status: "#{session.status}"
+      p ActionCable.server.broadcast "room_channel_#{message.room_id}", message: render_bot_message(message),
+      p ActionCable.server.broadcast "room_channel_0", room: "#{message.room_id}", status: "#{session.status}", message: render_bot_message(message)
     end
   end
 
