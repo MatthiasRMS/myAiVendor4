@@ -18,7 +18,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
     if verify_signature(@room.bot.secret, @room.bot.api_key, params["key"])
       puts "Valid signature"
       @session = find_or_create_session(params[:fbid])
-      session.update(last_exchange: Time.now)
+      @session.update(last_exchange: Time.now)
       p @session
       p params
       p params["msg"].class
