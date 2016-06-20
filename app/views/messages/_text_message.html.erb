@@ -1,13 +1,13 @@
 <% if message.sender == "user" %>
   <div class="message-container flexbox-start flex-item">
     <div class="message-content flex-item flexbox-columns">
+      <div class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></div>
       <ul class="list-unstyled list-inline">
-        <li><h6><%=  @room.first_name %></h6></li>
-        <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
+        <li><%= image_tag(@room.profile_picture, class: "micro-avatar-tab")%></li>
+        <li class="user_message">
+          <%= simple_format message.content %>
+        </li>
       </ul>
-      <div class="user_message">
-        <%= simple_format message.content %>
-      </div>
     </div>
   </div>
 <% else %>
