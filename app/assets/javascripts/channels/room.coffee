@@ -18,7 +18,9 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
       $('.messages').append data['message']
     if data["room"] == 0
       $("#"+data["room"]).css("color", "red")
+      $(".active").removeClass("active")
       $(".flexbox-columns-start").prepend($("#"+data["room"]))
+      $("#"+data["room"]).addClass("active")
     else
       $('.messages').append data['message']
       $("#mainColumn").prepend($("#" + data["room"]))
