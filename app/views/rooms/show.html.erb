@@ -12,7 +12,7 @@
     <div class="panel-heading">
       <h4>Current context</h4>
     </div>
-    <div id="<%= @room.facebook_id %>" class="facebook panel-body fixed-height">
+    <div id="<%= @room.facebook_id %>" id="wrapper" class="facebook panel-body fixed-height">
       <div class="flexbox-columns-start">
         <label>Update Message</label>
         <input id="msg" type="text">
@@ -73,7 +73,7 @@
 
 
   <!--  Information about the chatbot, the user and their history together -->
-  <div class="panel panel-default">
+  <div class="panel panel-default right-hand-side-column">
     <div class="panel-heading">
       <h4>Details from this specific room</h4>
     </div>
@@ -167,7 +167,7 @@
         </div>
       </div>
       <div class="backer-message-template">
-        <p>Rephrasing Template</p>
+        <p>Trolling Template</p>
         <div class="bot_message">
           <p>It seems that you are trying to trick me here. Let's focus on my real purpose, which is fashion.</p>
         </div>
