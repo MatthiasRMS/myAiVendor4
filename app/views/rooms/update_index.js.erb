@@ -1,5 +1,7 @@
 console.log("UPDATE");
 $(".messages").empty();
+$(".active").removeClass("active");
+$("#<%= @room.id %>").addClass("active");
 $(".panel-heading")[0].id = <%= @room.id %>
 $(".details-body").empty();
 <% @messages.each do |m| %>
