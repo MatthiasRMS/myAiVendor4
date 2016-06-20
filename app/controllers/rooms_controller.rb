@@ -7,7 +7,7 @@ class RoomsController < ApplicationController
 
   def update_index
     @room = Room.find(params[:room_id])
-    @messages = @room.messages
+    @messages = @room.messages.last(30)
     respond_to do |format|
       format.js
     end
