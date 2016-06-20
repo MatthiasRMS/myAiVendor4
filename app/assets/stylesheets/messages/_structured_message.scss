@@ -9,7 +9,16 @@
 }
 
 
-.structured-text {
+.structured-text-button {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  font-size: 14px;
+  padding-top: 10px;
+  background-color: #0084FF;
+  color: white;
+}
+
+.structured-text-carousel {
   border: 1px solid rgba(0, 0, 0, .1);
   border-radius: 5px;
   font-size: 14px;
