@@ -33,14 +33,14 @@
               </div>
               <div class="last-session-status">
                 <% current_status = Session.where(facebook_id: room.facebook_id).last.status %>
-                <% if current_status = 'blocked'  %>
-                  <%= image_tag("red-circle.png", width: '10')%>
+                <% if current_status = 'blocked' %>
+                  <%= image_tag("red-circle.png", width: '10') %>
                 <% elsif current_status = 'active' %>
-                  <%= image_tag("green-circle.png", width: '10')%>
+                  <%= image_tag("green-circle.png", width: '10') %>
                 <% elsif current_status = 'inactive' %>
-                  <%= image_tag("grey-circle.png", width: '10')%>
+                  <%= image_tag("grey-circle.png", width: '10') %>
                 <% else %>
-                  <%= image_tag("orange-circle.png", width: '10')%>
+                  <%= image_tag("orange-circle.png", width: '10') %>
                 <% end %>
                 <%= link_to  Session.where(facebook_id: room.facebook_id).last.status, room_path(room), id: "status" %>
               </div>
