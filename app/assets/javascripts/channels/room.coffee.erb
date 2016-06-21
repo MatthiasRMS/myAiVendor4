@@ -12,6 +12,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     $("#mainColumn").prepend($("#" + data["room"]))
     if window.location.href == "http://www.mymessagingstore.com/rooms"
       $("div#" + data["room"]).find("#status").text(data["status"])
+      console.log(data["status"])
       if data["status"] == "active"
         $("#" + data["room"] + " .fa-circle").css("color", "green")
       else if data["status"] == "blocked"
