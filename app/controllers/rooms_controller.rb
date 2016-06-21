@@ -14,7 +14,6 @@ class RoomsController < ApplicationController
   end
 
    def show
-
       @room = Room.find(params[:id])
       p @room.bot
       gon.endpoint = @room.bot.emission_endpoint
