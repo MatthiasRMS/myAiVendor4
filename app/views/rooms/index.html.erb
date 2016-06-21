@@ -38,13 +38,13 @@
               <div class="last-session-status">
                 <% current_status = Session.where(facebook_id: room.facebook_id).last.status %>
                 <% if current_status == 'blocked' %>
-                  <%= image_tag("red-circle.png", width: '10', class: "status-icon") %>
+                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:red"></i>
                 <% elsif current_status == 'active' %>
-                  <%= image_tag("green-circle.png", width: '10', class: "status-icon") %>
+                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:green">
                 <% elsif current_status == 'inactive' %>
-                  <%= image_tag("grey-circle.png", width: '10', class: "status-icon") %>
+                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:grey">
                 <% else %>
-                  <%= image_tag("orange-circle.png", width: '10', class: "status-icon") %>
+                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:orange">
                 <% end %>
                 <%= link_to  Session.where(facebook_id: room.facebook_id).last.status, room_path(room), id: "status" %>
               </div>
