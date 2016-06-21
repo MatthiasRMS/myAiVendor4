@@ -48,7 +48,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
    render json: { errors: @session.errors.full_messages }, status: :unprocessable_entity
  end
 
- def find_or_create_session(fbid, max_age: 4.minutes)
+ def find_or_create_session(fbid, max_age: 5.minutes)
     Session.find_by(["facebook_id = ? AND last_exchange >= ?", fbid, max_age.ago]) ||
     Session.create(facebook_id: fbid, context: {})
   end
