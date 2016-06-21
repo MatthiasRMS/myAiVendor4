@@ -1,7 +1,7 @@
 class RoomsController < ApplicationController
   def index
     @rooms = Room.all
-    @room = @rooms.last
+    @room = @rooms.sort_by {|r| r.messages.last.created_at}.reverse.first
     @no_footer = true
   end
 

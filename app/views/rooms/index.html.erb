@@ -19,7 +19,11 @@
       <% @rooms.sort_by {|r| r.messages.last.created_at}.reverse.each do |room| %>
 
         <%= link_to controller: "rooms", action: "update_index", room_id: room.id, remote: true do %>
+         <% if room = @room %>
+          <div id="<%= room.id %>" class="active room-tab">
+        <% else %>
           <div id="<%= room.id %>" class="room-tab">
+        <% end %>
             <div class="user-avatar">
               <% if room.profile_picture.present? %>
                 <%= image_tag(room.profile_picture, class: "avatar-tab")%>
