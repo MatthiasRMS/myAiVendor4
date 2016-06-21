@@ -32,6 +32,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
         else
           @session.update(status: "active")
           @message = Message.new({structured_messages: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
+        end
       else
         @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
       end
