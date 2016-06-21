@@ -17,7 +17,7 @@
       <li class="date"><%= message.created_at.strftime("%b %e, %l:%M%P") %></li>
     </ul>
     <div class="bot_message">
-       <%= simple_format message.content.gsub('{:text=>"', "").gsub('"}', "").gsub("/n", "") %>
+       <%= simple_format message.content.gsub('{:text=>"', "").gsub('"}', "").gsub("/n", "</br>") %>
     </div>
   </div>
 <% end %>
