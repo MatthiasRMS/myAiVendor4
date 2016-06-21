@@ -17,7 +17,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
       console.log("here is true")
       $('.messages').append data['message']
 
-    if data["room"] == 0
+    if window.location.href != "http://www.mymessagingstore.com/rooms"
       $("#"+data["room"]).css("color", "red")
       $(".flexbox-columns-start").prepend($("#"+data["room"]))
     else
