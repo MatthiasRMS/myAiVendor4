@@ -12,7 +12,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     $(".flexbox-columns-start").prepend($("#"+data["room"]))
     $("#mainColumn").prepend($("#" + data["room"]))
     if window.location.href == "http://www.mymessagingstore.com/rooms"
-      if $(".panel-heading")[0].id == data["room"] &&
+      if $(".panel-heading")[0].id == data["room"]
         $('.messages').append data['message']
         $("div#" + data["room"]).find("#status").text(data["status"])
     else
