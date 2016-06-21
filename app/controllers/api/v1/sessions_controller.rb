@@ -31,7 +31,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
       else
         p "ATTACHMENT"
         p params["msg"]
-        p params["msg"].include?
+        p params["msg"].include?("Please hold on a few seconds, while I analyse your last message")
         if params["msg"].include?("Please hold on a few seconds, while I analyse your last message")
           @session.update(status: "blocked")
           @message = Message.new({structured_messages: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
