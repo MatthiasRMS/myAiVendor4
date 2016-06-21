@@ -40,11 +40,11 @@
                 <% if current_status == 'blocked' %>
                   <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:red"></i>
                 <% elsif current_status == 'active' %>
-                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:green">
+                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:green"></i>
                 <% elsif current_status == 'inactive' %>
-                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:grey">
+                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:grey"></i>
                 <% else %>
-                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:orange">
+                  <i class="fa fa-circle" aria-hidden="true" class: "status-icon" style="color:orange"></i>
                 <% end %>
                 <%= link_to  Session.where(facebook_id: room.facebook_id).last.status, room_path(room), id: "status" %>
               </div>
