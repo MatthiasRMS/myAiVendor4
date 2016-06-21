@@ -25,18 +25,18 @@ class Api::V1::SessionsController < Api::V1::BaseController
       p params["profile_pic"]
 
       @room.update(profile_picture: profile_picture)
-      if params["msg"].include? "attachment"
+      if params["msg"].include?("attachment")
           @session.update(status: "active")
           @message = Message.new({structured_messages: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
       else
         p "ATTACHMENT"
         p params["msg"]
         p params["msg"].include?
-        if params["msg"].include? "Please hold on a few seconds, while I analyse your last message"
+        if params["msg"].include?("Please hold on a few seconds, while I analyse your last message")
           @session.update(status: "blocked")
           @message = Message.new({structured_messages: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
         else
-        @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
+          @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
         end
       end
       @message.save!
