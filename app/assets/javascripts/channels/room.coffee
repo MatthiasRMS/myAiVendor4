@@ -13,6 +13,7 @@ App.room = App.cable.subscriptions.create {channel: "RoomChannel", room: $(".mes
     $("#mainColumn").prepend($("#" + data["room"]))
     if window.location.href == "http://www.mymessagingstore.com/rooms"
       $("div#" + data["room"]).find("#status").text(data["status"])
+      $("#"+data["room"]+" .status-icon").replaceWith("<%= j image_tag("green-circle.png", width: '10', class: "status-icon") %>")
       if $(".panel-heading")[0].id == data["room"]
         $('.messages').append data['message']
         $("#wrapper").scrollTop($("#wrapper")[0].scrollHeight)
