@@ -28,7 +28,6 @@ class Api::V1::SessionsController < Api::V1::BaseController
       if params["msg"].include? "attachment"
           @session.update(status: "active")
           @message = Message.new({structured_messages: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
-        end
       else
         p "ATTACHMENT"
         p params["msg"]
@@ -38,6 +37,7 @@ class Api::V1::SessionsController < Api::V1::BaseController
           @message = Message.new({structured_messages: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
         else
         @message = Message.new({content: params["msg"], room_id: @room.id, sender: params[:sender], context: params[:context]})
+        end
       end
       @message.save!
       @session.update(status: update_session_status(@session, @room) )
